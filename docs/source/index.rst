@@ -20,4 +20,4 @@ Contents
 
    usage
    api
-   3D visualization <3Dviz.rst>
+   3D visualization <3Dviz>
