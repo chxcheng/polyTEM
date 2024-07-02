@@ -20,3 +20,4 @@ Contents
 
    usage
    api
+   3Dviz
