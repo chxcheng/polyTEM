@@ -11,7 +11,3 @@ Poster Extension for **GRC: Electronic Processes in Organic Materials**
 Contents
 --------
 
-.. toctree::
-
-   usage
-   api
