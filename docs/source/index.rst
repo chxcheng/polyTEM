@@ -20,12 +20,13 @@ local microstructure of fluorinated, pNDI-based polymer solar cells*
 Advanced Materials, 2024 (submitted).
 
 If you use this package for 2D Analysis, please cite:
-.. [`link <>`__] Cheng, C. et al., Impact of dilute DIO on local microstructure 
+
+.. [link] Cheng, C. et al., Impact of dilute DIO on local microstructure 
    of fluorinated, pNDI-based polymer solar cells. *Advanced Materials*, 2024. (submitted)
 
 If you use this package for 3D Analysis, please cite:
 
-.. [`link <>`__] Cheng, C., Marks A., Quill T., Salleo A., 3D liquid crystalline
+.. [link] Cheng, C., Marks A., Quill T., Salleo A., 3D liquid crystalline
    connectivity in semiconducting polymer films. *Gordon Research Conference:
    Electronic Processes in Organic Materials*, July 2024.
 
