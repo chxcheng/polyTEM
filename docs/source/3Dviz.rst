@@ -16,6 +16,4 @@ style="border:none; width: 100%; height: 100%;"
 
 .. raw:: html
 
-   <iframe 
-      src="../_static/S0_corner_streamplot1.html" >
-   </iframe>
+   <iframe src="../_static/S0_corner_streamplot1.html" style="border:none; width: 100%; height: 100%;"></iframe>
