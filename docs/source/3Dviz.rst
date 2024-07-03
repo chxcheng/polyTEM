@@ -16,8 +16,27 @@ Resize iframe after loading
 
 .. raw:: html
 
-   <iframe src="_static/S0_corner_streamplot1.html" style="border:none; width: 100%; height: 100%;"></iframe>
+   <script type="application/javascript">
 
-   <script>
-      iFrame.height = iFrame.contentWindow.document.body.scrollHeight
+   function resizeIFrameToFitContent( iFrame ) {
+
+      iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
+      iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+   }
+
+   window.addEventListener('DOMContentLoaded', function(e) {
+
+      var iFrame = document.getElementById( 'plotly3D' );
+      resizeIFrameToFitContent( iFrame );
+
+      // or, to resize all iframes:
+      var iframes = document.querySelectorAll("iframe");
+      for( var i = 0; i < iframes.length; i++) {
+         resizeIFrameToFitContent( iframes[i] );
+      }
+   } );
+
    </script>
+
+   <iframe src="_static/S0_corner_streamplot1.html" id="plotly3D"></iframe>
+
