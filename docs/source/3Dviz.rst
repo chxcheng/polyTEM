@@ -18,7 +18,7 @@ Resize iframe after loading
 
 
 
-   <iframe src="_static/S0_corner_streamplot1.html" id="plotly3D"></iframe>
+   <iframe src="_static/S0_corner_streamplot1.html" id="plotly3D" style="border:none; width: 100%; height: 100%"></iframe>
 
 What if I just add more content down here
 
