@@ -16,7 +16,22 @@ Resize iframe after loading
 
 .. raw:: html
 
-
+   <style>
+      #plotly3D {
+      /* Set the width of the iframe the size you want to transform it FROM */
+      width: 100%;
+      height: 710px;
+      /* apply the transform */
+      -webkit-transform:scale(0.25);
+      -moz-transform:scale(0.25);
+      -o-transform:scale(0.25);
+      transform:scale(0.25);
+      /* position it, as if it was the original size */
+      position: absolute;
+      left: -400px;
+      top: -200px;
+      }
+   </style>
 
    <iframe src="_static/S0_corner_streamplot1.html" id="plotly3D" style="border:none; width: 100%; height: 100%"></iframe>
 
@@ -26,20 +41,3 @@ And this will expand the screen hopefully?
 
 and then more info
 
-.. raw:: html
-
-   <script type="application/javascript">
-
-      function resizeIFrameToFitContent( iFrame ) {
-
-         iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
-         iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
-      }
-
-      window.addEventListener('DOMContentLoaded', function(e) {
-
-         var iFrame = document.getElementById( 'plotly3D' );
-         resizeIFrameToFitContent( iFrame );
-      } );
-
-   </script>
