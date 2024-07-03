@@ -14,4 +14,4 @@ Interactive visualization
 
 .. raw:: html
 
-    <iframe src="S0_corner_streamplot1.html"></iframe>
+   <iframe src="_static/S0_corner_streamplot1.html"></iframe>
