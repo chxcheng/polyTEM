@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pytem.crystal_peaks.vector_graph_utils &mdash; pyTEM 1.0 documentation</title>
+  <title>pytem.crystal_peaks.vector_graph_utils &mdash; polyTEM 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -15,14 +15,14 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pytem.image" href="pytem.image.html" />
-    <link rel="prev" title="pytem.crystal_peaks.flow_fields" href="pytem.crystal_peaks.flow_fields.html" /> 
+    <link rel="next" title="pytem.crystal_peaks.vector_graph_utils.create_edges_from_simulation" href="pytem.crystal_peaks.vector_graph_utils.create_edges_from_simulation.html" />
+    <link rel="prev" title="pytem.crystal_peaks.flow_fields.ProgressBar" href="pytem.crystal_peaks.flow_fields.ProgressBar.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            pyTEM
+            polyTEM
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -78,7 +78,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">pyTEM</a>
+          <a href="../index.html">polyTEM</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -104,40 +104,84 @@
 <p class="rubric">Functions</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_edges_from_simulation</span></code>(graph, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.vector_graph_utils.create_edges_from_simulation.html#pytem.crystal_peaks.vector_graph_utils.create_edges_from_simulation" title="pytem.crystal_peaks.vector_graph_utils.create_edges_from_simulation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_edges_from_simulation</span></code></a>(graph, ...)</p></td>
 <td><p>creates edges with edge attribute probability Args:     graph: networkx Graph to modify     prob_mat: sparse object, Probability Adjacency Matrix with shape (N, graph.order())     node_index: the Node index value that corresponds to the first row in prob_mat</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_nodes_from_vectorfield</span></code>(vector_field)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.vector_graph_utils.create_nodes_from_vectorfield.html#pytem.crystal_peaks.vector_graph_utils.create_nodes_from_vectorfield" title="pytem.crystal_peaks.vector_graph_utils.create_nodes_from_vectorfield"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_nodes_from_vectorfield</span></code></a>(vector_field)</p></td>
 <td><p>Args:</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code>(savefile)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.vector_graph_utils.load.html#pytem.crystal_peaks.vector_graph_utils.load" title="pytem.crystal_peaks.vector_graph_utils.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>(savefile)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">nonintersecting_paths</span></code>(paths)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.vector_graph_utils.nonintersecting_paths.html#pytem.crystal_peaks.vector_graph_utils.nonintersecting_paths" title="pytem.crystal_peaks.vector_graph_utils.nonintersecting_paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nonintersecting_paths</span></code></a>(paths)</p></td>
 <td><p>Find all nonintersecting paths given paths dictionary, where paths is the output of nx.shortest_path(graph,source)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code>(graph, savefile)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.vector_graph_utils.save.html#pytem.crystal_peaks.vector_graph_utils.save" title="pytem.crystal_peaks.vector_graph_utils.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(graph, savefile)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_largest_subgraph</span></code>(graph)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.vector_graph_utils.sort_largest_subgraph.html#pytem.crystal_peaks.vector_graph_utils.sort_largest_subgraph" title="pytem.crystal_peaks.vector_graph_utils.sort_largest_subgraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_largest_subgraph</span></code></a>(graph)</p></td>
 <td><p>Return list of subgraphs based on graph size</p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.vector_graph_utils.create_edges_from_simulation">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.vector_graph_utils.</span></span><span class="sig-name descname"><span class="pre">create_edges_from_simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probs_mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/vector_graph_utils.html#create_edges_from_simulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.vector_graph_utils.create_edges_from_simulation" title="Link to this definition"></a></dt>
+<dd><p>creates edges with edge attribute probability
+Args:</p>
+<blockquote>
+<div><p>graph: networkx Graph to modify
+prob_mat: sparse object, Probability Adjacency Matrix with shape (N, graph.order())
+node_index: the Node index value that corresponds to the first row in prob_mat</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.vector_graph_utils.create_nodes_from_vectorfield">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.vector_graph_utils.</span></span><span class="sig-name descname"><span class="pre">create_nodes_from_vectorfield</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector_field</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/vector_graph_utils.html#create_nodes_from_vectorfield"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.vector_graph_utils.create_nodes_from_vectorfield" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>vector_field: numpy array from CrystalStack3D vector field</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.vector_graph_utils.load">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.vector_graph_utils.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">savefile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/vector_graph_utils.html#load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.vector_graph_utils.load" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.vector_graph_utils.nonintersecting_paths">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.vector_graph_utils.</span></span><span class="sig-name descname"><span class="pre">nonintersecting_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paths</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/vector_graph_utils.html#nonintersecting_paths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.vector_graph_utils.nonintersecting_paths" title="Link to this definition"></a></dt>
+<dd><p>Find all nonintersecting paths given paths dictionary,
+where paths is the output of nx.shortest_path(graph,source)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.vector_graph_utils.save">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.vector_graph_utils.</span></span><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savefile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/vector_graph_utils.html#save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.vector_graph_utils.save" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.vector_graph_utils.sort_largest_subgraph">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.vector_graph_utils.</span></span><span class="sig-name descname"><span class="pre">sort_largest_subgraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/vector_graph_utils.html#sort_largest_subgraph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.vector_graph_utils.sort_largest_subgraph" title="Link to this definition"></a></dt>
+<dd><p>Return list of subgraphs based on graph size</p>
+</dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pytem.crystal_peaks.flow_fields.html" class="btn btn-neutral float-left" title="pytem.crystal_peaks.flow_fields" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pytem.image.html" class="btn btn-neutral float-right" title="pytem.image" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pytem.crystal_peaks.flow_fields.ProgressBar.html" class="btn btn-neutral float-left" title="pytem.crystal_peaks.flow_fields.ProgressBar" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pytem.crystal_peaks.vector_graph_utils.create_edges_from_simulation.html" class="btn btn-neutral float-right" title="pytem.crystal_peaks.vector_graph_utils.create_edges_from_simulation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Christina Cheng.</p>
+    <p>&#169; Copyright 2024, Christina Cheng.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

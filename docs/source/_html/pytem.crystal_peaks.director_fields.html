@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pytem.crystal_peaks.director_fields &mdash; pyTEM 1.0 documentation</title>
+  <title>pytem.crystal_peaks.director_fields &mdash; polyTEM 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -15,14 +15,14 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pytem.crystal_peaks.flow_fields" href="pytem.crystal_peaks.flow_fields.html" />
-    <link rel="prev" title="pytem.crystal_peaks.crystal_stack_3D" href="pytem.crystal_peaks.crystal_stack_3D.html" /> 
+    <link rel="next" title="pytem.crystal_peaks.director_fields.color_by_angle" href="pytem.crystal_peaks.director_fields.color_by_angle.html" />
+    <link rel="prev" title="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D" href="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            pyTEM
+            polyTEM
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -78,7 +78,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">pyTEM</a>
+          <a href="../index.html">polyTEM</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -104,16 +104,16 @@
 <p class="rubric">Functions</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">color_by_angle</span></code>(theta)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.director_fields.color_by_angle.html#pytem.crystal_peaks.director_fields.color_by_angle" title="pytem.crystal_peaks.director_fields.color_by_angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">color_by_angle</span></code></a>(theta)</p></td>
 <td><p>Tuple of RGB values to generate circular palette. Arguments:     theta: theta angle Returns:     (R, G, B): tuple of doubles with R, G, B coordinates based on input angle.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">distance_2d</span></code>(p1, p2)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.director_fields.distance_2d.html#pytem.crystal_peaks.director_fields.distance_2d" title="pytem.crystal_peaks.director_fields.distance_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">distance_2d</span></code></a>(p1, p2)</p></td>
 <td><p>Returns distance between two 2D vectors.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_director_field</span></code>(peaks_matrix, angles, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.director_fields.plot_director_field.html#pytem.crystal_peaks.director_fields.plot_director_field" title="pytem.crystal_peaks.director_fields.plot_director_field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_director_field</span></code></a>(peaks_matrix, angles, ...)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">seed_lines</span></code>(peaks_matrix, angles)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.director_fields.seed_lines.html#pytem.crystal_peaks.director_fields.seed_lines" title="pytem.crystal_peaks.director_fields.seed_lines"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seed_lines</span></code></a>(peaks_matrix, angles)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -121,25 +121,85 @@
 <p class="rubric">Classes</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">DirectorField</span></code>(row, col, theta, intensity)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.director_fields.DirectorField.html#pytem.crystal_peaks.director_fields.DirectorField" title="pytem.crystal_peaks.director_fields.DirectorField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DirectorField</span></code></a>(row, col, theta, intensity)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py class">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.director_fields.DirectorField">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.director_fields.</span></span><span class="sig-name descname"><span class="pre">DirectorField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/director_fields.html#DirectorField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.director_fields.DirectorField" title="Link to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.director_fields.DirectorField.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'pytem.crystal_peaks.director_fields',</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">DirectorField.__init__&gt;,</span> <span class="pre">'length':</span> <span class="pre">&lt;function</span> <span class="pre">DirectorField.length&gt;,</span> <span class="pre">'find_first_edges':</span> <span class="pre">&lt;function</span> <span class="pre">DirectorField.find_first_edges&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'DirectorField'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'DirectorField'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__doc__':</span> <span class="pre">None,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#pytem.crystal_peaks.director_fields.DirectorField.__dict__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.director_fields.DirectorField.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/director_fields.html#DirectorField.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.director_fields.DirectorField.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.director_fields.DirectorField.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'pytem.crystal_peaks.director_fields'</span></em><a class="headerlink" href="#pytem.crystal_peaks.director_fields.DirectorField.__module__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.director_fields.DirectorField.find_first_edges">
+<span class="sig-name descname"><span class="pre">find_first_edges</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/director_fields.html#DirectorField.find_first_edges"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.director_fields.DirectorField.find_first_edges" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.director_fields.DirectorField.length">
+<span class="sig-name descname"><span class="pre">length</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/director_fields.html#DirectorField.length"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.director_fields.DirectorField.length" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.director_fields.color_by_angle">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.director_fields.</span></span><span class="sig-name descname"><span class="pre">color_by_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/director_fields.html#color_by_angle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.director_fields.color_by_angle" title="Link to this definition"></a></dt>
+<dd><p>Tuple of RGB values to generate circular palette.
+Arguments:</p>
+<blockquote>
+<div><p>theta: theta angle</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>(R, G, B): tuple of doubles with R, G, B coordinates based on input angle</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.director_fields.distance_2d">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.director_fields.</span></span><span class="sig-name descname"><span class="pre">distance_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/director_fields.html#distance_2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.director_fields.distance_2d" title="Link to this definition"></a></dt>
+<dd><p>Returns distance between two 2D vectors.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.director_fields.plot_director_field">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.director_fields.</span></span><span class="sig-name descname"><span class="pre">plot_director_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peaks_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_length_nm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_length_nm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perpendicular</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_nm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linewidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colored_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/director_fields.html#plot_director_field"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.director_fields.plot_director_field" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.director_fields.seed_lines">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.director_fields.</span></span><span class="sig-name descname"><span class="pre">seed_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peaks_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/director_fields.html#seed_lines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.director_fields.seed_lines" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pytem.crystal_peaks.crystal_stack_3D.html" class="btn btn-neutral float-left" title="pytem.crystal_peaks.crystal_stack_3D" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pytem.crystal_peaks.flow_fields.html" class="btn btn-neutral float-right" title="pytem.crystal_peaks.flow_fields" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.html" class="btn btn-neutral float-left" title="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pytem.crystal_peaks.director_fields.color_by_angle.html" class="btn btn-neutral float-right" title="pytem.crystal_peaks.director_fields.color_by_angle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Christina Cheng.</p>
+    <p>&#169; Copyright 2024, Christina Cheng.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

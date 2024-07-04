@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pytem.paracrystalline &mdash; pyTEM 1.0 documentation</title>
+  <title>pytem.paracrystalline &mdash; polyTEM 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -15,14 +15,14 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pytem.spatial_analysis" href="pytem.spatial_analysis.html" />
-    <link rel="prev" title="pytem.cc_reduce_data" href="pytem.cc_reduce_data.html" /> 
+    <link rel="next" title="pytem.paracrystalline.calc_g" href="pytem.paracrystalline.calc_g.html" />
+    <link rel="prev" title="pytem.image.fft.tensor_psd" href="pytem.image.fft.tensor_psd.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            pyTEM
+            polyTEM
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -50,7 +50,28 @@
 <li class="toctree-l2 current"><a class="reference internal" href="pytem.html">pytem</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="pytem.cc_drift_correction.html">pytem.cc_drift_correction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pytem.cc_reduce_data.html">pytem.cc_reduce_data</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">pytem.paracrystalline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.crystal_peaks.html">pytem.crystal_peaks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.image.html">pytem.image</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">pytem.paracrystalline</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pytem.paracrystalline.calc_g.html">pytem.paracrystalline.calc_g</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.paracrystalline.get_fwhm.html">pytem.paracrystalline.get_fwhm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.paracrystalline.get_fwhm_fromg.html">pytem.paracrystalline.get_fwhm_fromg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.paracrystalline.get_q_dist.html">pytem.paracrystalline.get_q_dist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.paracrystalline.get_sigma.html">pytem.paracrystalline.get_sigma</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.paracrystalline.lattice_fluc.html">pytem.paracrystalline.lattice_fluc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.paracrystalline.mp_peakfit_func.html">pytem.paracrystalline.mp_peakfit_func</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.paracrystalline._GaussianModel"><code class="docutils literal notranslate"><span class="pre">_GaussianModel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.paracrystalline.calc_g"><code class="docutils literal notranslate"><span class="pre">calc_g()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.paracrystalline.get_fwhm"><code class="docutils literal notranslate"><span class="pre">get_fwhm()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.paracrystalline.get_fwhm_fromg"><code class="docutils literal notranslate"><span class="pre">get_fwhm_fromg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.paracrystalline.get_q_dist"><code class="docutils literal notranslate"><span class="pre">get_q_dist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.paracrystalline.get_sigma"><code class="docutils literal notranslate"><span class="pre">get_sigma()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.paracrystalline.lattice_fluc"><code class="docutils literal notranslate"><span class="pre">lattice_fluc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.paracrystalline.mp_peakfit_func"><code class="docutils literal notranslate"><span class="pre">mp_peakfit_func()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.params.html">pytem.params</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.spatial.html">pytem.spatial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pytem.spatial_analysis.html">pytem.spatial_analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pytem.statistics.html">pytem.statistics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pytem.tol_colors.html">pytem.tol_colors</a></li>
@@ -67,7 +88,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">pyTEM</a>
+          <a href="../index.html">polyTEM</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -93,43 +114,115 @@
 <p class="rubric">Functions</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_g</span></code>(qvals, label[, N, plot, saveplotfile])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.paracrystalline.calc_g.html#pytem.paracrystalline.calc_g" title="pytem.paracrystalline.calc_g"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_g</span></code></a>(qvals, label[, N, plot, saveplotfile])</p></td>
 <td><p>Bin/Histogram the distribution of qvals Calculate paracrystallinity % g where g = np.sqrt(E[d**2] / E[d] - 1) d == d-spacing of lattice plane E[x**n] == expected value, or nth moment of random variable x -- INPUTS qvals = 1D np.array of q_centers to count label = plot title, can include spaces N = number of images this is binned across</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_fwhm</span></code>(x)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.paracrystalline.get_fwhm.html#pytem.paracrystalline.get_fwhm" title="pytem.paracrystalline.get_fwhm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_fwhm</span></code></a>(x)</p></td>
 <td><p>x is array of observed q-values assuming that distribution of x is Gaussian like the FWHM of the distribution of x is std*np.sqrt(8 * np.log(2))</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_fwhm_fromg</span></code>(d, g[, erms])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.paracrystalline.get_fwhm_fromg.html#pytem.paracrystalline.get_fwhm_fromg" title="pytem.paracrystalline.get_fwhm_fromg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_fwhm_fromg</span></code></a>(d, g[, erms])</p></td>
 <td><p>From Appendix B in Rivnay, et al. Warren-Averbach paper FWHM of a Voigt profile = (4*np.pi**2 * g**2 / d )(0.5346 + np.sqrt(0.2166 + (8*np.log(2) * erms**2)/g**2)).</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_q_dist</span></code>(q_datacube, peak_model, params[, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.paracrystalline.get_q_dist.html#pytem.paracrystalline.get_q_dist" title="pytem.paracrystalline.get_q_dist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_q_dist</span></code></a>(q_datacube, peak_model, params[, ...])</p></td>
 <td><p>From 4D datacube containing the Integrated Intensity vs q linecuts from FFT output, peak fit and extract q-value of peak center.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_sigma</span></code>(fwhm)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.paracrystalline.get_sigma.html#pytem.paracrystalline.get_sigma" title="pytem.paracrystalline.get_sigma"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_sigma</span></code></a>(fwhm)</p></td>
 <td><p>assuming that the distribution is gaussian like then the standard deviation sigma = fwhm / (np.sqrt(8 * np.log(2)))</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">lattice_fluc</span></code>(qvals, label)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.paracrystalline.lattice_fluc.html#pytem.paracrystalline.lattice_fluc" title="pytem.paracrystalline.lattice_fluc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lattice_fluc</span></code></a>(qvals, label)</p></td>
 <td><p>Calculates the root-mean-square value of lattice parameter fluctuations e_rms = np.sqrt( E[e**2] ) e = delta_d / d, where d=d-spacing E[x] is expected value of x</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mp_peakfit_func</span></code>(row, model, pars)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.paracrystalline.mp_peakfit_func.html#pytem.paracrystalline.mp_peakfit_func" title="pytem.paracrystalline.mp_peakfit_func"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mp_peakfit_func</span></code></a>(row, model, pars)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.paracrystalline._GaussianModel">
+<span class="sig-prename descclassname"><span class="pre">pytem.paracrystalline.</span></span><span class="sig-name descname"><span class="pre">_GaussianModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.235</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/paracrystalline.html#_GaussianModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.paracrystalline._GaussianModel" title="Link to this definition"></a></dt>
+<dd><p>Default Gaussian Model for peakfitting FFT Intensity vs q linecut</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.paracrystalline.calc_g">
+<span class="sig-prename descclassname"><span class="pre">pytem.paracrystalline.</span></span><span class="sig-name descname"><span class="pre">calc_g</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">saveplotfile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/paracrystalline.html#calc_g"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.paracrystalline.calc_g" title="Link to this definition"></a></dt>
+<dd><p>Bin/Histogram the distribution of qvals
+Calculate paracrystallinity % g where
+g = np.sqrt(E[d**2] / E[d] - 1)
+d == d-spacing of lattice plane
+E[x**n] == expected value, or nth moment of random variable x
+–
+INPUTS
+qvals = 1D np.array of q_centers to count
+label = plot title, can include spaces
+N = number of images this is binned across</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.paracrystalline.get_fwhm">
+<span class="sig-prename descclassname"><span class="pre">pytem.paracrystalline.</span></span><span class="sig-name descname"><span class="pre">get_fwhm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/paracrystalline.html#get_fwhm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.paracrystalline.get_fwhm" title="Link to this definition"></a></dt>
+<dd><p>x is array of observed q-values
+assuming that distribution of x is Gaussian like
+the FWHM of the distribution of x is std*np.sqrt(8 * np.log(2))</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.paracrystalline.get_fwhm_fromg">
+<span class="sig-prename descclassname"><span class="pre">pytem.paracrystalline.</span></span><span class="sig-name descname"><span class="pre">get_fwhm_fromg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/paracrystalline.html#get_fwhm_fromg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.paracrystalline.get_fwhm_fromg" title="Link to this definition"></a></dt>
+<dd><p>From Appendix B in Rivnay, et al. Warren-Averbach paper
+FWHM of a Voigt profile =
+(4*np.pi**2 * g**2 / d )(0.5346 + np.sqrt(0.2166 + (8*np.log(2) * erms**2)/g**2))</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.paracrystalline.get_q_dist">
+<span class="sig-prename descclassname"><span class="pre">pytem.paracrystalline.</span></span><span class="sig-name descname"><span class="pre">get_q_dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q_datacube</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peak_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savefile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/paracrystalline.html#get_q_dist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.paracrystalline.get_q_dist" title="Link to this definition"></a></dt>
+<dd><p>From 4D datacube containing the Integrated Intensity vs q linecuts from FFT output,
+peak fit and extract q-value of peak center.
+Uses multiprocessing.
+—
+INPUTS
+datacube = 4D np.ndarray with shape (x, y, q_index, 2), with the 4th dim being [qval, fft intensity]
+num_threads = integer for multiprocessing pool</p>
+<p>OUTPUTS
+q_list = flattened list with the fitted q_center at each (x,y) location</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.paracrystalline.get_sigma">
+<span class="sig-prename descclassname"><span class="pre">pytem.paracrystalline.</span></span><span class="sig-name descname"><span class="pre">get_sigma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fwhm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/paracrystalline.html#get_sigma"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.paracrystalline.get_sigma" title="Link to this definition"></a></dt>
+<dd><p>assuming that the distribution is gaussian like
+then the standard deviation sigma = fwhm / (np.sqrt(8 * np.log(2)))</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.paracrystalline.lattice_fluc">
+<span class="sig-prename descclassname"><span class="pre">pytem.paracrystalline.</span></span><span class="sig-name descname"><span class="pre">lattice_fluc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/paracrystalline.html#lattice_fluc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.paracrystalline.lattice_fluc" title="Link to this definition"></a></dt>
+<dd><p>Calculates the root-mean-square value of lattice parameter fluctuations
+e_rms = np.sqrt( E[e**2] )
+e = delta_d / d, where d=d-spacing
+E[x] is expected value of x</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.paracrystalline.mp_peakfit_func">
+<span class="sig-prename descclassname"><span class="pre">pytem.paracrystalline.</span></span><span class="sig-name descname"><span class="pre">mp_peakfit_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pars</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/paracrystalline.html#mp_peakfit_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.paracrystalline.mp_peakfit_func" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pytem.cc_reduce_data.html" class="btn btn-neutral float-left" title="pytem.cc_reduce_data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pytem.spatial_analysis.html" class="btn btn-neutral float-right" title="pytem.spatial_analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pytem.image.fft.tensor_psd.html" class="btn btn-neutral float-left" title="pytem.image.fft.tensor_psd" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pytem.paracrystalline.calc_g.html" class="btn btn-neutral float-right" title="pytem.paracrystalline.calc_g" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Christina Cheng.</p>
+    <p>&#169; Copyright 2024, Christina Cheng.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

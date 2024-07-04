@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pytem.crystal_peaks.crystal_stack_3D &mdash; pyTEM 1.0 documentation</title>
+  <title>pytem.crystal_peaks.crystal_stack_3D &mdash; polyTEM 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -15,14 +15,14 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pytem.crystal_peaks.director_fields" href="pytem.crystal_peaks.director_fields.html" />
-    <link rel="prev" title="pytem.crystal_peaks.crystal_stack" href="pytem.crystal_peaks.crystal_stack.html" /> 
+    <link rel="next" title="pytem.crystal_peaks.crystal_stack_3D.find_match" href="pytem.crystal_peaks.crystal_stack_3D.find_match.html" />
+    <link rel="prev" title="pytem.crystal_peaks.crystal_stack.MultiCrystalStack" href="pytem.crystal_peaks.crystal_stack.MultiCrystalStack.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            pyTEM
+            polyTEM
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -78,7 +78,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">pyTEM</a>
+          <a href="../index.html">polyTEM</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -104,7 +104,7 @@
 <p class="rubric">Functions</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_match</span></code>(x, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.crystal_stack_3D.find_match.html#pytem.crystal_peaks.crystal_stack_3D.find_match" title="pytem.crystal_peaks.crystal_stack_3D.find_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_match</span></code></a>(x, y)</p></td>
 <td><p>For each element in y, get the index of x that matches that element Used to match the tilt_angles between the images used to create the CrystalStack3D and those used in the AlignmentResult</p></td>
 </tr>
 </tbody>
@@ -112,25 +112,219 @@
 <p class="rubric">Classes</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">CrystalStack3D</span></code>(stack_list, tilt_angles, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.html#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D" title="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CrystalStack3D</span></code></a>(stack_list, tilt_angles, ...)</p></td>
 <td><p>Assumptions</p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py class">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.crystal_stack_3D.</span></span><span class="sig-name descname"><span class="pre">CrystalStack3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stack_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tilt_angles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain_collections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_populate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orient_perpendicular</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#CrystalStack3D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D" title="Link to this definition"></a></dt>
+<dd><p>Assumptions
+–
+* the sample datacube parameters were used to generate each of the crystal stacks. Thus, the resolution and shape is the same.</p>
+<p>Attributes
+–
+stack_list: list of crystal stacks
+tilt_angles: list of  tilt angles corresponding to each stack in stack_list
+domain_collections: list of DomainCollections correspond to each stack in stack_list
+shape: (x,y) shape 
+resolution: resolution of tilt stack (afer sliding fft)
+vector_field: each row is from one fft peak and contains (x,y,a,b,c) for vector field direction
+threshold_func: function for peak finding
+Kb, Ks: Frank Elastic Constants in Angstroms</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'pytem.crystal_peaks.crystal_stack_3D',</span> <span class="pre">'__doc__':</span> <span class="pre">'\n</span>&#160;&#160;&#160; <span class="pre">Assumptions\n</span>&#160;&#160;&#160; <span class="pre">--\n</span>&#160;&#160;&#160; <span class="pre">*</span> <span class="pre">the</span> <span class="pre">sample</span> <span class="pre">datacube</span> <span class="pre">parameters</span> <span class="pre">were</span> <span class="pre">used</span> <span class="pre">to</span> <span class="pre">generate</span> <span class="pre">each</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">crystal</span> <span class="pre">stacks.</span> <span class="pre">Thus,</span> <span class="pre">the</span> <span class="pre">resolution</span> <span class="pre">and</span> <span class="pre">shape</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">same.\n</span>&#160;&#160;&#160; <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">Attributes\n</span>&#160;&#160;&#160; <span class="pre">--\n</span>&#160;&#160;&#160; <span class="pre">stack_list:</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">crystal</span> <span class="pre">stacks\n</span>&#160;&#160;&#160; <span class="pre">tilt_angles:</span> <span class="pre">list</span> <span class="pre">of</span>&#160; <span class="pre">tilt</span> <span class="pre">angles</span> <span class="pre">corresponding</span> <span class="pre">to</span> <span class="pre">each</span> <span class="pre">stack</span> <span class="pre">in</span> <span class="pre">stack_list\n</span>&#160;&#160;&#160; <span class="pre">domain_collections:</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">DomainCollections</span> <span class="pre">correspond</span> <span class="pre">to</span> <span class="pre">each</span> <span class="pre">stack</span> <span class="pre">in</span> <span class="pre">stack_list\n</span>&#160;&#160;&#160; <span class="pre">shape:</span> <span class="pre">(x,y)</span> <span class="pre">shape</span> <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">resolution:</span> <span class="pre">resolution</span> <span class="pre">of</span> <span class="pre">tilt</span> <span class="pre">stack</span> <span class="pre">(afer</span> <span class="pre">sliding</span> <span class="pre">fft)\n</span>&#160;&#160;&#160; <span class="pre">vector_field:</span> <span class="pre">each</span> <span class="pre">row</span> <span class="pre">is</span> <span class="pre">from</span> <span class="pre">one</span> <span class="pre">fft</span> <span class="pre">peak</span> <span class="pre">and</span> <span class="pre">contains</span> <span class="pre">(x,y,a,b,c)</span> <span class="pre">for</span> <span class="pre">vector</span> <span class="pre">field</span> <span class="pre">direction\n</span>&#160;&#160;&#160; <span class="pre">threshold_func:</span> <span class="pre">function</span> <span class="pre">for</span> <span class="pre">peak</span> <span class="pre">finding\n</span>&#160;&#160;&#160; <span class="pre">Kb,</span> <span class="pre">Ks:</span> <span class="pre">Frank</span> <span class="pre">Elastic</span> <span class="pre">Constants</span> <span class="pre">in</span> <span class="pre">Angstroms\n</span>&#160;&#160;&#160; <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">',</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.__init__&gt;,</span> <span class="pre">'save':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.save&gt;,</span> <span class="pre">'load':</span> <span class="pre">&lt;classmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'create_vector_field':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.create_vector_field&gt;,</span> <span class="pre">'align_vector_field':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.align_vector_field&gt;,</span> <span class="pre">'find_peak_threshold':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.find_peak_threshold&gt;,</span> <span class="pre">'apply_threshold_func':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.apply_threshold_func&gt;,</span> <span class="pre">'estimate_bending_stiffness':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.estimate_bending_stiffness&gt;,</span> <span class="pre">'adjacency_probability_matrix':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.adjacency_probability_matrix&gt;,</span> <span class="pre">'build_vector_graph':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.build_vector_graph&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'CrystalStack3D'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'CrystalStack3D'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.__dict__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stack_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tilt_angles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain_collections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_populate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orient_perpendicular</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#CrystalStack3D.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'pytem.crystal_peaks.crystal_stack_3D'</span></em><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.__module__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.adjacency_probability_matrix">
+<span class="sig-name descname"><span class="pre">adjacency_probability_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">savedir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_distance_pxl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">70</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_group_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'nematic'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#CrystalStack3D.adjacency_probability_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.adjacency_probability_matrix" title="Link to this definition"></a></dt>
+<dd><dl>
+<dt>Args:</dt><dd><p>Resolution: original imaging resolution of raw TEM image
+max_distance: int, pixel limit to build possible connections
+alpha_cutoff: int, tilt angle cutoff to build possible connections
+threads: int, for multiprocessing
+node_group_size: int, to segment nodes for multiprocessing
+model: “single-chain” or “nematic”
+<a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs: keyword-argument parameters for bending probability function
+–
+Lp: float, A, persistence length for “single-chain” model
+Kb, Ks: Frank Elastic Constants for nematic, with units of A</p>
+<blockquote>
+<div><p>model parameters should be provided in the same units as the vector field,
+if vector field is aligned, then model parameters should be in units of A
+otherwise, model parameters should be in units of CrystalStack pixels (e.g. on the order of 3 nm)</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.align_vector_field">
+<span class="sig-name descname"><span class="pre">align_vector_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alignment_result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alignment_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin_shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#CrystalStack3D.align_vector_field"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.align_vector_field" title="Link to this definition"></a></dt>
+<dd><p>Shifts the (x,y) coordinates in the vector field based on the marker alignment results
+and convert to (u,v) where u = x/cos(alpha) and v=y</p>
+<p>this returns a vector field where (u,v) has the pixel resolution of the original image, 
+before downsampling with the sliding fft</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>window_size: int, parameter used during sliding fft scan
+step_size: int, parameter used during sliding fft scan
+alignment_result: AlignmentResult object
+alignment_indices: the image index in AlignmentResult that corresponds to the images used to create the CrystalStack3D
+origin_shift: any origin shift applied during alignment</p>
+</dd>
+<dt>Returns:</dt><dd><p>vector field containing (u,v,alpha,a,b,c) of each fft peak feature</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.apply_threshold_func">
+<span class="sig-name descname"><span class="pre">apply_threshold_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#CrystalStack3D.apply_threshold_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.apply_threshold_func" title="Link to this definition"></a></dt>
+<dd><p>Sets the threshold function of every stack in the stack list</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>threshold_func: default None, uses self.threshold_func, otherwise input argument will override</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.build_vector_graph">
+<span class="sig-name descname"><span class="pre">build_vector_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_range</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#CrystalStack3D.build_vector_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.build_vector_graph" title="Link to this definition"></a></dt>
+<dd><p>Build vector graph representation from adjacency probability matrix</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.create_vector_field">
+<span class="sig-name descname"><span class="pre">create_vector_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rotate90_orientation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#CrystalStack3D.create_vector_field"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.create_vector_field" title="Link to this definition"></a></dt>
+<dd><p>Creates vector field (x,y,alpha,a,b,c), 
+where x is the x-axis of the image (across the columns of the data)</p>
+<blockquote>
+<div><p>y is the y-axis of the image (across the rows of the data)
+alpha is the tilt angle
+a,b,c represents the unit vector field of chain orientation, centered at (x,y)</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.estimate_bending_stiffness">
+<span class="sig-name descname"><span class="pre">estimate_bending_stiffness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#CrystalStack3D.estimate_bending_stiffness"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.estimate_bending_stiffness" title="Link to this definition"></a></dt>
+<dd><p>Estimates the bending stiffness by calculating the orientation correlation length
+Under the Worm-Like-Chain model, the orientation correlation length == bending stiffness</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>flip: bool, swaps perpendicular and parallel orientations. i.e. set True if</dt><dd><p>director orientation was obtained as “lamellar” but was actually “backbone”</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>Ld: average orientation correlation length
+stderr: standard error of the mean of Ld</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.find_peak_threshold">
+<span class="sig-name descname"><span class="pre">find_peak_threshold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#CrystalStack3D.find_peak_threshold"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.find_peak_threshold" title="Link to this definition"></a></dt>
+<dd><p>Use the fft intensities for high tilt angles to estimate noise floor to set threshold function
+for fft peak finding of lower tilt angles</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>alpha: the angle cutoff to divide the tilt angles
+inverse: default False, selects tilt angles greater than alpha. if True, selects tilt angles smaller.</p>
+</dd>
+<dt>Returns:</dt><dd><p>threshold_func: lambda function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#CrystalStack3D.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.load" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">savedir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#CrystalStack3D.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.save" title="Link to this definition"></a></dt>
+<dd><p>Saves the stacks based on their individual outdirs, with the prefix inserted in front of crystalstack.pkl
+Saves the tilt angles at savedir, tilt_angles.json
+Saves the vector field at savedir, vector_field.json</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D._multiprocessing_adjacency_func">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.crystal_stack_3D.</span></span><span class="sig-name descname"><span class="pre">_multiprocessing_adjacency_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_cutoff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_total</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savedir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'nematic'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#_multiprocessing_adjacency_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D._multiprocessing_adjacency_func" title="Link to this definition"></a></dt>
+<dd><p>multiprocessing function called to create adjacency probability matrix using Pool.apply_async()
+builds the upper triangle of the symmetric adjacency probability matrix, so vector_field</p>
+<p>Because this is intended to use with apply_async() and order is lost,
+A tuple is returned that includes to node index so that all of the resulting adjacency_p_rows
+can be sorted and reordered properly</p>
+<dl>
+<dt>Args:</dt><dd><p>node_group: np.ndarray a group of rows from CrystalStack3D.vector_field
+start_index: int, node_index of first node in node_group
+vector_field: np.array of tilt_stack.vector_field 
+max_distance: float A, cutoff for connections
+alpha_cutoff: float, tilt angle cutoff for connections
+n_total: number of nodes
+savedir = str, where to save the probability adjacency matrix for this node</p>
+<p><a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs
+–
+model: “single-chain” or “nematic” to determine bending probability. Default “nematic”
+Lp: Float, persistence length in A for “single-chain” bending probability
+Kb, Ks: float, Frank Elastic Constants for “nematic” bending probability</p>
+</dd>
+<dt>Returns:</dt><dd><p>start_index: index of node
+adjacency_p_row: sparse array with shape(n_total) with adjacency probabilities</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D._terminate_pool_on_error">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.crystal_stack_3D.</span></span><span class="sig-name descname"><span class="pre">_terminate_pool_on_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">err</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#_terminate_pool_on_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D._terminate_pool_on_error" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.find_match">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.crystal_stack_3D.</span></span><span class="sig-name descname"><span class="pre">find_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#find_match"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.find_match" title="Link to this definition"></a></dt>
+<dd><p>For each element in y, get the index of x that matches that element
+Used to match the tilt_angles between the images used to create the CrystalStack3D and those used in the AlignmentResult</p>
+<p>Usage: x should be AlignmentResult tilt angles and y should be CrystalStack3D tilt angles</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>x,y: numpy array</p>
+</dd>
+<dt>Returns:</dt><dd><p>indices: numpy array</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pytem.crystal_peaks.crystal_stack.html" class="btn btn-neutral float-left" title="pytem.crystal_peaks.crystal_stack" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pytem.crystal_peaks.director_fields.html" class="btn btn-neutral float-right" title="pytem.crystal_peaks.director_fields" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pytem.crystal_peaks.crystal_stack.MultiCrystalStack.html" class="btn btn-neutral float-left" title="pytem.crystal_peaks.crystal_stack.MultiCrystalStack" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pytem.crystal_peaks.crystal_stack_3D.find_match.html" class="btn btn-neutral float-right" title="pytem.crystal_peaks.crystal_stack_3D.find_match" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Christina Cheng.</p>
+    <p>&#169; Copyright 2024, Christina Cheng.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pytem.image.ctf &mdash; pyTEM 1.0 documentation</title>
+  <title>pytem.image.ctf &mdash; polyTEM 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -15,13 +15,13 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pytem.image.drift" href="pytem.image.drift.html" />
+    <link rel="next" title="pytem.image.ctf.CTF" href="pytem.image.ctf.CTF.html" />
     <link rel="prev" title="pytem.image.Image" href="pytem.image.Image.html" /> 
 </head>
 
@@ -34,7 +34,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            pyTEM
+            polyTEM
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -52,6 +52,7 @@
 <li class="toctree-l3"><a class="reference internal" href="pytem.cc_reduce_data.html">pytem.cc_reduce_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pytem.crystal_peaks.html">pytem.crystal_peaks</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="pytem.image.html">pytem.image</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pytem.image.html#pytem.image.Image"><code class="docutils literal notranslate"><span class="pre">Image</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="pytem.image.Image.html">pytem.image.Image</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">pytem.image.ctf</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pytem.image.drift.html">pytem.image.drift</a></li>
@@ -77,7 +78,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">pyTEM</a>
+          <a href="../index.html">polyTEM</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -105,11 +106,152 @@ Module functions assist in ctf correction</p>
 <p class="rubric">Classes</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">CTF</span></code>([fit_df, output, params])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.image.ctf.CTF.html#pytem.image.ctf.CTF" title="pytem.image.ctf.CTF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CTF</span></code></a>([fit_df, output, params])</p></td>
 <td><p>Class storing the results of ctffind4 output</p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py class">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pytem.image.ctf.</span></span><span class="sig-name descname"><span class="pre">CTF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fit_df=Empty</span> <span class="pre">DataFrame</span> <span class="pre">Columns:</span> <span class="pre">[Micrograph</span> <span class="pre">Num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Spatial</span> <span class="pre">Frequency</span> <span class="pre">(1/A)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CTF</span> <span class="pre">fit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Signal]</span> <span class="pre">Index:</span> <span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output={'astigmatism':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'cross-corr':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'defocus</span> <span class="pre">1</span> <span class="pre">(A)':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'defocus</span> <span class="pre">2</span> <span class="pre">(A)':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'max</span> <span class="pre">fit</span> <span class="pre">(A)':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'phase</span> <span class="pre">shift</span> <span class="pre">(rad)':</span> <span class="pre">0}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params={'Box</span> <span class="pre">size':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'Input</span> <span class="pre">file':</span> <span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'Pixel</span> <span class="pre">size':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'acceleration</span> <span class="pre">voltage':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'amplitude</span> <span class="pre">contrast':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'max.</span> <span class="pre">def.':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'max.</span> <span class="pre">res.':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'min.</span> <span class="pre">def.':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'min.</span> <span class="pre">res.':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'spherical</span> <span class="pre">aberration':</span> <span class="pre">0}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/ctf.html#CTF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.ctf.CTF" title="Link to this definition"></a></dt>
+<dd><p>Class storing the results of ctffind4 output</p>
+<dl>
+<dt>Attributes:</dt><dd><p>df: DataFrame containing spatial frequency vs ctffit
+fit_summary: dict with defocus, astigmatism, phase shift, cross-correlation, and max fit
+fit_pars: ctffind4 input parameters: pixel size, acceleration voltage, spherical aberration,</p>
+<blockquote>
+<div><p>amplitude contrast, min. res., max. res., Box size, min. def., max. def.</p>
+</div></blockquote>
+<p>envelope_decay: beta parameter for envelope decay</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'pytem.image.ctf',</span> <span class="pre">'__doc__':</span> <span class="pre">'\n</span>&#160;&#160;&#160; <span class="pre">Class</span> <span class="pre">storing</span> <span class="pre">the</span> <span class="pre">results</span> <span class="pre">of</span> <span class="pre">ctffind4</span> <span class="pre">output\n</span>&#160;&#160;&#160; <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">Attributes:\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">df:</span> <span class="pre">DataFrame</span> <span class="pre">containing</span> <span class="pre">spatial</span> <span class="pre">frequency</span> <span class="pre">vs</span> <span class="pre">ctffit\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">fit_summary:</span> <span class="pre">dict</span> <span class="pre">with</span> <span class="pre">defocus,</span> <span class="pre">astigmatism,</span> <span class="pre">phase</span> <span class="pre">shift,</span> <span class="pre">cross-correlation,</span> <span class="pre">and</span> <span class="pre">max</span> <span class="pre">fit\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">fit_pars:</span> <span class="pre">ctffind4</span> <span class="pre">input</span> <span class="pre">parameters:</span> <span class="pre">pixel</span> <span class="pre">size,</span> <span class="pre">acceleration</span> <span class="pre">voltage,</span> <span class="pre">spherical</span> <span class="pre">aberration,\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">amplitude</span> <span class="pre">contrast,</span> <span class="pre">min.</span> <span class="pre">res.,</span> <span class="pre">max.</span> <span class="pre">res.,</span> <span class="pre">Box</span> <span class="pre">size,</span> <span class="pre">min.</span> <span class="pre">def.,</span> <span class="pre">max.</span> <span class="pre">def.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">envelope_decay:</span> <span class="pre">beta</span> <span class="pre">parameter</span> <span class="pre">for</span> <span class="pre">envelope</span> <span class="pre">decay\n</span>&#160;&#160;&#160; <span class="pre">',</span> <span class="pre">'ctf_fit_df':</span> <span class="pre">Empty</span> <span class="pre">DataFrame</span> <span class="pre">Columns:</span> <span class="pre">[Micrograph</span> <span class="pre">Num,</span> <span class="pre">Spatial</span> <span class="pre">Frequency</span> <span class="pre">(1/A),</span> <span class="pre">CTF</span> <span class="pre">fit,</span> <span class="pre">Signal]</span> <span class="pre">Index:</span> <span class="pre">[],</span> <span class="pre">'summary_dict':</span> <span class="pre">{'defocus</span> <span class="pre">1</span> <span class="pre">(A)':</span> <span class="pre">0,</span> <span class="pre">'defocus</span> <span class="pre">2</span> <span class="pre">(A)':</span> <span class="pre">0,</span> <span class="pre">'astigmatism':</span> <span class="pre">0,</span> <span class="pre">'phase</span> <span class="pre">shift</span> <span class="pre">(rad)':</span> <span class="pre">0,</span> <span class="pre">'cross-corr':</span> <span class="pre">0,</span> <span class="pre">'max</span> <span class="pre">fit</span> <span class="pre">(A)':</span> <span class="pre">0},</span> <span class="pre">'default_pars':</span> <span class="pre">{'Input</span> <span class="pre">file':</span> <span class="pre">'',</span> <span class="pre">'Pixel</span> <span class="pre">size':</span> <span class="pre">0,</span> <span class="pre">'acceleration</span> <span class="pre">voltage':</span> <span class="pre">0,</span> <span class="pre">'spherical</span> <span class="pre">aberration':</span> <span class="pre">0,</span> <span class="pre">'amplitude</span> <span class="pre">contrast':</span> <span class="pre">0,</span> <span class="pre">'min.</span> <span class="pre">res.':</span> <span class="pre">0,</span> <span class="pre">'max.</span> <span class="pre">res.':</span> <span class="pre">0,</span> <span class="pre">'Box</span> <span class="pre">size':</span> <span class="pre">0,</span> <span class="pre">'min.</span> <span class="pre">def.':</span> <span class="pre">0,</span> <span class="pre">'max.</span> <span class="pre">def.':</span> <span class="pre">0},</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">CTF.__init__&gt;,</span> <span class="pre">'load':</span> <span class="pre">&lt;classmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'_process_fileline':</span> <span class="pre">&lt;function</span> <span class="pre">CTF._process_fileline&gt;,</span> <span class="pre">'_ctf_function':</span> <span class="pre">&lt;function</span> <span class="pre">CTF._ctf_function&gt;,</span> <span class="pre">'build_array':</span> <span class="pre">&lt;function</span> <span class="pre">CTF.build_array&gt;,</span> <span class="pre">'wiener_filter':</span> <span class="pre">&lt;function</span> <span class="pre">CTF.wiener_filter&gt;,</span> <span class="pre">'_full_ctf_model':</span> <span class="pre">&lt;function</span> <span class="pre">CTF._full_ctf_model&gt;,</span> <span class="pre">'envelope_fit':</span> <span class="pre">&lt;function</span> <span class="pre">CTF.envelope_fit&gt;,</span> <span class="pre">'plot_lineout':</span> <span class="pre">&lt;function</span> <span class="pre">CTF.plot_lineout&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'CTF'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'CTF'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#pytem.image.ctf.CTF.__dict__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fit_df=Empty</span> <span class="pre">DataFrame</span> <span class="pre">Columns:</span> <span class="pre">[Micrograph</span> <span class="pre">Num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Spatial</span> <span class="pre">Frequency</span> <span class="pre">(1/A)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CTF</span> <span class="pre">fit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Signal]</span> <span class="pre">Index:</span> <span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output={'astigmatism':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'cross-corr':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'defocus</span> <span class="pre">1</span> <span class="pre">(A)':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'defocus</span> <span class="pre">2</span> <span class="pre">(A)':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'max</span> <span class="pre">fit</span> <span class="pre">(A)':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'phase</span> <span class="pre">shift</span> <span class="pre">(rad)':</span> <span class="pre">0}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params={'Box</span> <span class="pre">size':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'Input</span> <span class="pre">file':</span> <span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'Pixel</span> <span class="pre">size':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'acceleration</span> <span class="pre">voltage':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'amplitude</span> <span class="pre">contrast':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'max.</span> <span class="pre">def.':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'max.</span> <span class="pre">res.':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'min.</span> <span class="pre">def.':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'min.</span> <span class="pre">res.':</span> <span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'spherical</span> <span class="pre">aberration':</span> <span class="pre">0}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/ctf.html#CTF.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.ctf.CTF.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'pytem.image.ctf'</span></em><a class="headerlink" href="#pytem.image.ctf.CTF.__module__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF._ctf_function">
+<span class="sig-name descname"><span class="pre">_ctf_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_j</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/ctf.html#CTF._ctf_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.ctf.CTF._ctf_function" title="Link to this definition"></a></dt>
+<dd><p>Reference: <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4711343/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4711343/</a></p>
+<p>To be used in np.fromfunction, in the form lambda i,j: _ctf_function(args)
+such that the lambda function is called with N parameters, where N is the rank of shape,
+and each parameter represents the coordinates of the array. 
+i.e. this function needs to work with i is a np.ndarray of row indices and j is a np.ndarray of col indices</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>i: row, pixel index 
+j: col, pixel index 
+s: size of array (assumes square)
+b: envelope decay parameter</p>
+</dd>
+</dl>
+<p>note that q=2pi/d (related to GIWAXS)
+where as u is 1/d</p>
+<p>Update 12.13.22 to allow for non-centered i and j.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF._full_ctf_model">
+<span class="sig-name descname"><span class="pre">_full_ctf_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/ctf.html#CTF._full_ctf_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.ctf.CTF._full_ctf_model" title="Link to this definition"></a></dt>
+<dd><p>combines CTFFIND ctf fit result with envelope function.
+envelope fn = exp(-B * u**2)
+where u is the frequency vector and B is the decay rate
+Returns:</p>
+<blockquote>
+<div><p>model: lmfit Model instance to allow for envelope function fitting</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF._process_fileline">
+<span class="sig-name descname"><span class="pre">_process_fileline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'summary'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linenum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/ctf.html#CTF._process_fileline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.ctf.CTF._process_fileline" title="Link to this definition"></a></dt>
+<dd><p>Processes ctffind4 output textfiles</p>
+<p>Expected info contanied in ctffind output (info==’summary’):
+Line 1: # CTF version, date and time
+Line 2: # Input file : &lt;filename&gt; ;
+Line 3: # &lt;Parameter Name&gt;: &lt;Value&gt; &lt;Unit&gt;;
+Line 4: # &lt;Parameter Name&gt;: &lt;Value&gt; &lt;Unit&gt;;
+Line 5: # Columns: #1 - micrograph number; #2 - defocus 1 [Angstroms]; #3 - defocus 2; #4 - azimuth of astigmatism; #5 - additional phase shift [radians]; #6 - cross correlation; #7 - spacing (in Angstroms);
+Line 6+: &lt;Column Values separated by space&gt;</p>
+<p>Expected info contained in ctiffind out _avrot:
+Line 1: # Output from CTFFIND version &lt;version&gt;, run on &lt;date&gt; &lt;time&gt;
+Line 2: # Input file: &lt;filename&gt;
+Line 3: # &lt;Parameter Name&gt;: &lt;Value&gt; &lt;Unit&gt;;
+Line 4: # &lt;Parameter Name&gt;: &lt;Value&gt; &lt;Unit&gt;;
+Line 5: # 6 lines per micrograph: #1 - spatial frequency (1/Angstroms); #2 - 1D rotational average of spectrum (assuming no astigmatism); #3 - 1D rotational average of spectrum; #4 - CTF fit; #5 - cross-correlation between spectrum and CTF fit; #6 - 2sigma of expected cross correlation of noise
+Line 6+: Values as described by Line 5.</p>
+<p>Assumes Python Version 3.7, where dictionaries are ordered!</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF.build_array">
+<span class="sig-name descname"><span class="pre">build_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/ctf.html#CTF.build_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.ctf.CTF.build_array" title="Link to this definition"></a></dt>
+<dd><p>uses the ctf fit output to build np.ndarray of input shape
+of the ctf function, to allow for correction.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>s: size of square array</p>
+</dd>
+<dt>Returns:</dt><dd><p>shifted_arr: np.array with shape (s,s) containing CTF, with u=0 centered</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF.ctf_fit_df">
+<span class="sig-name descname"><span class="pre">ctf_fit_df</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Empty</span> <span class="pre">DataFrame</span> <span class="pre">Columns:</span> <span class="pre">[Micrograph</span> <span class="pre">Num,</span> <span class="pre">Spatial</span> <span class="pre">Frequency</span> <span class="pre">(1/A),</span> <span class="pre">CTF</span> <span class="pre">fit,</span> <span class="pre">Signal]</span> <span class="pre">Index:</span> <span class="pre">[]</span></em><a class="headerlink" href="#pytem.image.ctf.CTF.ctf_fit_df" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF.default_pars">
+<span class="sig-name descname"><span class="pre">default_pars</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Box</span> <span class="pre">size':</span> <span class="pre">0,</span> <span class="pre">'Input</span> <span class="pre">file':</span> <span class="pre">'',</span> <span class="pre">'Pixel</span> <span class="pre">size':</span> <span class="pre">0,</span> <span class="pre">'acceleration</span> <span class="pre">voltage':</span> <span class="pre">0,</span> <span class="pre">'amplitude</span> <span class="pre">contrast':</span> <span class="pre">0,</span> <span class="pre">'max.</span> <span class="pre">def.':</span> <span class="pre">0,</span> <span class="pre">'max.</span> <span class="pre">res.':</span> <span class="pre">0,</span> <span class="pre">'min.</span> <span class="pre">def.':</span> <span class="pre">0,</span> <span class="pre">'min.</span> <span class="pre">res.':</span> <span class="pre">0,</span> <span class="pre">'spherical</span> <span class="pre">aberration':</span> <span class="pre">0}</span></em><a class="headerlink" href="#pytem.image.ctf.CTF.default_pars" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF.envelope_fit">
+<span class="sig-name descname"><span class="pre">envelope_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.08</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/ctf.html#CTF.envelope_fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.ctf.CTF.envelope_fit" title="Link to this definition"></a></dt>
+<dd><p>Uses lmfit to fit the envelope parameter to the ctf
+Returns:</p>
+<blockquote>
+<div><p>result: lmfit ModelResult
+self.envelope_decay: Parameter B of envelope function, see _full_ctf_model</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF.load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tilt_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/ctf.html#CTF.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.ctf.CTF.load" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF.plot_lineout">
+<span class="sig-name descname"><span class="pre">plot_lineout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/ctf.html#CTF.plot_lineout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.ctf.CTF.plot_lineout" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF.summary_dict">
+<span class="sig-name descname"><span class="pre">summary_dict</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'astigmatism':</span> <span class="pre">0,</span> <span class="pre">'cross-corr':</span> <span class="pre">0,</span> <span class="pre">'defocus</span> <span class="pre">1</span> <span class="pre">(A)':</span> <span class="pre">0,</span> <span class="pre">'defocus</span> <span class="pre">2</span> <span class="pre">(A)':</span> <span class="pre">0,</span> <span class="pre">'max</span> <span class="pre">fit</span> <span class="pre">(A)':</span> <span class="pre">0,</span> <span class="pre">'phase</span> <span class="pre">shift</span> <span class="pre">(rad)':</span> <span class="pre">0}</span></em><a class="headerlink" href="#pytem.image.ctf.CTF.summary_dict" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.image.ctf.CTF.wiener_filter">
+<span class="sig-name descname"><span class="pre">wiener_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/ctf.html#CTF.wiener_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.ctf.CTF.wiener_filter" title="Link to this definition"></a></dt>
+<dd><p>build wiener filter for CTF, with size (s,s), 
+BUG: RIGHT NOW ASSUME SQUARE!
+and signal to noise ratio with the same size</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
@@ -117,13 +259,13 @@ Module functions assist in ctf correction</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="pytem.image.Image.html" class="btn btn-neutral float-left" title="pytem.image.Image" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pytem.image.drift.html" class="btn btn-neutral float-right" title="pytem.image.drift" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pytem.image.ctf.CTF.html" class="btn btn-neutral float-right" title="pytem.image.ctf.CTF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Christina Cheng.</p>
+    <p>&#169; Copyright 2024, Christina Cheng.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

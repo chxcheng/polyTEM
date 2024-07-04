@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pytem.spatial.stats &mdash; pyTEM 1.0 documentation</title>
+  <title>pytem.spatial.stats &mdash; polyTEM 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -15,14 +15,14 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pytem.spatial_analysis" href="pytem.spatial_analysis.html" />
-    <link rel="prev" title="pytem.spatial.spatial_analysis" href="pytem.spatial.spatial_analysis.html" /> 
+    <link rel="next" title="pytem.spatial.stats.bending_probability" href="pytem.spatial.stats.bending_probability.html" />
+    <link rel="prev" title="pytem.spatial.spatial_analysis.plot_polygons_df" href="pytem.spatial.spatial_analysis.plot_polygons_df.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            pyTEM
+            polyTEM
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -76,7 +76,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">pyTEM</a>
+          <a href="../index.html">polyTEM</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -102,28 +102,28 @@
 <p class="rubric">Functions</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bending_probability</span></code>(v1, v2[, model, resolution])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.spatial.stats.bending_probability.html#pytem.spatial.stats.bending_probability" title="pytem.spatial.stats.bending_probability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bending_probability</span></code></a>(v1, v2[, model, resolution])</p></td>
 <td><p>Calculates the bending probability between aggregate segments v1 and v2 Segments are quantified as v = (x,y,alpha,a,b,c) where (a,b,c) is a unit vector of the nematic director (segment tangent), located at (x,y) (x,y) are in units of pixels</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">exponential_decay_length</span></code>(y, x[, start_ind, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.spatial.stats.exponential_decay_length.html#pytem.spatial.stats.exponential_decay_length" title="pytem.spatial.stats.exponential_decay_length"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exponential_decay_length</span></code></a>(y, x[, start_ind, ...])</p></td>
 <td><p>Fits an exponential to y by modeling log(y) = ax + b.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">extrapolate_NN</span></code>(array)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.spatial.stats.extrapolate_NN.html#pytem.spatial.stats.extrapolate_NN" title="pytem.spatial.stats.extrapolate_NN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extrapolate_NN</span></code></a>(array)</p></td>
 <td><p>Extrapolates the nematic orientations using Nearest Neighbors, to fill the bounding box</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">legendre_polynomial_2</span></code>([dimension])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.spatial.stats.legendre_polynomial_2.html#pytem.spatial.stats.legendre_polynomial_2" title="pytem.spatial.stats.legendre_polynomial_2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">legendre_polynomial_2</span></code></a>([dimension])</p></td>
 <td><p>2nd-order Legendre Polynomial.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_intersect</span></code>(line1, line2)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.spatial.stats.line_intersect.html#pytem.spatial.stats.line_intersect" title="pytem.spatial.stats.line_intersect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_intersect</span></code></a>(line1, line2)</p></td>
 <td><p>find the intersecting points between two lines</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_histogram_distributions</span></code>(array, bins)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.spatial.stats.make_histogram_distributions.html#pytem.spatial.stats.make_histogram_distributions" title="pytem.spatial.stats.make_histogram_distributions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_histogram_distributions</span></code></a>(array, bins)</p></td>
 <td><p>Histogram values and return random variable distribution</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotate_align_vectors</span></code>(vec1, vec2)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.spatial.stats.rotate_align_vectors.html#pytem.spatial.stats.rotate_align_vectors" title="pytem.spatial.stats.rotate_align_vectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotate_align_vectors</span></code></a>(vec1, vec2)</p></td>
 <td><p>Find the rotation matrix that aligns vec1 to vec2 :param vec1: A 3d &quot;source&quot; vector :param vec2: A 3d &quot;destination&quot; vector :return mat: A transform matrix (3x3) which when applied to vec1, aligns it with vec2.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">vector_curvature</span></code>(v1, v2, r1, r2)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.spatial.stats.vector_curvature.html#pytem.spatial.stats.vector_curvature" title="pytem.spatial.stats.vector_curvature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vector_curvature</span></code></a>(v1, v2, r1, r2)</p></td>
 <td><p>Calculates the numerical components of curvature of v1(r1) using finite, single-sided (forward) difference between two unit vectors v1 and v2, whose origins are projected into the xy plane onto r1 and r2</p></td>
 </tr>
 </tbody>
@@ -131,25 +131,341 @@
 <p class="rubric">Classes</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">LinRegressModel</span></code>(slope, intercept, rvalue)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.spatial.stats.LinRegressModel.html#pytem.spatial.stats.LinRegressModel" title="pytem.spatial.stats.LinRegressModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LinRegressModel</span></code></a>(slope, intercept, rvalue)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py class">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pytem.spatial.stats.</span></span><span class="sig-name descname"><span class="pre">LinRegressModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slope</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intercept</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rvalue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel" title="Link to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__add__">
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__add__" title="Link to this definition"></a></dt>
+<dd><p>Return self+value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__class_getitem__">
+<span class="sig-name descname"><span class="pre">__class_getitem__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__class_getitem__" title="Link to this definition"></a></dt>
+<dd><p>See PEP 585</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__contains__">
+<span class="sig-name descname"><span class="pre">__contains__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__contains__" title="Link to this definition"></a></dt>
+<dd><p>Return key in self.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__eq__" title="Link to this definition"></a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__ge__">
+<span class="sig-name descname"><span class="pre">__ge__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__ge__" title="Link to this definition"></a></dt>
+<dd><p>Return self&gt;=value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__getattribute__">
+<span class="sig-name descname"><span class="pre">__getattribute__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__getattribute__" title="Link to this definition"></a></dt>
+<dd><p>Return getattr(self, name).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__getitem__" title="Link to this definition"></a></dt>
+<dd><p>Return self[key].</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__getnewargs__">
+<span class="sig-name descname"><span class="pre">__getnewargs__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__getnewargs__" title="Link to this definition"></a></dt>
+<dd><p>Return self as a plain tuple.  Used by copy and pickle.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__gt__">
+<span class="sig-name descname"><span class="pre">__gt__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__gt__" title="Link to this definition"></a></dt>
+<dd><p>Return self&gt;value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__hash__" title="Link to this definition"></a></dt>
+<dd><p>Return hash(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__iter__" title="Link to this definition"></a></dt>
+<dd><p>Implement iter(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__le__">
+<span class="sig-name descname"><span class="pre">__le__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__le__" title="Link to this definition"></a></dt>
+<dd><p>Return self&lt;=value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__len__">
+<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__len__" title="Link to this definition"></a></dt>
+<dd><p>Return len(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__lt__">
+<span class="sig-name descname"><span class="pre">__lt__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__lt__" title="Link to this definition"></a></dt>
+<dd><p>Return self&lt;value.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'pytem.spatial.stats'</span></em><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__module__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__mul__">
+<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__mul__" title="Link to this definition"></a></dt>
+<dd><p>Return self*value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__ne__">
+<span class="sig-name descname"><span class="pre">__ne__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__ne__" title="Link to this definition"></a></dt>
+<dd><p>Return self!=value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__new__">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__new__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slope</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intercept</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rvalue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__new__" title="Link to this definition"></a></dt>
+<dd><p>Create new instance of LinRegressModel(slope, intercept, rvalue)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__repr__" title="Link to this definition"></a></dt>
+<dd><p>Return a nicely formatted representation string</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__rmul__">
+<span class="sig-name descname"><span class="pre">__rmul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__rmul__" title="Link to this definition"></a></dt>
+<dd><p>Return value*self.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.__slots__">
+<span class="sig-name descname"><span class="pre">__slots__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.__slots__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel._asdict">
+<span class="sig-name descname"><span class="pre">_asdict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel._asdict" title="Link to this definition"></a></dt>
+<dd><p>Return a new dict which maps field names to their values.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel._field_defaults">
+<span class="sig-name descname"><span class="pre">_field_defaults</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel._field_defaults" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel._fields">
+<span class="sig-name descname"><span class="pre">_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('slope',</span> <span class="pre">'intercept',</span> <span class="pre">'rvalue')</span></em><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel._fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel._make">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_make</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel._make" title="Link to this definition"></a></dt>
+<dd><p>Make a new LinRegressModel object from a sequence or iterable</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel._replace">
+<span class="sig-name descname"><span class="pre">_replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel._replace" title="Link to this definition"></a></dt>
+<dd><p>Return a new LinRegressModel object replacing specified fields with new values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.count" title="Link to this definition"></a></dt>
+<dd><p>Return number of occurrences of value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9223372036854775807</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.index" title="Link to this definition"></a></dt>
+<dd><p>Return first index of value.</p>
+<p>Raises ValueError if the value is not present.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.intercept">
+<span class="sig-name descname"><span class="pre">intercept</span></span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.intercept" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.rvalue">
+<span class="sig-name descname"><span class="pre">rvalue</span></span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.rvalue" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.stats.LinRegressModel.slope">
+<span class="sig-name descname"><span class="pre">slope</span></span><a class="headerlink" href="#pytem.spatial.stats.LinRegressModel.slope" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial.stats.bending_probability">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial.stats.</span></span><span class="sig-name descname"><span class="pre">bending_probability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'nematic'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/stats.html#bending_probability"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.stats.bending_probability" title="Link to this definition"></a></dt>
+<dd><p>Calculates the bending probability between aggregate segments v1 and v2
+Segments are quantified as v = (x,y,alpha,a,b,c)
+where (a,b,c) is a unit vector of the nematic director (segment tangent), located at (x,y)
+(x,y) are in units of pixels</p>
+<p>Models:
+1) Single-chain WLC in Free Solution</p>
+<blockquote>
+<div><p>p = exp(-1/2 * Lp * omega**2)
+Lp is the chain persistence length
+omega is the bending rate dtheta/dd (d is distance)</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><dl class="simple">
+<dt>WLC in thermotropic nematic field obtained from Frank-Oseen Theory</dt><dd><p>p = exp(-bg)
+bg = Ks*(div(n))**2 + Kb*curl(div(n))**2
+bg = 0.5*Ks*(s1 + s2)**2 + 0.5*Kb*(b1**2 + b2**2)</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>BUGS:
+RUNTIME WARNING for model=’single-chain’: invalid value encountered in arccos when calculating theta?</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>v1,v2: vector field of chain orientation segments
+model: “single-chain”,”Frank-Oseen” or “nematic”        
+resolution: A/pixel resolution, needed for model=”single-chain”
+Lp: units A, Persistence Length of polymer, default 3nm
+Ks, Kb: units pixels</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial.stats.exponential_decay_length">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial.stats.</span></span><span class="sig-name descname"><span class="pre">exponential_decay_length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/stats.html#exponential_decay_length"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.stats.exponential_decay_length" title="Link to this definition"></a></dt>
+<dd><p>Fits an exponential to y by modeling log(y) = ax + b. Where the decay is given by -1/a</p>
+<p>Useful for modeling orientation correlation length where the input y is the
+expected value of the 2nd-order Legendre polynomial</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>y,x: np.array
+start_ind, end_ind: int, indexes for fitting
+plot: boolean, if True, will plot over any existing figure! Does not create new figure.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Ld: decay length</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial.stats.extrapolate_NN">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial.stats.</span></span><span class="sig-name descname"><span class="pre">extrapolate_NN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/stats.html#extrapolate_NN"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.stats.extrapolate_NN" title="Link to this definition"></a></dt>
+<dd><p>Extrapolates the nematic orientations using Nearest Neighbors, to fill the bounding box</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial.stats.legendre_polynomial_2">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial.stats.</span></span><span class="sig-name descname"><span class="pre">legendre_polynomial_2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/stats.html#legendre_polynomial_2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.stats.legendre_polynomial_2" title="Link to this definition"></a></dt>
+<dd><p>2nd-order Legendre Polynomial.
+dimension==2, 2D constrained is 2*(np.cos(np.deg2rad(x))**2) - 1
+dimension==3, 3D is 3/2*(np.cos(np.deg2rad(x))**2) - 1/2</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial.stats.line_intersect">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial.stats.</span></span><span class="sig-name descname"><span class="pre">line_intersect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/stats.html#line_intersect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.stats.line_intersect" title="Link to this definition"></a></dt>
+<dd><p>find the intersecting points between two lines</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>line1 (array): array with shape (N,2) representing the X,Y values of the points of line 1</dt><dd><p>or array with shape (2,) representing the slope and intercept of line 1</p>
+</dd>
+<dt>line2 (array): array with shape (N,2) representing the X,Y, values of the points of line 2</dt><dd><p>or array with shape (2,) representing the slope and intercept of line 2</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>point (array): x,y</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial.stats.make_histogram_distributions">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial.stats.</span></span><span class="sig-name descname"><span class="pre">make_histogram_distributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/stats.html#make_histogram_distributions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.stats.make_histogram_distributions" title="Link to this definition"></a></dt>
+<dd><p>Histogram values and return random variable distribution</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><p>array: 2D array with shape (n_samples,n_experiments). Histogram is performed by column.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list of histogram distributions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial.stats.rotate_align_vectors">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial.stats.</span></span><span class="sig-name descname"><span class="pre">rotate_align_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vec2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/stats.html#rotate_align_vectors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.stats.rotate_align_vectors" title="Link to this definition"></a></dt>
+<dd><p>Find the rotation matrix that aligns vec1 to vec2
+:param vec1: A 3d “source” vector
+:param vec2: A 3d “destination” vector
+:return mat: A transform matrix (3x3) which when applied to vec1, aligns it with vec2.</p>
+<p>Source: <a class="reference external" href="https://stackoverflow.com/questions/45142959/calculate-rotation-matrix-to-align-two-vectors-in-3d-space">https://stackoverflow.com/questions/45142959/calculate-rotation-matrix-to-align-two-vectors-in-3d-space</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial.stats.vector_curvature">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial.stats.</span></span><span class="sig-name descname"><span class="pre">vector_curvature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/stats.html#vector_curvature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.stats.vector_curvature" title="Link to this definition"></a></dt>
+<dd><p>Calculates the numerical components of curvature of v1(r1)
+using finite, single-sided (forward) difference between two unit vectors v1 and v2,
+whose origins are projected into the xy plane onto r1 and r2</p>
+<p>splay: s1 = dvx/dx, s2 = dvy/dy
+twist: t1 = -dvy/dx, t2 = dvx/dy
+bend: b1 = dvx/dz, b2 = dvy/dz</p>
+<p>These equations assume that the nematic vector is parallel to the z direction
+Assumed that r1!=r2</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>v1,v2: unit tangent vectors
+r1,r2: location of origin of v1 and v2</p>
+</dd>
+<dt>Returns:</dt><dd><p>s1,s2,b1,b2</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pytem.spatial.spatial_analysis.html" class="btn btn-neutral float-left" title="pytem.spatial.spatial_analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pytem.spatial_analysis.html" class="btn btn-neutral float-right" title="pytem.spatial_analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pytem.spatial.spatial_analysis.plot_polygons_df.html" class="btn btn-neutral float-left" title="pytem.spatial.spatial_analysis.plot_polygons_df" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pytem.spatial.stats.bending_probability.html" class="btn btn-neutral float-right" title="pytem.spatial.stats.bending_probability" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Christina Cheng.</p>
+    <p>&#169; Copyright 2024, Christina Cheng.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

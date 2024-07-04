@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pytem.crystal_peaks.flow_fields &mdash; pyTEM 1.0 documentation</title>
+  <title>pytem.crystal_peaks.flow_fields &mdash; polyTEM 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -15,14 +15,14 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pytem.crystal_peaks.vector_graph_utils" href="pytem.crystal_peaks.vector_graph_utils.html" />
-    <link rel="prev" title="pytem.crystal_peaks.director_fields" href="pytem.crystal_peaks.director_fields.html" /> 
+    <link rel="next" title="pytem.crystal_peaks.flow_fields.choose_file" href="pytem.crystal_peaks.flow_fields.choose_file.html" />
+    <link rel="prev" title="pytem.crystal_peaks.director_fields.DirectorField" href="pytem.crystal_peaks.director_fields.DirectorField.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            pyTEM
+            polyTEM
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -78,7 +78,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">pyTEM</a>
+          <a href="../index.html">polyTEM</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -104,70 +104,70 @@
 <p class="rubric">Functions</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">choose_file</span></code>(path, file_number, file_type[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.choose_file.html#pytem.crystal_peaks.flow_fields.choose_file" title="pytem.crystal_peaks.flow_fields.choose_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">choose_file</span></code></a>(path, file_number, file_type[, ...])</p></td>
 <td><p>Display all files in the specified directory and number them in order.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">color_by_angle</span></code>(theta[, inverse])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.color_by_angle.html#pytem.crystal_peaks.flow_fields.color_by_angle" title="pytem.crystal_peaks.flow_fields.color_by_angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">color_by_angle</span></code></a>(theta[, inverse])</p></td>
 <td><p>Assigns r, g, b values based on input angle. Inputs:     theta: angle in degrees. Can be a single value or an array. Outputs:     tuple of r, g, b values, each of which has the same shape as the input values.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">define_subgrid</span></code>(a1_shape, a1_spacing, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.define_subgrid.html#pytem.crystal_peaks.flow_fields.define_subgrid" title="pytem.crystal_peaks.flow_fields.define_subgrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">define_subgrid</span></code></a>(a1_shape, a1_spacing, ...)</p></td>
 <td><p>This function returns six functions that allow for easy conversion between cartesian coordinates, row-column coordinates, and subgrids within row-column coordinates.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">determine_peaks</span></code>(intensity_matrix, cutoff, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.determine_peaks.html#pytem.crystal_peaks.flow_fields.determine_peaks" title="pytem.crystal_peaks.flow_fields.determine_peaks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">determine_peaks</span></code></a>(intensity_matrix, cutoff, ...)</p></td>
 <td><p>Returns a matrix of peak positions derived from a matrix of diffraction data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_filenames</span></code>(path, file_type[, extension])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.get_filenames.html#pytem.crystal_peaks.flow_fields.get_filenames" title="pytem.crystal_peaks.flow_fields.get_filenames"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_filenames</span></code></a>(path, file_type[, extension])</p></td>
 <td><p>Provide a list of files in the specified directory, containing the specified file_type string</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_vector</span></code>(theta, length)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.get_vector.html#pytem.crystal_peaks.flow_fields.get_vector" title="pytem.crystal_peaks.flow_fields.get_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_vector</span></code></a>(theta, length)</p></td>
 <td><p>Returns the 2d vector of the specified length at the specified angle in degrees</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_q_intensity_matrix</span></code>(big_data_path, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.load_q_intensity_matrix.html#pytem.crystal_peaks.flow_fields.load_q_intensity_matrix" title="pytem.crystal_peaks.flow_fields.load_q_intensity_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_q_intensity_matrix</span></code></a>(big_data_path, ...)</p></td>
 <td><p>Loads a numpy matrix with the correct data using my (Luke's) naming conventions.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">main</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.main.html#pytem.crystal_peaks.flow_fields.main" title="pytem.crystal_peaks.flow_fields.main"><code class="xref py py-obj docutils literal notranslate"><span class="pre">main</span></code></a>()</p></td>
 <td><p>This function runs when this file is executed (as opposed to getting imported by another program).</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_and_reshape_intensity_matrix</span></code>(...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.normalize_and_reshape_intensity_matrix.html#pytem.crystal_peaks.flow_fields.normalize_and_reshape_intensity_matrix" title="pytem.crystal_peaks.flow_fields.normalize_and_reshape_intensity_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_and_reshape_intensity_matrix</span></code></a>(...)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_flow_fields</span></code>(datacube, peaks_matrix, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.plot_flow_fields.html#pytem.crystal_peaks.flow_fields.plot_flow_fields" title="pytem.crystal_peaks.flow_fields.plot_flow_fields"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_flow_fields</span></code></a>(datacube, peaks_matrix, ...)</p></td>
 <td><p>Plot flow Fields, By Luke Balhorn and Camila.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_graded_lines</span></code>(trimmed_lines, red, green, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.plot_graded_lines.html#pytem.crystal_peaks.flow_fields.plot_graded_lines" title="pytem.crystal_peaks.flow_fields.plot_graded_lines"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_graded_lines</span></code></a>(trimmed_lines, red, green, ...)</p></td>
 <td><p>Plots lines with non-constant RGBA or Width values. Inputs:     trimmed_lines: (4 x m x n) matrix, which contains the (x, y, theta, is_active) values for each point m along         each line n. This is the output of the trim_lines function. red: color value between 0 and 1     green: color value between 0 and 1     blue: color value between 0 and 1     alpha: transparency value between 0 and 1, where 1 is fully opaque and 0 is fully transparent. Interestingly,         transparency does not seem to increase rendering time. width: line width. The value is not capped but is usually on the order of 1.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_solid_lines</span></code>(propagated_lines[, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.plot_solid_lines.html#pytem.crystal_peaks.flow_fields.plot_solid_lines" title="pytem.crystal_peaks.flow_fields.plot_solid_lines"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_solid_lines</span></code></a>(propagated_lines[, ...])</p></td>
 <td><p>Plots lines with a constant color and width. Inputs:     propagated_lines: (4 x m x n) matrix, which contains the (x, y, theta, is_active) values for each point m along each         line n. is_active is a binary value which is true if the         line is still being drawn at that point. min_length: lines shorter than this will not be drawn     sparsity: values greater than 1 reduce the number of lines drawn for speed and readability purposes. Outputs:     fig: matplotlib.pyplot figure produces by this function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_intensity_matrix</span></code>(matrix[, rotate])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.prepare_intensity_matrix.html#pytem.crystal_peaks.flow_fields.prepare_intensity_matrix" title="pytem.crystal_peaks.flow_fields.prepare_intensity_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_intensity_matrix</span></code></a>(matrix[, rotate])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_line_data</span></code>(trimmed_lines, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.prepare_line_data.html#pytem.crystal_peaks.flow_fields.prepare_line_data" title="pytem.crystal_peaks.flow_fields.prepare_line_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_line_data</span></code></a>(trimmed_lines, ...)</p></td>
 <td><p>Combines data from trimmed lines and normalized intensities to give the angle, intensity, and other parameters at each point in the trimmed lines.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">propagate_lines</span></code>(line_seeds, peak_matrix, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.propagate_lines.html#pytem.crystal_peaks.flow_fields.propagate_lines" title="pytem.crystal_peaks.flow_fields.propagate_lines"><code class="xref py py-obj docutils literal notranslate"><span class="pre">propagate_lines</span></code></a>(line_seeds, peak_matrix, ...)</p></td>
 <td><p>Lines are extended in both direction from each line seed to create a more readable image.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">quick_flow_plot</span></code>(intensity_matrix, step_size, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.quick_flow_plot.html#pytem.crystal_peaks.flow_fields.quick_flow_plot" title="pytem.crystal_peaks.flow_fields.quick_flow_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quick_flow_plot</span></code></a>(intensity_matrix, step_size, ...)</p></td>
 <td><p>This function covers the full process of creating flow plots from a matrix of intensity(row, col, theta).</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_metadata_from_filename</span></code>(filename)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.read_metadata_from_filename.html#pytem.crystal_peaks.flow_fields.read_metadata_from_filename" title="pytem.crystal_peaks.flow_fields.read_metadata_from_filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_metadata_from_filename</span></code></a>(filename)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_values</span></code>(values[, vmin, brightness, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.scale_values.html#pytem.crystal_peaks.flow_fields.scale_values" title="pytem.crystal_peaks.flow_fields.scale_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_values</span></code></a>(values[, vmin, brightness, ...])</p></td>
 <td><p>Rescales data such as intensity, q, or similar to values suitable for linewidth, alpha, or similar.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">seed_lines</span></code>(peak_matrix, step_size[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.seed_lines.html#pytem.crystal_peaks.flow_fields.seed_lines" title="pytem.crystal_peaks.flow_fields.seed_lines"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seed_lines</span></code></a>(peak_matrix, step_size[, ...])</p></td>
 <td><p>Uses the peak matrix to produce a 3xn matrix of x, y, angle values to act as the start of lines that will be drawn.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift_mask</span></code>(mask, target_array_shape, shift)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.shift_mask.html#pytem.crystal_peaks.flow_fields.shift_mask" title="pytem.crystal_peaks.flow_fields.shift_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift_mask</span></code></a>(mask, target_array_shape, shift)</p></td>
 <td><p>Moves a mask by an integer number of spaces in each direction. This allows a shape such as an ellipse to be drawn at any point on a matrix, and is faster than methods like np.roll. Inputs:     mask: output of an np.where() function that you would like to move     target_array_shape: shape of the array that was used in the np.where() function     shift: tuple or numpy array of the number of spaces to move in each direction. Ouputs:     formatted_mask: shifted mask in the same format as the original mask.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">smooth</span></code>(array, smoothing_length)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.smooth.html#pytem.crystal_peaks.flow_fields.smooth" title="pytem.crystal_peaks.flow_fields.smooth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">smooth</span></code></a>(array, smoothing_length)</p></td>
 <td><p>Smooth a 2D array along axis 1 using a moving average.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trim_lines</span></code>(propagated_lines, ...[, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.trim_lines.html#pytem.crystal_peaks.flow_fields.trim_lines" title="pytem.crystal_peaks.flow_fields.trim_lines"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trim_lines</span></code></a>(propagated_lines, ...[, ...])</p></td>
 <td><p>Trims lines created by the propagate_lines function for purposes of readability, rendering speed, and homogeneous line density. Inputs:     propagated_lines: (4 x m x n) matrix, which contains the (x, y, theta, is_active) values for each point m along         each line n. is_active is a boolean value which is true if the         line is still being drawn at that point. intensity_matrix_shape: dimensions provided by intensity_matrix.shape     step_size: real space distance  between points in the intensity matrix, i.e. 10nm     line_spacing: minimum distance between two lines before they start to overlap. Note that some overlaps         may be allowed. spacing_resolution: higher values reduce geometric artifacts that cause greater spacing at certain angles. angle_spacing_degrees: minimum angular distance between two crossing lines before those lines count as         overlapping. max_overlap_fraction: fraction of line that can overlap with already-drawn lines. If the line overlaps         by more than this it is not drawn. min_length: lines with less points than the minimum length are not drawn     verbose: Boolean. When true, extra troubleshooting information is shown, including the space-filling process. Outputs:     trimmed_lines: matplotlib.pyplot figure drawn by the function.</p></td>
 </tr>
 </tbody>
@@ -175,25 +175,423 @@
 <p class="rubric">Classes</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProgressBar</span></code>(total_tasks[, interval])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.flow_fields.ProgressBar.html#pytem.crystal_peaks.flow_fields.ProgressBar" title="pytem.crystal_peaks.flow_fields.ProgressBar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProgressBar</span></code></a>(total_tasks[, interval])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py class">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.ProgressBar">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">ProgressBar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">total_tasks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#ProgressBar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.ProgressBar" title="Link to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.ProgressBar.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'pytem.crystal_peaks.flow_fields',</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">ProgressBar.__init__&gt;,</span> <span class="pre">'update':</span> <span class="pre">&lt;function</span> <span class="pre">ProgressBar.update&gt;,</span> <span class="pre">'get_total_time':</span> <span class="pre">&lt;function</span> <span class="pre">ProgressBar.get_total_time&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'ProgressBar'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'ProgressBar'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__doc__':</span> <span class="pre">None,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.ProgressBar.__dict__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.ProgressBar.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">total_tasks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#ProgressBar.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.ProgressBar.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.ProgressBar.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'pytem.crystal_peaks.flow_fields'</span></em><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.ProgressBar.__module__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.ProgressBar.get_total_time">
+<span class="sig-name descname"><span class="pre">get_total_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#ProgressBar.get_total_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.ProgressBar.get_total_time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.ProgressBar.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_when_finished</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#ProgressBar.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.ProgressBar.update" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.choose_file">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">choose_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_print</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#choose_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.choose_file" title="Link to this definition"></a></dt>
+<dd><p>Display all files in the specified directory and number them in order.  Users can then select a file by
+providing only a number.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.color_by_angle">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">color_by_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#color_by_angle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.color_by_angle" title="Link to this definition"></a></dt>
+<dd><p>Assigns r, g, b values based on input angle.
+Inputs:</p>
+<blockquote>
+<div><p>theta: angle in degrees.  Can be a single value or an array.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Outputs:</dt><dd><p>tuple of r, g, b values, each of which has the same shape as the input values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.define_subgrid">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">define_subgrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a1_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a1_spacing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_density</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#define_subgrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.define_subgrid" title="Link to this definition"></a></dt>
+<dd><p>This function returns six functions that allow for easy conversion between cartesian coordinates,
+row-column coordinates, and subgrids within row-column coordinates. The properties of the grid only need to be
+entered once, and functions are returned that already know the grid’s shape.</p>
+<p>These functions are written to be jit-compatible.  Jit is a package that speeds up your code but can make
+debugging more difficult. Using jit created negligible speed gains, so I would recommend not using it for now,
+but it’s here for if the code becomes more demanding in the future.</p>
+<dl>
+<dt>Inputs:</dt><dd><p>a1_shape is the shape of a matrix, or “grid”, that you want to map onto cartesian coordinates.
+a1_spacing is the step size of the grid in cartesian units, i.e. 10nm.  2d array or tuple.
+grid_density is the number of subgrid units per grid unit.  For example, a shape of (4, 5) yields a</p>
+<blockquote>
+<div><p>subgrid that has 4 times as many rows and 5 times as many columns as the original grid.</p>
+</div></blockquote>
+</dd>
+<dt>Outputs:</dt><dd><p>grid_to_subgrid: function that takes matrix coordinates and returns coordinates on the finer subgrid
+subgrid_to_grid: inverse of grid_to_subgrid
+cart_to_grid: function that takes cartesian coordinates and returns the matching grid square as well as the</p>
+<blockquote>
+<div><p>coordinates within that grid square</p>
+</div></blockquote>
+<p>grid_to_cart: inverse of cart_to_grid
+cart_to_subgrid: function that takes cartesian coordinates and returns the matching subgrid square as well</p>
+<blockquote>
+<div><p>as the coordinates within that subgrid square</p>
+</div></blockquote>
+<p>subgrid_to_cart: inverse of cart_to_subgrid</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.determine_peaks">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">determine_peaks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intensity_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peak_width</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#determine_peaks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.determine_peaks" title="Link to this definition"></a></dt>
+<dd><p>Returns a matrix of peak positions derived from a matrix of diffraction data.  A peak is present if it is
+brighter than the cutoff and brighter than all neighboring angles within the peak width.  It is very important
+to tune the inputs of this function to your dataset and make sure they make sense.  You may choose to set the
+cutoff automatically using some percentile value, or choose it manually. Make sure the number of peaks per
+grid square agrees qualitatively with your data.</p>
+<p>If you prefer a different method of finding peaks, you may choose to replace this function.
+Make sure the output is in the same format.</p>
+<dl>
+<dt>Inputs:</dt><dd><p>intensity_matrix: 3d matrix where the three dimensions are (real space x position, real space y position, angle)
+cutoff: minimum brightness to define a peak, in the same units as the pi matrix
+peak_width: twice the minimum distance between two peaks, in degrees</p>
+</dd>
+<dt>Outputs:</dt><dd><p>peak_matrix: 3d matrix with the same shape as intensity_matrix, with a 1 where there is a peak and 0 everywhere else</p>
+<p>The function also prints the total number of peaks and the average peaks per grid square.  Make sure that these
+values agree qualitatively with your diffraction data.  Don’t use multiple peaks per grid square unless you
+think your data justifies it.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.get_filenames">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">get_filenames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#get_filenames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.get_filenames" title="Link to this definition"></a></dt>
+<dd><p>Provide a list of files in the specified directory, containing the specified file_type string</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.get_vector">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">get_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#get_vector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.get_vector" title="Link to this definition"></a></dt>
+<dd><p>Returns the 2d vector of the specified length at the specified angle in degrees</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.load_q_intensity_matrix">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">load_q_intensity_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">big_data_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a_step</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#load_q_intensity_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.load_q_intensity_matrix" title="Link to this definition"></a></dt>
+<dd><p>Loads a numpy matrix with the correct data using my (Luke’s) naming conventions. Output is a 3D matrix, where
+the dimensions are (image, q, theta)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.main">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.main" title="Link to this definition"></a></dt>
+<dd><p>This function runs when this file is executed (as opposed to getting imported by another program).  It is used
+for testing during development and may not execute without the proper files available.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.normalize_and_reshape_intensity_matrix">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">normalize_and_reshape_intensity_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intensity_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_angles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#normalize_and_reshape_intensity_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.normalize_and_reshape_intensity_matrix" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.plot_flow_fields">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">plot_flow_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datacube</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peaks_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perpendicular</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bend_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">curve_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preview_sparsity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spacing_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_spacing_degrees</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_overlap_fraction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inverse_colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_preview</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_figures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#plot_flow_fields"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.plot_flow_fields" title="Link to this definition"></a></dt>
+<dd><p>Plot flow Fields, By Luke Balhorn and Camila. Modified by Christina</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>datacube: np.ndarray
+peaks_matrix: np.ndarray containing (x,y,theta) = 1 if there was a peak in the datacube</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.plot_graded_lines">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">plot_graded_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trimmed_lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">red</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">green</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#plot_graded_lines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.plot_graded_lines" title="Link to this definition"></a></dt>
+<dd><p>Plots lines with non-constant RGBA or Width values.
+Inputs:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>trimmed_lines: (4 x m x n) matrix, which contains the (x, y, theta, is_active) values for each point m along</dt><dd><p>each line n.  This is the output of the trim_lines function.</p>
+</dd>
+</dl>
+<p>red: color value between 0 and 1
+green: color value between 0 and 1
+blue: color value between 0 and 1
+alpha: transparency value between 0 and 1, where 1 is fully opaque and 0 is fully transparent. Interestingly,</p>
+<blockquote>
+<div><p>transparency does not seem to increase rendering time.</p>
+</div></blockquote>
+<p>width: line width.  The value is not capped but is usually on the order of 1.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.plot_solid_lines">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">plot_solid_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">propagated_lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparsity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#plot_solid_lines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.plot_solid_lines" title="Link to this definition"></a></dt>
+<dd><p>Plots lines with a constant color and width.
+Inputs:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>propagated_lines: (4 x m x n) matrix, which contains the (x, y, theta, is_active) values for each point m along each</dt><dd><p>line n.  is_active is a binary value which is true if the
+line is still being drawn at that point.</p>
+</dd>
+</dl>
+<p>min_length: lines shorter than this will not be drawn
+sparsity: values greater than 1 reduce the number of lines drawn for speed and readability purposes.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Outputs:</dt><dd><p>fig: matplotlib.pyplot figure produces by this function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.prepare_intensity_matrix">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">prepare_intensity_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#prepare_intensity_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.prepare_intensity_matrix" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.prepare_line_data">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">prepare_line_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trimmed_lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_intensity_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#prepare_line_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.prepare_line_data" title="Link to this definition"></a></dt>
+<dd><p>Combines data from trimmed lines and normalized intensities to give the angle, intensity, and other parameters at
+each point in the trimmed lines.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="simple">
+<dt>trimmed_lines: (4 x m x n) matrix, which contains the (x, y, theta, is_active) values for each point m along</dt><dd><p>each line n.  This is the output of the trim_lines function.</p>
+</dd>
+<dt>norm_intensity_matrix: 3d matrix where the three dimensions are (real space x position, real space y position, angle).</dt><dd><p>Normalizing values is recommended for ease-of-use.</p>
+</dd>
+</dl>
+</dd>
+<dt>Outputs:</dt><dd><p>line_data: (7 x m x n) matrix, which contains the (x, y, theta, is_active, intensity, _, _) values for each
+point m along each line n.  The last two values are placeholders, for example if you wanted to add in peak
+width or diffraction angle.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.propagate_lines">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">propagate_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line_seeds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peak_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix_step_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bend_tolerance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">curve_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_grid_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#propagate_lines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.propagate_lines" title="Link to this definition"></a></dt>
+<dd><p>Lines are extended in both direction from each line seed to create a more readable image.  When lines encounter
+a small change in angle, they bend to the new angle. If the angle difference is larger than the angle tolerance,
+the line ends instead.  Lines also end if they reach the edge of the figure or they reach the maximum number
+of points.  At each step, the lines are extended by a fixed unit length using a test line. If the test line finds a
+compatible location, the line is extended; otherwise it is terminated.  Lines extend in both directions from each
+line seed, but the two directions are treated as separate lines.</p>
+<dl>
+<dt>Inputs:</dt><dd><p>line_seeds: as created by the seed_lines function, this is a 3xn matrix of (x, y, theta) values.
+peak_matrix: as created by the determine_peaks function, this is a binary matrix showing the positions</p>
+<blockquote>
+<div><p>and angles of peaks.</p>
+</div></blockquote>
+<p>matrix_step_size: the real space distance between grid squares, i.e. 10nm
+bend_tolerance: the maximum bending permitted in a line spanning two grid squares
+curve_resolution: the number of times per unit length that the angle of the line is updated
+max_grid_length: the maximum length a line can be extended, in grid units</p>
+</dd>
+<dt>Outputs:</dt><dd><dl class="simple">
+<dt>line_matrix: (4 x m x n) matrix, which contains the (x, y, theta, is_active) values for each point m along each</dt><dd><p>line n.  is_active is a binary value which is true if the
+line is still being drawn at that point.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.quick_flow_plot">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">quick_flow_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intensity_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_peak_intensity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peak_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bend_tolerance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_spacing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">curve_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spacing_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_spacing_degrees</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_overlap_fraction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preview_sparsity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format_codes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brightness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contrast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#quick_flow_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.quick_flow_plot" title="Link to this definition"></a></dt>
+<dd><p>This function covers the full process of creating flow plots from a matrix of intensity(row, col, theta).</p>
+<dl>
+<dt>Inputs:</dt><dd><p>intensity_matrix: 3D matrix of intensity values as a function of (row, col, theta).
+step_size: Real space distance between points in the intensity_matrix, i.e. 10nm
+min_peak_intensity: lowest intensity that can be considered a diffraction peak
+peak_width: Used to determine whether points of high intensity are one point or two.  In Degrees.
+bend_tolerance: maximum angle difference between two grid squares for a line to be drawn between them.</p>
+<blockquote>
+<div><p>In degrees.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>line_spacing: minimum distance between two lines for both lines to be drawn.  In grid units (i.e. 2 would be</dt><dd><p>one line per 2 grid squares)</p>
+</dd>
+</dl>
+<p>seed_density: line seeds created per diffraction peak
+curve_resolution: the number of times per grid square that the angle of a line will be updated
+spacing_resolution: the resolution when determining the spacing between lines to draw.  If resolution is too</p>
+<blockquote>
+<div><p>low, spacings for lines drawn at angles will be different than for horizontal and vertical lines.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>angle_spacing_degrees: Lines can cross on the flow plot if the difference between their angles is larger</dt><dd><p>than the angle spacing.</p>
+</dd>
+<dt>max_overlap_fraction: Lines will be drawn if their overlap with other lines that have already been drawn</dt><dd><p>is less than the max_overlap_fraction</p>
+</dd>
+<dt>preview_sparsity: plots of propagated lines, before trimming, take a lot of time to render.  preview_sparsity</dt><dd><p>thins these plots by only drawing 1/preview_sparsity of the lines.</p>
+</dd>
+<dt>format_codes: list of which types of line plots to draw, which can be defaults or user-defined.  User-defined</dt><dd><p>format codes can be any data type, including strings.</p>
+</dd>
+<dt>brightness, contrast, alpha: these determine the mapping of a data category like intensity onto a</dt><dd><p>display property like linewidth.  See the scale_values function for more details.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.read_metadata_from_filename">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">read_metadata_from_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#read_metadata_from_filename"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.read_metadata_from_filename" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.scale_values">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">scale_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brightness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contrast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#scale_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.scale_values" title="Link to this definition"></a></dt>
+<dd><p>Rescales data such as intensity, q, or similar to values suitable for linewidth, alpha, or similar.  There are
+many possible versions of this function - this is the one that works best for my data so far.  My guess is that
+some users will write a different version of this function to fit their needs.</p>
+<dl>
+<dt>Inputs:</dt><dd><p>values: the values to be scaled.  Typically an array.
+vmin: any values below vmin are set equal to vmin before scaling.
+brightness: the highest value output by this function.  Note that when mapping to RGBA values, brightness</p>
+<blockquote>
+<div><p>generally can’t be greater than 1.</p>
+</div></blockquote>
+<p>contrast: the value of input data that yields the brightest possible signal.
+gamma: the nonlinearity of the mapping curve.  If gamma &gt; 1, strong signals will be spaced more than weak</p>
+<blockquote>
+<div><p>signals, and vice versa for gamma &lt; 1.</p>
+</div></blockquote>
+<p>If gamma = 0, all inputs will be mapped to the same value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.seed_lines">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">seed_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peak_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#seed_lines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.seed_lines" title="Link to this definition"></a></dt>
+<dd><p>Uses the peak matrix to produce a 3xn matrix of x, y, angle values to act as the start of lines that will be
+drawn. Lines are seeded in every grid square with a peak.  The number of line seeds per peak is equal to
+seed_density**2.  Line seeds are distributed evenly in the grid square.  If grid density is one, the line seed is
+in the center of the grid square.  Line seeds point in both directions, so angles are on a domain of 360 degrees.</p>
+<dl>
+<dt>Inputs:</dt><dd><p>peak_matrix: binary matrix showing the positions of peaks
+step_size: spacing between matrix nodes
+seed_density: larger grid density means more line seeds.  The line seeds will be distributed evenly about</p>
+<blockquote>
+<div><p>the grid square.</p>
+</div></blockquote>
+</dd>
+<dt>Outputs:</dt><dd><p>3xn array of (x, y, angle) values.  Angles are on a domain of 360 degrees.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.shift_mask">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">shift_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_array_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#shift_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.shift_mask" title="Link to this definition"></a></dt>
+<dd><p>Moves a mask by an integer number of spaces in each direction.  This allows a shape such as an ellipse to
+be drawn at any point on a matrix, and is faster than methods like np.roll.
+Inputs:</p>
+<blockquote>
+<div><p>mask: output of an np.where() function that you would like to move
+target_array_shape: shape of the array that was used in the np.where() function
+shift: tuple or numpy array of the number of spaces to move in each direction.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Ouputs:</dt><dd><p>formatted_mask: shifted mask in the same format as the original mask</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.smooth">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">smooth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smoothing_length</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#smooth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.smooth" title="Link to this definition"></a></dt>
+<dd><p>Smooth a 2D array along axis 1 using a moving average.  This function assumes that the edges of the array
+terminate, as opposed to looping around like for an angular value.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>array: 2d array to be smoothed along axis 1
+smoothing_length: number of points to average.</p>
+</dd>
+<dt>Outputs:</dt><dd><p>smoothed_array: array with the same shape as the original, after applying the moving average</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.flow_fields.trim_lines">
+<span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.flow_fields.</span></span><span class="sig-name descname"><span class="pre">trim_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">propagated_lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity_matrix_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_spacing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spacing_resolution</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_spacing_degrees</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_overlap_fraction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/flow_fields.html#trim_lines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.flow_fields.trim_lines" title="Link to this definition"></a></dt>
+<dd><p>Trims lines created by the propagate_lines function for purposes of readability, rendering speed, and
+homogeneous line density.
+Inputs:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>propagated_lines: (4 x m x n) matrix, which contains the (x, y, theta, is_active) values for each point m along</dt><dd><p>each line n.  is_active is a boolean value which is true if the
+line is still being drawn at that point.</p>
+</dd>
+</dl>
+<p>intensity_matrix_shape: dimensions provided by intensity_matrix.shape
+step_size: real space distance  between points in the intensity matrix, i.e. 10nm
+line_spacing: minimum distance between two lines before they start to overlap.  Note that some overlaps</p>
+<blockquote>
+<div><p>may be allowed.</p>
+</div></blockquote>
+<p>spacing_resolution: higher values reduce geometric artifacts that cause greater spacing at certain angles.
+angle_spacing_degrees: minimum angular distance between two crossing lines before those lines count as</p>
+<blockquote>
+<div><p>overlapping.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>max_overlap_fraction: fraction of line that can overlap with already-drawn lines.  If the line overlaps</dt><dd><p>by more than this it is not drawn.</p>
+</dd>
+</dl>
+<p>min_length: lines with less points than the minimum length are not drawn
+verbose: Boolean. When true, extra troubleshooting information is shown, including the space-filling process.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Outputs:</dt><dd><p>trimmed_lines: matplotlib.pyplot figure drawn by the function</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pytem.crystal_peaks.director_fields.html" class="btn btn-neutral float-left" title="pytem.crystal_peaks.director_fields" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pytem.crystal_peaks.vector_graph_utils.html" class="btn btn-neutral float-right" title="pytem.crystal_peaks.vector_graph_utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pytem.crystal_peaks.director_fields.DirectorField.html" class="btn btn-neutral float-left" title="pytem.crystal_peaks.director_fields.DirectorField" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pytem.crystal_peaks.flow_fields.choose_file.html" class="btn btn-neutral float-right" title="pytem.crystal_peaks.flow_fields.choose_file" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Christina Cheng.</p>
+    <p>&#169; Copyright 2024, Christina Cheng.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

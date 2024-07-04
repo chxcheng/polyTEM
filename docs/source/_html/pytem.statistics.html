@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pytem.statistics &mdash; pyTEM 1.0 documentation</title>
+  <title>pytem.statistics &mdash; polyTEM 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -15,14 +15,14 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pytem.tol_colors" href="pytem.tol_colors.html" />
-    <link rel="prev" title="pytem.spatial_analysis" href="pytem.spatial_analysis.html" /> 
+    <link rel="next" title="pytem.statistics.decay_length" href="pytem.statistics.decay_length.html" />
+    <link rel="prev" title="pytem.spatial_analysis.plot_polygons_df" href="pytem.spatial_analysis.plot_polygons_df.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            pyTEM
+            polyTEM
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -56,7 +56,39 @@
 <li class="toctree-l3"><a class="reference internal" href="pytem.params.html">pytem.params</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pytem.spatial.html">pytem.spatial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pytem.spatial_analysis.html">pytem.spatial_analysis</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">pytem.statistics</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">pytem.statistics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.decay_length.html">pytem.statistics.decay_length</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.decay_length_means.html">pytem.statistics.decay_length_means</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.fisher_z.html">pytem.statistics.fisher_z</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.get_deltath_hist.html">pytem.statistics.get_deltath_hist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.get_kstest.html">pytem.statistics.get_kstest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.get_spatial_df.html">pytem.statistics.get_spatial_df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.get_stack_list.html">pytem.statistics.get_stack_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.match_stack_lists.html">pytem.statistics.match_stack_lists</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.overlap_density.html">pytem.statistics.overlap_density</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.plot_xcorr.html">pytem.statistics.plot_xcorr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.remove_outliers.html">pytem.statistics.remove_outliers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.xcorr_linecuts.html">pytem.statistics.xcorr_linecuts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.xcorr_slow.html">pytem.statistics.xcorr_slow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.z_test.html">pytem.statistics.z_test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics._ksdist"><code class="docutils literal notranslate"><span class="pre">_ksdist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics._mp_df_func"><code class="docutils literal notranslate"><span class="pre">_mp_df_func()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics.decay_length"><code class="docutils literal notranslate"><span class="pre">decay_length()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics.decay_length_means"><code class="docutils literal notranslate"><span class="pre">decay_length_means()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics.fisher_z"><code class="docutils literal notranslate"><span class="pre">fisher_z()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics.get_deltath_hist"><code class="docutils literal notranslate"><span class="pre">get_deltath_hist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics.get_kstest"><code class="docutils literal notranslate"><span class="pre">get_kstest()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics.get_spatial_df"><code class="docutils literal notranslate"><span class="pre">get_spatial_df()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics.get_stack_list"><code class="docutils literal notranslate"><span class="pre">get_stack_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics.match_stack_lists"><code class="docutils literal notranslate"><span class="pre">match_stack_lists()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics.overlap_density"><code class="docutils literal notranslate"><span class="pre">overlap_density()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics.plot_xcorr"><code class="docutils literal notranslate"><span class="pre">plot_xcorr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics.remove_outliers"><code class="docutils literal notranslate"><span class="pre">remove_outliers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics.xcorr_linecuts"><code class="docutils literal notranslate"><span class="pre">xcorr_linecuts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics.xcorr_slow"><code class="docutils literal notranslate"><span class="pre">xcorr_slow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.statistics.z_test"><code class="docutils literal notranslate"><span class="pre">z_test()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="pytem.tol_colors.html">pytem.tol_colors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pytem.utilities.html">pytem.utilities</a></li>
 </ul>
@@ -71,7 +103,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">pyTEM</a>
+          <a href="../index.html">polyTEM</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -97,64 +129,244 @@
 <p class="rubric">Functions</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">decay_length</span></code>(expected_vals, distances[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.statistics.decay_length.html#pytem.statistics.decay_length" title="pytem.statistics.decay_length"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decay_length</span></code></a>(expected_vals, distances[, ...])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">decay_length_means</span></code>(expected_val_list, distances)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.statistics.decay_length_means.html#pytem.statistics.decay_length_means" title="pytem.statistics.decay_length_means"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decay_length_means</span></code></a>(expected_val_list, distances)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fisher_z</span></code>(rho)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.statistics.fisher_z.html#pytem.statistics.fisher_z" title="pytem.statistics.fisher_z"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fisher_z</span></code></a>(rho)</p></td>
 <td><p>Fisher Z Transform turns pearson correlation coefficient r into a normally distributed z value, such that z = arctanh(r) with mean 0.5*np.log((1+rho)/(1-rho)) and stderr 1/np.sqrt(N-3) INPUTS: rho = np.ndarray of correlation coefficients</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_deltath_hist</span></code>(filename[, plot, fig, axs])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.statistics.get_deltath_hist.html#pytem.statistics.get_deltath_hist" title="pytem.statistics.get_deltath_hist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_deltath_hist</span></code></a>(filename[, plot, fig, axs])</p></td>
 <td><p>Process and Plot the AngleOverlap histogram INPUTS filename = .csv output of the AngleOverlap.py script --- OUTPUTS delta_th_df = dataframe</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_kstest</span></code>(stack_list[, reference, plot])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.statistics.get_kstest.html#pytem.statistics.get_kstest" title="pytem.statistics.get_kstest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_kstest</span></code></a>(stack_list[, reference, plot])</p></td>
 <td><p>retrieves Kolmogorov-smirnov test D-value against all distances for each stack in stack_list -- INPUTS stack_list = list of crystal stacks OUTPUTS kstest_list[sample][d_value_list] = list of all the ks_dvalues kstest_thetas[sample,distance] = theta with the largest CDF difference from uniform</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_spatial_df</span></code>(stack_list)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.statistics.get_spatial_df.html#pytem.statistics.get_spatial_df" title="pytem.statistics.get_spatial_df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_spatial_df</span></code></a>(stack_list)</p></td>
 <td><p>Uses multiprocessing to run function multiprocessing_df_func, which performs spatial analysis on each stack.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stack_list</span></code>(filenames_list[, num_threads])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.statistics.get_stack_list.html#pytem.statistics.get_stack_list" title="pytem.statistics.get_stack_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stack_list</span></code></a>(filenames_list[, num_threads])</p></td>
 <td><p>Use multiprocessing to load stacks from filenames helps reduce time for large datasets</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match_stack_lists</span></code>(stack_list1[, stack_list2])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.statistics.match_stack_lists.html#pytem.statistics.match_stack_lists" title="pytem.statistics.match_stack_lists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match_stack_lists</span></code></a>(stack_list1[, stack_list2])</p></td>
 <td><p>arbitrary CrystalStackLists may not having matching lengths and matching image orders.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">overlap_density</span></code>(stack_list1, stack_list2[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.statistics.overlap_density.html#pytem.statistics.overlap_density" title="pytem.statistics.overlap_density"><code class="xref py py-obj docutils literal notranslate"><span class="pre">overlap_density</span></code></a>(stack_list1, stack_list2[, ...])</p></td>
 <td><p>Compares overlap density of CrystalStacks peaks.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_xcorr</span></code>(xc_array[, dtheta, resolution, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.statistics.plot_xcorr.html#pytem.statistics.plot_xcorr" title="pytem.statistics.plot_xcorr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_xcorr</span></code></a>(xc_array[, dtheta, resolution, ...])</p></td>
 <td><p>plotting function for cross correlation</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_outliers</span></code>(data, col[, method])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.statistics.remove_outliers.html#pytem.statistics.remove_outliers" title="pytem.statistics.remove_outliers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_outliers</span></code></a>(data, col[, method])</p></td>
 <td><p>removes outliers from pandas database using method input INPUT: data = pandas dataframe col = string of column name method = 'IQR', data more than 1.5*IQR outside the IQR are considered outliers. 'mean', data more than 4 standard deviations from the mean are considered outliers.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">xcorr_linecuts</span></code>(arr, max_d)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.statistics.xcorr_linecuts.html#pytem.statistics.xcorr_linecuts" title="pytem.statistics.xcorr_linecuts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xcorr_linecuts</span></code></a>(arr, max_d)</p></td>
 <td><p>Outputs the radial lineout of average correlation.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">xcorr_slow</span></code>(stack_list1[, stack_list2, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.statistics.xcorr_slow.html#pytem.statistics.xcorr_slow" title="pytem.statistics.xcorr_slow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xcorr_slow</span></code></a>(stack_list1[, stack_list2, ...])</p></td>
 <td><p>Across many samples, performs crosscorrelation of two 3-D datacubes that originate from the same sample. First, checks that the datasets come match sample name Second, perform crosscorrelation (convolution of the datacubes) using scipy.signal.correlate This method is slow, tqdm will print progress -- INPUT stack_list1: List of CrystalStack instances stack_list2: List of CrystalStack instances, if not inputted, then perform autocorrelation instead -- OUTPUT xc_array: 4-D array of shape (len(matches), size[0]*2 - 1, size[1]*2 - 1, size[2]*2-1)              that represents (sample, lagx, lagy, lag_theta), centered around 0 lag --- KNOWN BUGS This uses A LOT of RAM space Takes about 5 seconds per pair of images.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">z_test</span></code>(x, y)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.statistics.z_test.html#pytem.statistics.z_test" title="pytem.statistics.z_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">z_test</span></code></a>(x, y)</p></td>
 <td><p>Standard Z-Statistic test Critical Z for p=0.01 is 2.33</p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics._ksdist">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">_ksdist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#_ksdist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics._ksdist" title="Link to this definition"></a></dt>
+<dd><p>performs the kolmogorov-smirnov test against the uniform distribution
+returns the KS-distribution (comparison between the CDFs) and the D-value
+which is the max value in the KS-distribution. 
+–
+OUTPUT
+ksdist = np.array(shape=(x,1)) difference in CDF for each element in x
+D = float, the max difference in CDF among all values in x
+D_x = the element in x that has the max difference</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics._mp_df_func">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">_mp_df_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stack</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#_mp_df_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics._mp_df_func" title="Link to this definition"></a></dt>
+<dd><p>Given a TEM Image’s CrystalStack Instance,
+Retrieve the average domain shape and Global Moran’s I Statistics
+For use in Multiprocessing Function</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.decay_length">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">decay_length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expected_vals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distances</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#decay_length"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.decay_length" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.decay_length_means">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">decay_length_means</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expected_val_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distances</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#decay_length_means"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.decay_length_means" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.fisher_z">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">fisher_z</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#fisher_z"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.fisher_z" title="Link to this definition"></a></dt>
+<dd><p>Fisher Z Transform turns pearson correlation coefficient r
+into a normally distributed z value, such that
+z = arctanh(r)
+with mean 0.5*np.log((1+rho)/(1-rho))
+and stderr 1/np.sqrt(N-3)
+INPUTS:
+rho = np.ndarray of correlation coefficients</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.get_deltath_hist">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">get_deltath_hist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#get_deltath_hist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.get_deltath_hist" title="Link to this definition"></a></dt>
+<dd><p>Process and Plot the AngleOverlap histogram
+INPUTS
+filename = .csv output of the AngleOverlap.py script
+—
+OUTPUTS
+delta_th_df = dataframe</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.get_kstest">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">get_kstest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stack_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#get_kstest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.get_kstest" title="Link to this definition"></a></dt>
+<dd><p>retrieves Kolmogorov-smirnov test D-value against all distances
+for each stack in stack_list
+–
+INPUTS
+stack_list = list of crystal stacks
+OUTPUTS
+kstest_list[sample][d_value_list] = list of all the ks_dvalues
+kstest_thetas[sample,distance] = theta with the largest CDF difference from uniform</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.get_spatial_df">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">get_spatial_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stack_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#get_spatial_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.get_spatial_df" title="Link to this definition"></a></dt>
+<dd><p>Uses multiprocessing to run function multiprocessing_df_func,
+which performs spatial analysis on each stack.
+All of the spatial analysis is them compiled into a dataframe</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.get_stack_list">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">get_stack_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filenames_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#get_stack_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.get_stack_list" title="Link to this definition"></a></dt>
+<dd><p>Use multiprocessing to load stacks from filenames
+helps reduce time for large datasets</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.match_stack_lists">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">match_stack_lists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stack_list1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stack_list2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#match_stack_lists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.match_stack_lists" title="Link to this definition"></a></dt>
+<dd><p>arbitrary CrystalStackLists may not having matching lengths and matching image orders.
+This function matches samples across the two lists.
+Matches returns the indices (i,j) for matched samples for stack list 1 and 2, respectively</p>
+<p>Assumes that stack_list1 is the shorter list</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.overlap_density">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">overlap_density</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stack_list1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stack_list2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xstal_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savefile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prematched</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#overlap_density"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.overlap_density" title="Link to this definition"></a></dt>
+<dd><p>Compares overlap density of CrystalStacks peaks.
+Density defined by:
+(Area containing crystalline signal from list1 AND list2) / (Reference Area)</p>
+<p>INPUTS:
+stack_list1 = list of CrystalStack objects
+stack_list2 = list of CrystalStack objects
+reference   = determines reference area. options are None or ‘sum’</p>
+<blockquote>
+<div><p>‘’    = no reference area used imples that the reference area is the area of the full sized image
+‘sum’   = uses the total crystalline area from list1 and list2 as the reference.</p>
+</div></blockquote>
+<dl>
+<dt>xstal_area  = defines what type of crystalline area</dt><dd><p>‘all’   = anywhere (x,y) location that had fft peak, uses crystalStack.sparse_peaks_mat for coo
+‘domains’ = only (x,y) locations that belong to a cluster, uses crystalStack.peaks_df for coo
+‘aligned’ = only clusters that have aligned orientations between list 1 and list 2, modifies crystalStack.peaks_df for coo.</p>
+<blockquote>
+<div><p>use with NO reference, result is then directly proportional to amount of interfacial area in the film</p>
+</div></blockquote>
+</dd>
+</dl>
+<p>–
+OUTPUTS:
+if overlap_density value is 0, then error occured. checking logging.ERROR</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.plot_xcorr">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">plot_xcorr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xc_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtheta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3.17</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.015</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#plot_xcorr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.plot_xcorr" title="Link to this definition"></a></dt>
+<dd><p>plotting function for cross correlation</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.remove_outliers">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">remove_outliers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'IQR'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#remove_outliers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.remove_outliers" title="Link to this definition"></a></dt>
+<dd><p>removes outliers from pandas database using method input
+INPUT:
+data = pandas dataframe
+col = string of column name
+method = ‘IQR’, data more than 1.5*IQR outside the IQR are considered outliers.</p>
+<blockquote>
+<div><p>‘mean’, data more than 4 standard deviations from the mean are considered outliers.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.xcorr_linecuts">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">xcorr_linecuts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#xcorr_linecuts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.xcorr_linecuts" title="Link to this definition"></a></dt>
+<dd><p>Outputs the radial lineout of average correlation.
+Borrows some helper functions from _conditional_probability (import as cp)
+INPUTS:
+arr = 2D correlation array, centered such that lag 0 is at center of array
+–
+OUTPUTS:
+linecut = 2D array with dimensions (d,2), average correlation as a function of radial distance d</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.xcorr_slow">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">xcorr_slow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stack_list1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stack_list2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prematched</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#xcorr_slow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.xcorr_slow" title="Link to this definition"></a></dt>
+<dd><p>Across many samples, performs crosscorrelation of two 3-D datacubes that originate from the same sample.  
+First, checks that the datasets come match sample name
+Second, perform crosscorrelation (convolution of the datacubes) using scipy.signal.correlate
+This method is slow, tqdm will print progress
+–
+INPUT
+stack_list1: List of CrystalStack instances
+stack_list2: List of CrystalStack instances, if not inputted, then perform autocorrelation instead
+–
+OUTPUT
+xc_array: 4-D array of shape (len(matches), size[0]*2 - 1, size[1]*2 - 1, size[2]*2-1)</p>
+<blockquote>
+<div><p>that represents (sample, lagx, lagy, lag_theta), centered around 0 lag</p>
+</div></blockquote>
+<p>—
+KNOWN BUGS
+This uses A LOT of RAM space
+Takes about 5 seconds per pair of images.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.z_test">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">z_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#z_test"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.z_test" title="Link to this definition"></a></dt>
+<dd><p>Standard Z-Statistic test
+Critical Z for p=0.01 is 2.33</p>
+</dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pytem.spatial_analysis.html" class="btn btn-neutral float-left" title="pytem.spatial_analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pytem.tol_colors.html" class="btn btn-neutral float-right" title="pytem.tol_colors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pytem.spatial_analysis.plot_polygons_df.html" class="btn btn-neutral float-left" title="pytem.spatial_analysis.plot_polygons_df" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pytem.statistics.decay_length.html" class="btn btn-neutral float-right" title="pytem.statistics.decay_length" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Christina Cheng.</p>
+    <p>&#169; Copyright 2024, Christina Cheng.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

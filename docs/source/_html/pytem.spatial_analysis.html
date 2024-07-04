@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pytem.spatial_analysis &mdash; pyTEM 1.0 documentation</title>
+  <title>pytem.spatial_analysis &mdash; polyTEM 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -15,14 +15,14 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pytem.statistics" href="pytem.statistics.html" />
-    <link rel="prev" title="pytem.spatial.stats" href="pytem.spatial.stats.html" /> 
+    <link rel="next" title="pytem.spatial_analysis.bivariate_moran" href="pytem.spatial_analysis.bivariate_moran.html" />
+    <link rel="prev" title="pytem.spatial.stats.LinRegressModel" href="pytem.spatial.stats.LinRegressModel.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            pyTEM
+            polyTEM
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -55,7 +55,34 @@
 <li class="toctree-l3"><a class="reference internal" href="pytem.paracrystalline.html">pytem.paracrystalline</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pytem.params.html">pytem.params</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pytem.spatial.html">pytem.spatial</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">pytem.spatial_analysis</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">pytem.spatial_analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pytem.spatial_analysis.bivariate_moran.html">pytem.spatial_analysis.bivariate_moran</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.spatial_analysis.create_polygons.html">pytem.spatial_analysis.create_polygons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.spatial_analysis.domain_length_df.html">pytem.spatial_analysis.domain_length_df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.spatial_analysis.get_domain_gradient.html">pytem.spatial_analysis.get_domain_gradient</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.spatial_analysis.moran.html">pytem.spatial_analysis.moran</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.spatial_analysis.moran_local.html">pytem.spatial_analysis.moran_local</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.spatial_analysis.plot_lmoran.html">pytem.spatial_analysis.plot_lmoran</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.spatial_analysis.plot_polygons_df.html">pytem.spatial_analysis.plot_polygons_df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis._domain_length"><code class="docutils literal notranslate"><span class="pre">_domain_length()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis._domains_to_fft"><code class="docutils literal notranslate"><span class="pre">_domains_to_fft()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis._make_polygons_multiprocessing"><code class="docutils literal notranslate"><span class="pre">_make_polygons_multiprocessing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis._moran_BV"><code class="docutils literal notranslate"><span class="pre">_moran_BV()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis._multiprocessing_domain_to_fft_func"><code class="docutils literal notranslate"><span class="pre">_multiprocessing_domain_to_fft_func()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis._multiprocessing_polygons_func"><code class="docutils literal notranslate"><span class="pre">_multiprocessing_polygons_func()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis._peaks_from_domainfft"><code class="docutils literal notranslate"><span class="pre">_peaks_from_domainfft()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis._plot_lmoran_complex_theta"><code class="docutils literal notranslate"><span class="pre">_plot_lmoran_complex_theta()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis._plot_lmoran_sin_orientation"><code class="docutils literal notranslate"><span class="pre">_plot_lmoran_sin_orientation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis.bivariate_moran"><code class="docutils literal notranslate"><span class="pre">bivariate_moran()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis.create_polygons"><code class="docutils literal notranslate"><span class="pre">create_polygons()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis.domain_length_df"><code class="docutils literal notranslate"><span class="pre">domain_length_df()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis.get_domain_gradient"><code class="docutils literal notranslate"><span class="pre">get_domain_gradient()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis.moran"><code class="docutils literal notranslate"><span class="pre">moran()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis.moran_local"><code class="docutils literal notranslate"><span class="pre">moran_local()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis.plot_lmoran"><code class="docutils literal notranslate"><span class="pre">plot_lmoran()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytem.spatial_analysis.plot_polygons_df"><code class="docutils literal notranslate"><span class="pre">plot_polygons_df()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="pytem.statistics.html">pytem.statistics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pytem.tol_colors.html">pytem.tol_colors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pytem.utilities.html">pytem.utilities</a></li>
@@ -71,7 +98,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">pyTEM</a>
+          <a href="../index.html">polyTEM</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -96,46 +123,193 @@
 <p class="rubric">Functions</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bivariate_moran</span></code>(cluster_df, q_val, ...[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.spatial_analysis.bivariate_moran.html#pytem.spatial_analysis.bivariate_moran" title="pytem.spatial_analysis.bivariate_moran"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bivariate_moran</span></code></a>(cluster_df, q_val, ...[, ...])</p></td>
 <td><p>wrapper function</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_polygons</span></code>(peaks_df[, alpha, verbose, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.spatial_analysis.create_polygons.html#pytem.spatial_analysis.create_polygons" title="pytem.spatial_analysis.create_polygons"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_polygons</span></code></a>(peaks_df[, alpha, verbose, ...])</p></td>
 <td><p>create polygon for each cluster group using alpha shape set to concave hull alpha is used to determine the convexity and concavitiy of the final polygon first check if peaks_df[&quot;coo&quot;] exists, otherwise create it</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">domain_length_df</span></code>(cluster_df[, theta_type, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.spatial_analysis.domain_length_df.html#pytem.spatial_analysis.domain_length_df" title="pytem.spatial_analysis.domain_length_df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">domain_length_df</span></code></a>(cluster_df[, theta_type, ...])</p></td>
 <td><p>Get domain size statistics for each cluster in cluster dataframe.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_domain_gradient</span></code>(domain_array, ...[, plot])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.spatial_analysis.get_domain_gradient.html#pytem.spatial_analysis.get_domain_gradient" title="pytem.spatial_analysis.get_domain_gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_domain_gradient</span></code></a>(domain_array, ...[, plot])</p></td>
 <td><p>Note: x,y follows i,j indexing such that x is iterating through the rows and y is iterating through the columns Thus, the parallel orientation is in the direction of y  and the perpendicular orientation is in the direction of x, and these follow the conventions of plt.imshow() BUT are inverse to the cartesian coordinates as usually plotted.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moran</span></code>(cluster_df[, var, w_type, knn_size, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.spatial_analysis.moran.html#pytem.spatial_analysis.moran" title="pytem.spatial_analysis.moran"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moran</span></code></a>(cluster_df[, var, w_type, knn_size, ...])</p></td>
 <td><p>Computes Moran's Global I Statistic cluster_df = GeoDataFrame()</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moran_local</span></code>(cluster_df[, w_type, var, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.spatial_analysis.moran_local.html#pytem.spatial_analysis.moran_local" title="pytem.spatial_analysis.moran_local"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moran_local</span></code></a>(cluster_df[, w_type, var, ...])</p></td>
 <td><p>Computes Moran Local Statistic cluster_df = GeoDataFrame()</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_lmoran</span></code>(cluster_df, lmoran, var)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pytem.spatial_analysis.plot_lmoran.html#pytem.spatial_analysis.plot_lmoran" title="pytem.spatial_analysis.plot_lmoran"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_lmoran</span></code></a>(cluster_df, lmoran, var)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_polygons_df</span></code>(cluster_df[, resolution, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pytem.spatial_analysis.plot_polygons_df.html#pytem.spatial_analysis.plot_polygons_df" title="pytem.spatial_analysis.plot_polygons_df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_polygons_df</span></code></a>(cluster_df[, resolution, ...])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis._domain_length">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">_domain_length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lamellar'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#_domain_length"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis._domain_length" title="Link to this definition"></a></dt>
+<dd><p>INPUT:
+cluster: pandas Series, a row in cluster_df in which</p>
+<blockquote>
+<div><p>[‘theta’] is the orientation of crystalline stacking, w.r.t the horizontal
+[‘geometry’] is a Shapely Polygon representing the domain geometry</p>
+</div></blockquote>
+<p>–
+OUTPUT:
+bb_Lc: length in direction of backbone chain, defined as longest line through polygon in that orientation
+ax_len: length of bounding box oriented in direction of backbone orientation (length == perpendicular direction to lamellar stacking)
+ax_width: width of bounding box oriented in direction of backbon orientation (width == direction of lamellar stacking)</p>
+<p>Note: The output is in the same units as the cluster geometry.  
+default unit is pixels, may need conversion!</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis._domains_to_fft">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">_domains_to_fft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">driftCorrected_filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'image_drift_corrected.npy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">red_dimx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">231</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">red_dimy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">223</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#_domains_to_fft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis._domains_to_fft" title="Link to this definition"></a></dt>
+<dd><p>Uses multiprocessing to get the fft of all the domains in image listed by cluster_df
+returns a list of fft for each domain</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis._make_polygons_multiprocessing">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">_make_polygons_multiprocessing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_sub_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster_num_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#_make_polygons_multiprocessing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis._make_polygons_multiprocessing" title="Link to this definition"></a></dt>
+<dd><p>function used in create_polygons
+sets up the multiprocessing pool process to form alpha shapes
+collects multiprocessing results</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis._moran_BV">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">_moran_BV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2_prefix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sin_orientation'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'kernel'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">knn_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#_moran_BV"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis._moran_BV" title="Link to this definition"></a></dt>
+<dd><p>cluster_df = GeoDataFrame()</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis._multiprocessing_domain_to_fft_func">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">_multiprocessing_domain_to_fft_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_geom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bp_filter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">red_dimx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">231</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">red_dimy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">223</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#_multiprocessing_domain_to_fft_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis._multiprocessing_domain_to_fft_func" title="Link to this definition"></a></dt>
+<dd><p>For a given domain geometry in an image, get  the fft in for that domain only,
+and then filter to a specific q-range.
+— INPUTS —
+cluster_geom: Geometric Shapely Shape (Polygon)
+cluster_num: int, some identifying domain index
+red_dimx and red_dimy: size of the reduced image from the datacube process</p>
+<blockquote>
+<div><p>so that we can scale the cluster_geom to the size of the og image</p>
+</div></blockquote>
+<p>image: the original, drift corrected image
+bp_filter: bandpass filter to filter the resulting fft to a q_range of interest
+plot: Boolean</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis._multiprocessing_polygons_func">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">_multiprocessing_polygons_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#_multiprocessing_polygons_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis._multiprocessing_polygons_func" title="Link to this definition"></a></dt>
+<dd><p>creates an alphashape Polygon based on a given cluster, based on CrystalStack.peaks_df</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>cluster_num: integer, to organize clusters when multiprocessing Pool results are collected
+sub_df: CrystalStack.peaks_df containing points belonging to the same cluster
+alpha: alphashape parameter</p>
+</dd>
+<dt>Returns:</dt><dd><p>cluster_df: dataframe containing the cluster number, average orientation, and Polygon gemoetry</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis._peaks_from_domainfft">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">_peaks_from_domainfft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fft_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_angles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_sigma=0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fft_size=512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_func=&lt;function</span> <span class="pre">&lt;lambda&gt;&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#_peaks_from_domainfft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis._peaks_from_domainfft" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis._plot_lmoran_complex_theta">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">_plot_lmoran_complex_theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmoran</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#_plot_lmoran_complex_theta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis._plot_lmoran_complex_theta" title="Link to this definition"></a></dt>
+<dd><p>Adapted from <a class="reference external" href="https://geographicdata.science/book/notebooks/07_local_autocorrelation.html">https://geographicdata.science/book/notebooks/07_local_autocorrelation.html</a>
+Plots local statistics, scatterplot quadrant, stastical significance, and cluster map</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis._plot_lmoran_sin_orientation">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">_plot_lmoran_sin_orientation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmoran</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sin_orientation'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#_plot_lmoran_sin_orientation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis._plot_lmoran_sin_orientation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis.bivariate_moran">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">bivariate_moran</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2_prefix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_angles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fft_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'orientation'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'kernel'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#bivariate_moran"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis.bivariate_moran" title="Link to this definition"></a></dt>
+<dd><p>wrapper function</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis.create_polygons">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">create_polygons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peaks_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warning_msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ignore'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#create_polygons"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis.create_polygons" title="Link to this definition"></a></dt>
+<dd><p>create polygon for each cluster group using alpha shape set to concave hull
+alpha is used to determine the convexity and concavitiy of the final polygon
+first check if peaks_df[“coo”] exists, otherwise create it</p>
+<p>BUG!</p>
+<p>parallization using multiprocessing</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis.domain_length_df">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">domain_length_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lamellar'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#domain_length_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis.domain_length_df" title="Link to this definition"></a></dt>
+<dd><p>Get domain size statistics for each cluster in cluster dataframe.</p>
+<p>The lengths are returned for “backbone”, “bbox_length”, and “bbox_width”.
+“backbone” length is the longest length through the polygon in the direction of backbone orientation, 
+we assuem that the backbone is perpendicular to the lamellar. “bbox_length” is the length of the bounding box
+in the backbone direction, and “bbox_width” is the length of the bounding box in the lamellar direction.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis.get_domain_gradient">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">get_domain_gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_orientation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#get_domain_gradient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis.get_domain_gradient" title="Link to this definition"></a></dt>
+<dd><p>Note: x,y follows i,j indexing such that x is iterating through the rows and y is iterating through the columns
+Thus, the parallel orientation is in the direction of y 
+and the perpendicular orientation is in the direction of x,
+and these follow the conventions of plt.imshow()
+BUT are inverse to the cartesian coordinates as usually plotted.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis.moran">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">moran</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'complex_theta'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'kernel'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">knn_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#moran"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis.moran" title="Link to this definition"></a></dt>
+<dd><p>Computes Moran’s Global I Statistic
+cluster_df = GeoDataFrame()</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis.moran_local">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">moran_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'kernel'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sin_orientation'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">knn_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#moran_local"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis.moran_local" title="Link to this definition"></a></dt>
+<dd><p>Computes Moran Local Statistic
+cluster_df = GeoDataFrame()</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis.plot_lmoran">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">plot_lmoran</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmoran</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#plot_lmoran"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis.plot_lmoran" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.spatial_analysis.plot_polygons_df">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">plot_polygons_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3.13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial_analysis.html#plot_polygons_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial_analysis.plot_polygons_df" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pytem.spatial.stats.html" class="btn btn-neutral float-left" title="pytem.spatial.stats" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pytem.statistics.html" class="btn btn-neutral float-right" title="pytem.statistics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pytem.spatial.stats.LinRegressModel.html" class="btn btn-neutral float-left" title="pytem.spatial.stats.LinRegressModel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pytem.spatial_analysis.bivariate_moran.html" class="btn btn-neutral float-right" title="pytem.spatial_analysis.bivariate_moran" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Christina Cheng.</p>
+    <p>&#169; Copyright 2024, Christina Cheng.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
