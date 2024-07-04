@@ -5,8 +5,8 @@ build:
   tools:
     python: "3.10"
   jobs:
-    post_build:
-      - cp --recursive docs/source/_html/* _readthedocs/html/
+    pre_build:
+      - cp --recursive docs/source/_html/* _readthedocs/html/generated_api/
 
 python:
   install:
