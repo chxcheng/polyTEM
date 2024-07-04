@@ -6,7 +6,7 @@ build:
     python: "3.10"
   jobs:
     pre_build:
-      - mkdir $READTHEDOCS_OUTPUT/html/generated_api
+      - mkdir -p $READTHEDOCS_OUTPUT/html/generated_api
       - cp --recursive docs/source/_html/* $READTHEDOCS_OUTPUT/html/generated_api/
 
 python:
