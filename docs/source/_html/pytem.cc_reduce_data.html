@@ -129,7 +129,7 @@
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.cc_reduce_data.bandpass_filter.html#pytem.cc_reduce_data.bandpass_filter" title="pytem.cc_reduce_data.bandpass_filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bandpass_filter</span></code></a>(M, q_low, q_high, dx)</p></td>
-<td><p>Generates bandpass filter of size MxM for range of frequencies (q_low, q_high). Arguments:     M: size in pixels of output bandpass filter(in fourier space)     q_low: minimum q value in inverse Angstroms     q_high: maximum q value in inverse Angstroms     dx: HRTEM image resolution in Angstroms/pixel Returns:     mask: numpy array size (M, M) with ones for pixels between selected bandwidth of q values and zeros elsewhere.</p></td>
+<td><p>Generates bandpass filter of size MxM for range of frequencies (q_low, q_high).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pytem.cc_reduce_data.bandpass_filtering_image.html#pytem.cc_reduce_data.bandpass_filtering_image" title="pytem.cc_reduce_data.bandpass_filtering_image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bandpass_filtering_image</span></code></a>(img_gpu, q, ...[, ...])</p></td>
 <td><p>Computes FT of image, multiplies by user-defined filter, and computes the inverse FT to get a filtered version of the image.</p></td>
@@ -141,16 +141,16 @@
 <td><p>Function performs azimuthal intensity integrations as function of q for selected q bandwidth.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.cc_reduce_data.gaussian_q_filter.html#pytem.cc_reduce_data.gaussian_q_filter" title="pytem.cc_reduce_data.gaussian_q_filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gaussian_q_filter</span></code></a>(q, sigma_q, sigma_th, M, dx)</p></td>
-<td><p>Generates gaussian filter in Fourier space for designated q center and bandwidth. Arguments:     q: q vector in angstroms     sigma_q: q bandwidth in angstroms     sigma_th: theta bandwidth in degrees     M: size of output fourier transform image     dx: HRTEM image resolution in Angstroms/pixel Return:     matrix: numpy array of size (NN, NN) with gaussian filter. Normalized by area (sum = 2).</p></td>
+<td><p>Generates gaussian filter in Fourier space for designated q center and bandwidth.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pytem.cc_reduce_data.get_datacube.html#pytem.cc_reduce_data.get_datacube" title="pytem.cc_reduce_data.get_datacube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_datacube</span></code></a>(img_gpu, angles, step_size, ...)</p></td>
-<td><p>Get intensity - theta 4D array. Saves 4D array output. Arguments:     img_gpu: GPU tensor of raw image     angles: np array with angles to probe     step_size: size of steps during 'rastering'     selected_filter: gaussian filter - numpy of size (M, M) (potentially combined with bandpass filter) to rotate and use for analysis     bandpass: bandpass filter - numpy of size (M, M)     N: Size of nano-image in pixels     M: size of FFT     device: name of GPU CUDA device     dx: pixel resolution in Angstrom/pixel     plot_freq: integer to determine frequency to plot window analysis. No plots shown if set to zero. Returns:     datacube: 4D pyTorch tensor containing integrated intesity for every (row, col, theta)     q datacube: 4D np array containing the q linecuts counts for every (row,col,q).</p></td>
+<td><p>Get intensity - theta 4D array.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.cc_reduce_data.get_orientation_torch.html#pytem.cc_reduce_data.get_orientation_torch" title="pytem.cc_reduce_data.get_orientation_torch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_orientation_torch</span></code></a>(fft, filters, device)</p></td>
 <td><p>Gets Intensity tensor for different angles at any grid point (x,y).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pytem.cc_reduce_data.get_q_pixels.html#pytem.cc_reduce_data.get_q_pixels" title="pytem.cc_reduce_data.get_q_pixels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_q_pixels</span></code></a>(q, M, dx)</p></td>
-<td><p>Conversion of reciprocal space component in angstroms to spatial frequency in number of pixels. Arguments:     q: reciprocal space vector (2pi/d)     M: size of Fourier transform     dx: HRTEM image resolution in Angstroms/pixel Returns:     f_pixels: q in pixel size.</p></td>
+<td><p>Conversion of reciprocal space component in angstroms to spatial frequency in number of pixels.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.cc_reduce_data.make_gaussian_filter_tensor.html#pytem.cc_reduce_data.make_gaussian_filter_tensor" title="pytem.cc_reduce_data.make_gaussian_filter_tensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_gaussian_filter_tensor</span></code></a>(single_filter, ...)</p></td>
 <td><p>Generates 3D tensor of size (M, M, number_angles) with stack of rotated Fourier filters to be used for datacube extraction.</p></td>
@@ -165,13 +165,13 @@
 <td><p>Generate 1D raised cosine window of length s and with roll-factor beta. :param s: pixel lenght of signal :param beta: roll-factor beta. Default=0.2 mainly zeroes down signal close to edges of image. :return:      frequencies, window: frequency values and corresponding raised cosine signal.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.cc_reduce_data.subplot_mini.html#pytem.cc_reduce_data.subplot_mini" title="pytem.cc_reduce_data.subplot_mini"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subplot_mini</span></code></a>(image, fft_raw, I_vs_th[, ...])</p></td>
-<td><p>Plots stack of figures to describe nano-FFT extraction process. From left to right, the following figures are plot: real space  nano-image, raw FFT, and filtered FFT. Args:     image: real-space image     fft_raw: calculated FFT     fft_masked: FFT multiplied with bandpass filter     title: optional title for first subplot     dx: image resolution in Angstrom/pixel     save_fig: filename in case user wants to save plot.</p></td>
+<td><p>Plots stack of figures to describe nano-FFT extraction process.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pytem.cc_reduce_data.tensor_fft.html#pytem.cc_reduce_data.tensor_fft" title="pytem.cc_reduce_data.tensor_fft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_fft</span></code></a>(tensor, s[, print_time])</p></td>
-<td><p>Returns powder spectrum of 2D tensor (image) using PyTorch implementation. NOTE: location of operation (GPU or CPU) is determined by location of input tensor. Send tensor to GPU prior to using this function to perform operations in GPU (i.e. tensor.to(cuda)) Args:     tensor: 2D tensor (image)     s: output size of FFT (s x s). tensor is padded with zeros prior to performing FFT operation     to specified output size. Returns:     fft: powder spectra (real^2 + complex^2) tensor of size (s x s) with Fourier Transform. DC frequency component is set in center of tensor.</p></td>
+<td><p>Returns powder spectrum of 2D tensor (image) using PyTorch implementation.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.cc_reduce_data.tensor_shift_fft.html#pytem.cc_reduce_data.tensor_shift_fft" title="pytem.cc_reduce_data.tensor_shift_fft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_shift_fft</span></code></a>(fft)</p></td>
-<td><p>Shift zero frequency spatial frequency component to center of 2D image. For Pytorch implementation Args:     fft: 2D FFT obtained using torch_fft function Returns:     shifted FFT with DC frequency component in center of image.</p></td>
+<td><p>Shift zero frequency spatial frequency component to center of 2D image.</p></td>
 </tr>
 </tbody>
 </table>
@@ -179,15 +179,16 @@
 <dt class="sig sig-object py" id="pytem.cc_reduce_data.bandpass_filter">
 <span class="sig-prename descclassname"><span class="pre">pytem.cc_reduce_data.</span></span><span class="sig-name descname"><span class="pre">bandpass_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_high</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/cc_reduce_data.html#bandpass_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.cc_reduce_data.bandpass_filter" title="Link to this definition"></a></dt>
 <dd><p>Generates bandpass filter of size MxM for range of frequencies (q_low, q_high).
-Arguments:</p>
-<blockquote>
-<div><p>M: size in pixels of output bandpass filter(in fourier space)
-q_low: minimum q value in inverse Angstroms
-q_high: maximum q value in inverse Angstroms
-dx: HRTEM image resolution in Angstroms/pixel</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>mask: numpy array size (M, M) with ones for pixels between selected bandwidth of q values and zeros elsewhere.</p>
+:param M: size in pixels of output bandpass filter(in fourier space)
+:param q_low: minimum q value in inverse Angstroms
+:param q_high: maximum q value in inverse Angstroms
+:param dx: HRTEM image resolution in Angstroms/pixel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy array size (M, M) with ones for pixels between selected bandwidth of q values and zeros elsewhere.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>mask</p>
 </dd>
 </dl>
 </dd></dl>
@@ -232,16 +233,17 @@ image - 2D numpy array</p>
 <dt class="sig sig-object py" id="pytem.cc_reduce_data.gaussian_q_filter">
 <span class="sig-prename descclassname"><span class="pre">pytem.cc_reduce_data.</span></span><span class="sig-name descname"><span class="pre">gaussian_q_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/cc_reduce_data.html#gaussian_q_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.cc_reduce_data.gaussian_q_filter" title="Link to this definition"></a></dt>
 <dd><p>Generates gaussian filter in Fourier space for designated q center and bandwidth.
-Arguments:</p>
-<blockquote>
-<div><p>q: q vector in angstroms
-sigma_q: q bandwidth in angstroms
-sigma_th: theta bandwidth in degrees
-M: size of output fourier transform image
-dx: HRTEM image resolution in Angstroms/pixel</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Return:</dt><dd><p>matrix: numpy array of size (NN, NN) with gaussian filter. Normalized by area (sum = 2).</p>
+:param q: q vector in angstroms
+:param sigma_q: q bandwidth in angstroms
+:param sigma_th: theta bandwidth in degrees
+:param M: size of output fourier transform image
+:param dx: HRTEM image resolution in Angstroms/pixel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy array of size (NN, NN) with gaussian filter. Normalized by area (sum = 2).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>matrix</p>
 </dd>
 </dl>
 </dd></dl>
@@ -250,22 +252,23 @@ dx: HRTEM image resolution in Angstroms/pixel</p>
 <dt class="sig sig-object py" id="pytem.cc_reduce_data.get_datacube">
 <span class="sig-prename descclassname"><span class="pre">pytem.cc_reduce_data.</span></span><span class="sig-name descname"><span class="pre">get_datacube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_gpu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selected_filter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.924</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qintensity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/cc_reduce_data.html#get_datacube"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.cc_reduce_data.get_datacube" title="Link to this definition"></a></dt>
 <dd><p>Get intensity - theta 4D array. Saves 4D array output.
-Arguments:</p>
-<blockquote>
-<div><p>img_gpu: GPU tensor of raw image
-angles: np array with angles to probe
-step_size: size of steps during ‘rastering’
-selected_filter: gaussian filter - numpy of size (M, M) (potentially combined with bandpass filter) to rotate and use for analysis
-bandpass: bandpass filter - numpy of size (M, M)
-N: Size of nano-image in pixels
-M: size of FFT
-device: name of GPU CUDA device
-dx: pixel resolution in Angstrom/pixel
-plot_freq: integer to determine frequency to plot window analysis. No plots shown if set to zero.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>datacube: 4D pyTorch tensor containing integrated intesity for every (row, col, theta)
+:param img_gpu: GPU tensor of raw image
+:param angles: np array with angles to probe
+:param step_size: size of steps during ‘rastering’
+:param selected_filter: gaussian filter - numpy of size (M, M) (potentially combined with bandpass filter) to rotate and use for analysis
+:param bandpass: bandpass filter - numpy of size (M, M)
+:param N: Size of nano-image in pixels
+:param M: size of FFT
+:param device: name of GPU CUDA device
+:param dx: pixel resolution in Angstrom/pixel
+:param plot_freq: integer to determine frequency to plot window analysis. No plots shown if set to zero.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>4D pyTorch tensor containing integrated intesity for every (row, col, theta)
 q datacube: 4D np array containing the q linecuts counts for every (row,col,q)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>datacube</p>
 </dd>
 </dl>
 </dd></dl>
@@ -285,14 +288,15 @@ operations to speed 2x process with respect to loop.
 <dt class="sig sig-object py" id="pytem.cc_reduce_data.get_q_pixels">
 <span class="sig-prename descclassname"><span class="pre">pytem.cc_reduce_data.</span></span><span class="sig-name descname"><span class="pre">get_q_pixels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/cc_reduce_data.html#get_q_pixels"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.cc_reduce_data.get_q_pixels" title="Link to this definition"></a></dt>
 <dd><p>Conversion of reciprocal space component in angstroms to spatial frequency in number of pixels.
-Arguments:</p>
-<blockquote>
-<div><p>q: reciprocal space vector (2pi/d)
-M: size of Fourier transform
-dx: HRTEM image resolution in Angstroms/pixel</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>f_pixels: q in pixel size</p>
+:param q: reciprocal space vector (2pi/d)
+:param M: size of Fourier transform
+:param dx: HRTEM image resolution in Angstroms/pixel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>q in pixel size</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>f_pixels</p>
 </dd>
 </dl>
 </dd></dl>
@@ -343,15 +347,12 @@ Can be relatively slow operation because only performed once per image/datacube.
 <span class="sig-prename descclassname"><span class="pre">pytem.cc_reduce_data.</span></span><span class="sig-name descname"><span class="pre">subplot_mini</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fft_raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">I_vs_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.924</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/cc_reduce_data.html#subplot_mini"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.cc_reduce_data.subplot_mini" title="Link to this definition"></a></dt>
 <dd><p>Plots stack of figures to describe nano-FFT extraction process. From left to right,
 the following figures are plot: real space  nano-image, raw FFT, and filtered FFT.
-Args:</p>
-<blockquote>
-<div><p>image: real-space image
-fft_raw: calculated FFT
-fft_masked: FFT multiplied with bandpass filter
-title: optional title for first subplot
-dx: image resolution in Angstrom/pixel
-save_fig: filename in case user wants to save plot</p>
-</div></blockquote>
+:param image: real-space image
+:param fft_raw: calculated FFT
+:param fft_masked: FFT multiplied with bandpass filter
+:param title: optional title for first subplot
+:param dx: image resolution in Angstrom/pixel
+:param save_fig: filename in case user wants to save plot</p>
 </dd></dl>
 
 <dl class="py function">
@@ -360,17 +361,19 @@ save_fig: filename in case user wants to save plot</p>
 <dd><p>Returns powder spectrum of 2D tensor (image) using PyTorch implementation.
 NOTE: location of operation (GPU or CPU) is determined by location of input tensor.
 Send tensor to GPU prior to using this function to perform operations in GPU (i.e. tensor.to(cuda))
-Args:</p>
-<blockquote>
-<div><p>tensor: 2D tensor (image)
-s: output size of FFT (s x s). tensor is padded with zeros prior to performing FFT operation
-to specified output size.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><dl class="simple">
-<dt>fft: powder spectra (real^2 + complex^2) tensor of size (s x s) with Fourier Transform.</dt><dd><p>DC frequency component is set in center of tensor.</p>
+:param tensor: 2D tensor (image)
+:param s: output size of FFT (s x s). tensor is padded with zeros prior to performing FFT operation
+:param to specified output size.:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>powder spectra (real^2 + complex^2) tensor of size (s x s) with Fourier Transform.</dt><dd><p>DC frequency component is set in center of tensor.</p>
 </dd>
 </dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>fft</p>
 </dd>
 </dl>
 </dd></dl>
@@ -379,12 +382,10 @@ to specified output size.</p>
 <dt class="sig sig-object py" id="pytem.cc_reduce_data.tensor_shift_fft">
 <span class="sig-prename descclassname"><span class="pre">pytem.cc_reduce_data.</span></span><span class="sig-name descname"><span class="pre">tensor_shift_fft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fft</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/cc_reduce_data.html#tensor_shift_fft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.cc_reduce_data.tensor_shift_fft" title="Link to this definition"></a></dt>
 <dd><p>Shift zero frequency spatial frequency component to center of 2D image. For Pytorch implementation
-Args:</p>
-<blockquote>
-<div><p>fft: 2D FFT obtained using torch_fft function</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>shifted FFT with DC frequency component in center of image.</p>
+:param fft: 2D FFT obtained using torch_fft function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>shifted FFT with DC frequency component in center of image.</p>
 </dd>
 </dl>
 </dd></dl>

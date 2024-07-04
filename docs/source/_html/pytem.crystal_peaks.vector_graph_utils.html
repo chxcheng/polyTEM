@@ -105,10 +105,15 @@
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.vector_graph_utils.create_edges_from_simulation.html#pytem.crystal_peaks.vector_graph_utils.create_edges_from_simulation" title="pytem.crystal_peaks.vector_graph_utils.create_edges_from_simulation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_edges_from_simulation</span></code></a>(graph, ...)</p></td>
-<td><p>creates edges with edge attribute probability Args:     graph: networkx Graph to modify     prob_mat: sparse object, Probability Adjacency Matrix with shape (N, graph.order())     node_index: the Node index value that corresponds to the first row in prob_mat</p></td>
+<td><p>creates edges with edge attribute probability :param graph: networkx Graph to modify :param prob_mat: sparse object, Probability Adjacency Matrix with shape (N, graph.order()) :param node_index: the Node index value that corresponds to the first row in prob_mat</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pytem.crystal_peaks.vector_graph_utils.create_nodes_from_vectorfield.html#pytem.crystal_peaks.vector_graph_utils.create_nodes_from_vectorfield" title="pytem.crystal_peaks.vector_graph_utils.create_nodes_from_vectorfield"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_nodes_from_vectorfield</span></code></a>(vector_field)</p></td>
-<td><p>Args:</p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">param vector_field<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy array from CrystalStack3D vector field</p>
+</dd>
+</dl>
+</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.vector_graph_utils.load.html#pytem.crystal_peaks.vector_graph_utils.load" title="pytem.crystal_peaks.vector_graph_utils.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>(savefile)</p></td>
 <td><p></p></td>
@@ -128,19 +133,17 @@
 <dt class="sig sig-object py" id="pytem.crystal_peaks.vector_graph_utils.create_edges_from_simulation">
 <span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.vector_graph_utils.</span></span><span class="sig-name descname"><span class="pre">create_edges_from_simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probs_mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/vector_graph_utils.html#create_edges_from_simulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.vector_graph_utils.create_edges_from_simulation" title="Link to this definition"></a></dt>
 <dd><p>creates edges with edge attribute probability
-Args:</p>
-<blockquote>
-<div><p>graph: networkx Graph to modify
-prob_mat: sparse object, Probability Adjacency Matrix with shape (N, graph.order())
-node_index: the Node index value that corresponds to the first row in prob_mat</p>
-</div></blockquote>
+:param graph: networkx Graph to modify
+:param prob_mat: sparse object, Probability Adjacency Matrix with shape (N, graph.order())
+:param node_index: the Node index value that corresponds to the first row in prob_mat</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pytem.crystal_peaks.vector_graph_utils.create_nodes_from_vectorfield">
 <span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.vector_graph_utils.</span></span><span class="sig-name descname"><span class="pre">create_nodes_from_vectorfield</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector_field</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/vector_graph_utils.html#create_nodes_from_vectorfield"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.vector_graph_utils.create_nodes_from_vectorfield" title="Link to this definition"></a></dt>
-<dd><dl class="simple">
-<dt>Args:</dt><dd><p>vector_field: numpy array from CrystalStack3D vector field</p>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vector_field</strong> – numpy array from CrystalStack3D vector field</p>
 </dd>
 </dl>
 </dd></dl>

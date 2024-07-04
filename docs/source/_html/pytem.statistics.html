@@ -166,7 +166,7 @@
 <td><p>Outputs the radial lineout of average correlation.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.statistics.xcorr_slow.html#pytem.statistics.xcorr_slow" title="pytem.statistics.xcorr_slow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xcorr_slow</span></code></a>(stack_list1[, stack_list2, ...])</p></td>
-<td><p>Across many samples, performs crosscorrelation of two 3-D datacubes that originate from the same sample. First, checks that the datasets come match sample name Second, perform crosscorrelation (convolution of the datacubes) using scipy.signal.correlate This method is slow, tqdm will print progress -- INPUT stack_list1: List of CrystalStack instances stack_list2: List of CrystalStack instances, if not inputted, then perform autocorrelation instead -- OUTPUT xc_array: 4-D array of shape (len(matches), size[0]*2 - 1, size[1]*2 - 1, size[2]*2-1)              that represents (sample, lagx, lagy, lag_theta), centered around 0 lag --- KNOWN BUGS This uses A LOT of RAM space Takes about 5 seconds per pair of images.</p></td>
+<td><p>Across many samples, performs crosscorrelation of two 3-D datacubes that originate from the same sample. First, checks that the datasets come match sample name Second, perform crosscorrelation (convolution of the datacubes) using scipy.signal.correlate This method is slow, tqdm will print progress -- INPUT stack_list1: List of CrystalStack instances stack_list2: List of CrystalStack instances, if not inputted, then perform autocorrelation instead -- OUTPUT xc_array: 4-D array of shape (len(matches), size[0]*2 - 1, size[1]*2 - 1, size[2]*2-1)             that represents (sample, lagx, lagy, lag_theta), centered around 0 lag --- KNOWN BUGS This uses A LOT of RAM space Takes about 5 seconds per pair of images.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pytem.statistics.z_test.html#pytem.statistics.z_test" title="pytem.statistics.z_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">z_test</span></code></a>(x, y)</p></td>
 <td><p>Standard Z-Statistic test Critical Z for p=0.01 is 2.33</p></td>
@@ -178,7 +178,7 @@
 <span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">_ksdist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#_ksdist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics._ksdist" title="Link to this definition"></a></dt>
 <dd><p>performs the kolmogorov-smirnov test against the uniform distribution
 returns the KS-distribution (comparison between the CDFs) and the D-value
-which is the max value in the KS-distribution. 
+which is the max value in the KS-distribution.
 –
 OUTPUT
 ksdist = np.array(shape=(x,1)) difference in CDF for each element in x
@@ -326,7 +326,7 @@ linecut = 2D array with dimensions (d,2), average correlation as a function of r
 <dl class="py function">
 <dt class="sig sig-object py" id="pytem.statistics.xcorr_slow">
 <span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">xcorr_slow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stack_list1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stack_list2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prematched</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#xcorr_slow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.xcorr_slow" title="Link to this definition"></a></dt>
-<dd><p>Across many samples, performs crosscorrelation of two 3-D datacubes that originate from the same sample.  
+<dd><p>Across many samples, performs crosscorrelation of two 3-D datacubes that originate from the same sample.
 First, checks that the datasets come match sample name
 Second, perform crosscorrelation (convolution of the datacubes) using scipy.signal.correlate
 This method is slow, tqdm will print progress

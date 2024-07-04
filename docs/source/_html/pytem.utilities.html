@@ -126,7 +126,7 @@
 <span class="sig-prename descclassname"><span class="pre">pytem.utilities.</span></span><span class="sig-name descname"><span class="pre">read_mdoc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/utilities.html#read_mdoc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.utilities.read_mdoc" title="Link to this definition"></a></dt>
 <dd><p>Reads the mdoc file generated during imaging and extracts parameters</p>
 <p>Expected file contents:
-T = SerialEM: Glacios 9953405 at Stanford University        26-Oct-23  14:55:45    
+T = SerialEM: Glacios 9953405 at Stanford University        26-Oct-23  14:55:45
 Voltage = 200</p>
 <p>[FrameSet = 0]
 GainReference = CountRef_AM880_2_area_2_0000_0.0.mrc
@@ -161,11 +161,16 @@ NavigatorLabel = 11
 UncroppedSize = -5760 -4092
 RotationAndFlip = 0
 TimeStamp = 120499611</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>filename: .mrc.mdoc filename</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – .mrc.mdoc filename</p>
 </dd>
-<dt>Returns:</dt><dd><p>pixel_res: float, angstroms per pixel
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>float, angstroms per pixel
 defocus: float, target defocus</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pixel_res</p>
 </dd>
 </dl>
 </dd></dl>

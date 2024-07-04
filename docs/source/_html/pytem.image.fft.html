@@ -127,10 +127,15 @@
 <td><p>Gets Intensity tensor for different angles at any grid point (x,y).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pytem.image.fft.get_q_pixels.html#pytem.image.fft.get_q_pixels" title="pytem.image.fft.get_q_pixels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_q_pixels</span></code></a>(q, s, dx)</p></td>
-<td><p>Conversion of reciprocal space component in angstroms to spatial frequency in number of pixels. Arguments:     q: reciprocal space vector (2pi/d)     s: size of Fourier transform     dx: HRTEM image resolution in Angstroms/pixel Returns:     f_pixels: q in pixel size.</p></td>
+<td><p>Conversion of reciprocal space component in angstroms to spatial frequency in number of pixels.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.image.fft.ifft.html#pytem.image.fft.ifft" title="pytem.image.fft.ifft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ifft</span></code></a>(ffts, outshape, processor[, ...])</p></td>
-<td><p>Arguments:</p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">param ffts<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list object. if only one, then it should be treated as the total, complex fft.</p>
+</dd>
+</dl>
+</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pytem.image.fft.normalize_tensor.html#pytem.image.fft.normalize_tensor" title="pytem.image.fft.normalize_tensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_tensor</span></code></a>(tensor)</p></td>
 <td><p>Tensor normalization operation.</p></td>
@@ -139,7 +144,7 @@
 <td><p>Plots Fourier transform and optionally radial contours of q space.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pytem.image.fft.q_lineout.html#pytem.image.fft.q_lineout" title="pytem.image.fft.q_lineout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">q_lineout</span></code></a>(fft_gpu, dx[, q_bandwidth, ...])</p></td>
-<td><p>Function performs azimuthal intensity integrations as function of q for selected q bandwidth. Args:     fft_gpu: Pytorch tensor fourier transform     dx: resolution in Angstrom / pixel     q_bandwidth: halfwidth of bandpass filter     q_increments: integration coarseness, ignored if q_list provided     q0: q to start integration, ignored if q_list provided     qmax: max q for q lineout, ignored if q_list provided     q_list: list of values to calculate instead of construction based on q increments. q_list overrides other input.</p></td>
+<td><p>Function performs azimuthal intensity integrations as function of q for selected q bandwidth.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.image.fft.rotate_filter.html#pytem.image.fft.rotate_filter" title="pytem.image.fft.rotate_filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotate_filter</span></code></a>(single_filter, angles[, device])</p></td>
 <td><p>Generates 3D tensor of size (M, M, number_angles) with stack of rotated Fourier filters to be used for datacube extraction.</p></td>
@@ -154,13 +159,13 @@
 <td><p>Plots stack of figures to describe nano-FFT extraction process.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.image.fft.tensor_fft.html#pytem.image.fft.tensor_fft" title="pytem.image.fft.tensor_fft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_fft</span></code></a>(tensor, shape[, centered])</p></td>
-<td><p>Computes fft of 2D tensor using pytorch GPU implementation TENSOR FFT IS NOT ZERO CENTERED BY DEFAULT! the comment out is legacy code from camila Args:     tensor: 2D torch.tensor     size: int shape of fft output size</p></td>
+<td><p>Computes fft of 2D tensor using pytorch GPU implementation TENSOR FFT IS NOT ZERO CENTERED BY DEFAULT! the comment out is legacy code from camila :param tensor: 2D torch.tensor :param size: int shape of fft output size</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pytem.image.fft.tensor_ifft.html#pytem.image.fft.tensor_ifft" title="pytem.image.fft.tensor_ifft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_ifft</span></code></a>(fft)</p></td>
-<td><p>inverse FFT using pytorch implentation for GPU use Arguments:     fft: complex torch.Tensor</p></td>
+<td><p>inverse FFT using pytorch implentation for GPU use :param fft: complex torch.Tensor</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.image.fft.tensor_psd.html#pytem.image.fft.tensor_psd" title="pytem.image.fft.tensor_psd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_psd</span></code></a>(tensor[, size])</p></td>
-<td><p>Returns powder spectrum of 2D tensor (image) using PyTorch implementation. NOTE: location of operation (GPU or CPU) is determined by location of input tensor. Send tensor to GPU prior to using this function to perform operations in GPU (i.e. tensor.to(cuda)) Args:     tensor: 2D tensor (image)     s: output size of FFT (s x s). tensor is padded with zeros prior to performing FFT operation     to specified output size. Returns:     fft: powder spectra (real^2 + complex^2) tensor of size (s x s) with Fourier Transform. DC frequency component is set in center of tensor.</p></td>
+<td><p>Returns powder spectrum of 2D tensor (image) using PyTorch implementation.</p></td>
 </tr>
 </tbody>
 </table>
@@ -168,14 +173,17 @@
 <dt class="sig sig-object py" id="pytem.image.fft.apply_fourier_filter">
 <span class="sig-prename descclassname"><span class="pre">pytem.image.fft.</span></span><span class="sig-name descname"><span class="pre">apply_fourier_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fft_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_arr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/fft.html#apply_fourier_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.fft.apply_fourier_filter" title="Link to this definition"></a></dt>
 <dd><p>Perfomrs fourier filter</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>img: np.ndarray
-dx: Angstrom/pixel resolution of img
-fft_size: size of fft
-device: torch device to use
-filter_arr: filter array input, optional
-kind: type of filter to use if filter_arr is not given.
-kwargs: parameters to build filter of type _kind_</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img</strong> – np.ndarray</p></li>
+<li><p><strong>dx</strong> – Angstrom/pixel resolution of img</p></li>
+<li><p><strong>fft_size</strong> – size of fft</p></li>
+<li><p><strong>device</strong> – torch device to use</p></li>
+<li><p><strong>filter_arr</strong> – filter array input, optional</p></li>
+<li><p><strong>kind</strong> – type of filter to use if filter_arr is not given.</p></li>
+<li><p><strong>kwargs</strong> – parameters to build filter of type _kind_</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -186,15 +194,16 @@ kwargs: parameters to build filter of type _kind_</p>
 <dd><p>Generates bandpass filter of size s x s for range of frequencies (q_low, q_high).</p>
 <p>Written by Camila</p>
 <p>Created bandpass filter is zero frequency centered
-Arguments:</p>
-<blockquote>
-<div><p>s: size in pixels of output bandpass filter(in fourier space)
-q_low: minimum q value in inverse Angstroms
-q_high: maximum q value in inverse Angstroms
-dx: HRTEM image resolution in Angstroms/pixel</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>mask: numpy array size (M, M) with ones for pixels between selected bandwidth of q values and zeros elsewhere.</p>
+:param s: size in pixels of output bandpass filter(in fourier space)
+:param q_low: minimum q value in inverse Angstroms
+:param q_high: maximum q value in inverse Angstroms
+:param dx: HRTEM image resolution in Angstroms/pixel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy array size (M, M) with ones for pixels between selected bandwidth of q values and zeros elsewhere.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>mask</p>
 </dd>
 </dl>
 </dd></dl>
@@ -204,12 +213,19 @@ dx: HRTEM image resolution in Angstroms/pixel</p>
 <span class="sig-prename descclassname"><span class="pre">pytem.image.fft.</span></span><span class="sig-name descname"><span class="pre">cpu_fft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centered</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/fft.html#cpu_fft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.fft.cpu_fft" title="Link to this definition"></a></dt>
 <dd><p>Computes fft of 2D image stored on cpu using numpy
 Output fft is zero centered.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>img: numpy.ndarray of image
-size: int shape of fft output size</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img</strong> – numpy.ndarray of image</p></li>
+<li><p><strong>size</strong> – int shape of fft output size</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>real: numpy array of real component of fft
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy array of real component of fft
 imag. numpy ndarray of imaginary component of fft</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
 </dd>
 </dl>
 </dd></dl>
@@ -233,7 +249,7 @@ based on Baxter, et al.
 </div></blockquote>
 <dl>
 <dt>rac{Sigma_k fft1(k) * conj(fft2(k)}</dt><dd><p>{np.sqrt(Sigma_k magnitude(fft2(k))**2) * np.sqrt(Sigma_k magnitude(fft1(k))**2)}
-where k is the spectral frequency 
+where k is the spectral frequency
 k is equivalent to u in other modules, = 1/d</p>
 <p>BUG: ASSUMES SQUARE FFT of same shapes</p>
 <dl class="simple">
@@ -253,14 +269,21 @@ FRC_counts: the FRC coefficient FRC(q)</p>
 <span class="sig-prename descclassname"><span class="pre">pytem.image.fft.</span></span><span class="sig-name descname"><span class="pre">gaussian_q_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/fft.html#gaussian_q_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.fft.gaussian_q_filter" title="Link to this definition"></a></dt>
 <dd><p>Generates gaussian filter in Fourier space for designated q center and bandwidth.</p>
 <p>Written by Camila</p>
-<dl class="simple">
-<dt>Arguments:</dt><dd><p>q: q vector in angstroms
-sigma_q: q bandwidth in angstroms
-sigma_th: theta bandwidth in degrees
-M: size of output fourier transform image
-dx: HRTEM image resolution in Angstroms/pixel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> – q vector in angstroms</p></li>
+<li><p><strong>sigma_q</strong> – q bandwidth in angstroms</p></li>
+<li><p><strong>sigma_th</strong> – theta bandwidth in degrees</p></li>
+<li><p><strong>M</strong> – size of output fourier transform image</p></li>
+<li><p><strong>dx</strong> – HRTEM image resolution in Angstroms/pixel</p></li>
+</ul>
 </dd>
-<dt>Return:</dt><dd><p>matrix: numpy array of size (NN, NN) with gaussian filter. Normalized by area (sum = 2).</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy array of size (NN, NN) with gaussian filter. Normalized by area (sum = 2).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>matrix</p>
 </dd>
 </dl>
 </dd></dl>
@@ -289,14 +312,15 @@ operations to speed 2x process with respect to loop.</p>
 <dt class="sig sig-object py" id="pytem.image.fft.get_q_pixels">
 <span class="sig-prename descclassname"><span class="pre">pytem.image.fft.</span></span><span class="sig-name descname"><span class="pre">get_q_pixels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/fft.html#get_q_pixels"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.fft.get_q_pixels" title="Link to this definition"></a></dt>
 <dd><p>Conversion of reciprocal space component in angstroms to spatial frequency in number of pixels.
-Arguments:</p>
-<blockquote>
-<div><p>q: reciprocal space vector (2pi/d)
-s: size of Fourier transform
-dx: HRTEM image resolution in Angstroms/pixel</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>f_pixels: q in pixel size</p>
+:param q: reciprocal space vector (2pi/d)
+:param s: size of Fourier transform
+:param dx: HRTEM image resolution in Angstroms/pixel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>q in pixel size</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>f_pixels</p>
 </dd>
 </dl>
 </dd></dl>
@@ -304,16 +328,21 @@ dx: HRTEM image resolution in Angstroms/pixel</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pytem.image.fft.ifft">
 <span class="sig-prename descclassname"><span class="pre">pytem.image.fft.</span></span><span class="sig-name descname"><span class="pre">ifft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ffts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outshape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centered_input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">real_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/fft.html#ifft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.fft.ifft" title="Link to this definition"></a></dt>
-<dd><dl>
-<dt>Arguments:</dt><dd><dl class="simple">
-<dt>ffts: list object. if only one, then it should be treated as the total, complex fft.</dt><dd><p>Otherwise, list should be [real, imag] components of fft</p>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ffts</strong> – list object. if only one, then it should be treated as the total, complex fft.
+Otherwise, list should be [real, imag] components of fft</p></li>
+<li><p><strong>processor</strong> – which processor to use</p></li>
+<li><p><strong>centered_input</strong> – boolean which handles whether the fft is centered or not</p></li>
+<li><p><strong>real_only</strong> – boolean which handles whether to output real or complex image.</p></li>
+</ul>
 </dd>
-</dl>
-<p>processor: which processor to use
-centered_input: boolean which handles whether the fft is centered or not
-real_only: boolean which handles whether to output real or complex image.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>array-like. type depends on input processor</p>
 </dd>
-<dt>Returns:</dt><dd><p>img: array-like. type depends on input processor</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>img</p>
 </dd>
 </dl>
 </dd></dl>
@@ -342,21 +371,22 @@ fig = matplotlib figure</p>
 <dt class="sig sig-object py" id="pytem.image.fft.q_lineout">
 <span class="sig-prename descclassname"><span class="pre">pytem.image.fft.</span></span><span class="sig-name descname"><span class="pre">q_lineout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fft_gpu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_bandwidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.002</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_increments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.002</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savefile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/fft.html#q_lineout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.fft.q_lineout" title="Link to this definition"></a></dt>
 <dd><p>Function performs azimuthal intensity integrations as function of q for selected q bandwidth.
-Args:</p>
-<blockquote>
-<div><p>fft_gpu: Pytorch tensor fourier transform
-dx: resolution in Angstrom / pixel
-q_bandwidth: halfwidth of bandpass filter
-q_increments: integration coarseness, ignored if q_list provided
-q0: q to start integration, ignored if q_list provided
-qmax: max q for q lineout, ignored if q_list provided
-q_list: list of values to calculate instead of construction based on q increments. q_list overrides other input</p>
-<p>device: cuda device</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>x: np.ndarray of q values
+:param fft_gpu: Pytorch tensor fourier transform
+:param dx: resolution in Angstrom / pixel
+:param q_bandwidth: halfwidth of bandpass filter
+:param q_increments: integration coarseness, ignored if q_list provided
+:param q0: q to start integration, ignored if q_list provided
+:param qmax: max q for q lineout, ignored if q_list provided
+:param q_list: list of values to calculate instead of construction based on q increments. q_list overrides other input
+:param device: cuda device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray of q values
 y: np.ndarray of counts, corresponding to q values
 plot: figure</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>x</p>
 </dd>
 </dl>
 </dd></dl>
@@ -366,12 +396,19 @@ plot: figure</p>
 <span class="sig-prename descclassname"><span class="pre">pytem.image.fft.</span></span><span class="sig-name descname"><span class="pre">rotate_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">single_filter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/fft.html#rotate_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.fft.rotate_filter" title="Link to this definition"></a></dt>
 <dd><p>Generates 3D tensor of size (M, M, number_angles) with stack of rotated Fourier filters to be used for
 datacube extraction.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>single_filter: Initial filter as numpy array of size (M, M)
-angles: list or numpy array with rotation angles
-device: CUDA device send final output tensor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>single_filter</strong> – Initial filter as numpy array of size (M, M)</p></li>
+<li><p><strong>angles</strong> – list or numpy array with rotation angles</p></li>
+<li><p><strong>device</strong> – CUDA device send final output tensor</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>tensor: 3D filters tensor with series of filters for azimuthal information extraction</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>3D filters tensor with series of filters for azimuthal information extraction</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tensor</p>
 </dd>
 </dl>
 </dd></dl>
@@ -381,22 +418,29 @@ device: CUDA device send final output tensor</p>
 <span class="sig-prename descclassname"><span class="pre">pytem.image.fft.</span></span><span class="sig-name descname"><span class="pre">sliding_window_scan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fft_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation_filter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_vals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/fft.html#sliding_window_scan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.fft.sliding_window_scan" title="Link to this definition"></a></dt>
 <dd><p>Performs sliding psd across the input image. If orientation filter is given, then each local psd window ois converted to intensity vs orientation theta. Else, returns a 4d datacube of fft images.</p>
 <p>Built off of Camila’s work. Requires use of GPU</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>image: np.ndarray
-res: image Angstrom/pixel resolution
-window_size: int, image window size
-fft_size: int, size of fft to calculate
-step_size: step size of sliding window scan
-device: ‘cuda:#’ for torch device
-angles: np.ndarray with orientation angles to probe
-orientation_filter: Gaussian filter that will be rotated to use for orientation analysis
-q_vals: np.ndarray of q-values to track intensity (i.e:np.arange(q0,qmax,dq))
-image_mask: mask to remove scans from final result if there are known defects in image (such as lacey carbon artifacts)
-plot_freq: Frequency of scan result to plot and show</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> – np.ndarray</p></li>
+<li><p><strong>res</strong> – image Angstrom/pixel resolution</p></li>
+<li><p><strong>window_size</strong> – int, image window size</p></li>
+<li><p><strong>fft_size</strong> – int, size of fft to calculate</p></li>
+<li><p><strong>step_size</strong> – step size of sliding window scan</p></li>
+<li><p><strong>device</strong> – ‘cuda:#’ for torch device</p></li>
+<li><p><strong>angles</strong> – np.ndarray with orientation angles to probe</p></li>
+<li><p><strong>orientation_filter</strong> – Gaussian filter that will be rotated to use for orientation analysis</p></li>
+<li><p><strong>q_vals</strong> – np.ndarray of q-values to track intensity (i.e:np.arange(q0,qmax,dq))</p></li>
+<li><p><strong>image_mask</strong> – mask to remove scans from final result if there are known defects in image (such as lacey carbon artifacts)</p></li>
+<li><p><strong>plot_freq</strong> – Frequency of scan result to plot and show</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>fft_4d_datacube: 4D np.ndarray containing the fft power spectrum for every (row,col)
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>4D np.ndarray containing the fft power spectrum for every (row,col)
 ii_datacube: 4D pyTorch tensor containing integrated intensity for every (row,col,theta)
 q_datacube: 4D np.ndarray containign the q_linecut counts for every (row,col,q)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>fft_4d_datacube</p>
 </dd>
 </dl>
 </dd></dl>
@@ -434,13 +478,16 @@ dx: A/Pixel resolution of the input images</p>
 <dd><p>Plots stack of figures to describe nano-FFT extraction process. From left to right,
 the following figures are plot: real space  nano-image, raw FFT, and filtered FFT.</p>
 <p>Written by Camila</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>image: real-space image
-fft_raw: calculated FFT
-fft_masked: FFT multiplied with bandpass filter
-title: optional title for first subplot
-dx: image resolution in Angstrom/pixel
-save_fig: filename in case user wants to save plot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> – real-space image</p></li>
+<li><p><strong>fft_raw</strong> – calculated FFT</p></li>
+<li><p><strong>fft_masked</strong> – FFT multiplied with bandpass filter</p></li>
+<li><p><strong>title</strong> – optional title for first subplot</p></li>
+<li><p><strong>dx</strong> – image resolution in Angstrom/pixel</p></li>
+<li><p><strong>save_fig</strong> – filename in case user wants to save plot</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -451,14 +498,15 @@ save_fig: filename in case user wants to save plot</p>
 <dd><p>Computes fft of 2D tensor using pytorch GPU implementation
 TENSOR FFT IS NOT ZERO CENTERED BY DEFAULT!
 the comment out is legacy code from camila
-Args:</p>
-<blockquote>
-<div><p>tensor: 2D torch.tensor
-size: int shape of fft output size</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>real: torch.Tensor of real component of fft
+:param tensor: 2D torch.tensor
+:param size: int shape of fft output size</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor of real component of fft
 imag: torch.Tensor of imaginary component of fft</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>real</p>
 </dd>
 </dl>
 </dd></dl>
@@ -467,10 +515,7 @@ imag: torch.Tensor of imaginary component of fft</p>
 <dt class="sig sig-object py" id="pytem.image.fft.tensor_ifft">
 <span class="sig-prename descclassname"><span class="pre">pytem.image.fft.</span></span><span class="sig-name descname"><span class="pre">tensor_ifft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fft</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/fft.html#tensor_ifft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.fft.tensor_ifft" title="Link to this definition"></a></dt>
 <dd><p>inverse FFT using pytorch implentation for GPU use
-Arguments:</p>
-<blockquote>
-<div><p>fft: complex torch.Tensor</p>
-</div></blockquote>
+:param fft: complex torch.Tensor</p>
 <p>Returns:</p>
 </dd></dl>
 
@@ -480,17 +525,19 @@ Arguments:</p>
 <dd><p>Returns powder spectrum of 2D tensor (image) using PyTorch implementation.
 NOTE: location of operation (GPU or CPU) is determined by location of input tensor.
 Send tensor to GPU prior to using this function to perform operations in GPU (i.e. tensor.to(cuda))
-Args:</p>
-<blockquote>
-<div><p>tensor: 2D tensor (image)
-s: output size of FFT (s x s). tensor is padded with zeros prior to performing FFT operation
-to specified output size.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><dl class="simple">
-<dt>fft: powder spectra (real^2 + complex^2) tensor of size (s x s) with Fourier Transform.</dt><dd><p>DC frequency component is set in center of tensor.</p>
+:param tensor: 2D tensor (image)
+:param s: output size of FFT (s x s). tensor is padded with zeros prior to performing FFT operation
+:param to specified output size.:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>powder spectra (real^2 + complex^2) tensor of size (s x s) with Fourier Transform.</dt><dd><p>DC frequency component is set in center of tensor.</p>
 </dd>
 </dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>fft</p>
 </dd>
 </dl>
 </dd></dl>

@@ -104,17 +104,53 @@
 <dt class="sig sig-object py" id="pytem.image.Image">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pytem.image.</span></span><span class="sig-name descname"><span class="pre">Image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savedir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'fft_size':</span> <span class="pre">512,</span> <span class="pre">'max_drift':</span> <span class="pre">10,</span> <span class="pre">'processor':</span> <span class="pre">'cpu',</span> <span class="pre">'q':</span> <span class="pre">0,</span> <span class="pre">'q_bandwidth':</span> <span class="pre">0.01,</span> <span class="pre">'q_high':</span> <span class="pre">0,</span> <span class="pre">'q_low':</span> <span class="pre">0,</span> <span class="pre">'savefile_prefix':</span> <span class="pre">'',</span> <span class="pre">'step_size':</span> <span class="pre">32,</span> <span class="pre">'th_bandwidth':</span> <span class="pre">0.01,</span> <span class="pre">'threads':</span> <span class="pre">8,</span> <span class="pre">'window_size':</span> <span class="pre">128}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda:0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/Image.html#Image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.Image" title="Link to this definition"></a></dt>
 <dd><p>Image Class</p>
-<dl class="simple">
-<dt>Attributes:</dt><dd><p>data: numpy array containing image values
-dim: shape of data
-resolution: pixel resolution in Angstroms
-savedir: 
-_processor: str, ‘cpu’ or ‘cuda:#’
-process_params: Parameter dictionary
-pwd: np.array power spectrum of data
-ctf: CTF object</p>
-</dd>
-</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.image.Image.data">
+<span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#pytem.image.Image.data" title="Link to this definition"></a></dt>
+<dd><p>numpy array containing image values</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.image.Image.dim">
+<span class="sig-name descname"><span class="pre">dim</span></span><a class="headerlink" href="#pytem.image.Image.dim" title="Link to this definition"></a></dt>
+<dd><p>shape of data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.image.Image.resolution">
+<span class="sig-name descname"><span class="pre">resolution</span></span><a class="headerlink" href="#pytem.image.Image.resolution" title="Link to this definition"></a></dt>
+<dd><p>pixel resolution in Angstroms</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.image.Image.savedir">
+<span class="sig-name descname"><span class="pre">savedir</span></span><a class="headerlink" href="#pytem.image.Image.savedir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.image.Image._processor">
+<span class="sig-name descname"><span class="pre">_processor</span></span><a class="headerlink" href="#pytem.image.Image._processor" title="Link to this definition"></a></dt>
+<dd><p>str, ‘cpu’ or ‘cuda:#’</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.image.Image.process_params">
+<span class="sig-name descname"><span class="pre">process_params</span></span><a class="headerlink" href="#pytem.image.Image.process_params" title="Link to this definition"></a></dt>
+<dd><p>Parameter dictionary</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.image.Image.pwd">
+<span class="sig-name descname"><span class="pre">pwd</span></span><a class="headerlink" href="#pytem.image.Image.pwd" title="Link to this definition"></a></dt>
+<dd><p>np.array power spectrum of data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.image.Image.ctf">
+<span class="sig-name descname"><span class="pre">ctf</span></span><a class="headerlink" href="#pytem.image.Image.ctf" title="Link to this definition"></a></dt>
+<dd><p>CTF object</p>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pytem.image.Image.__dict__">
 <span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'pytem.image.Image',</span> <span class="pre">'__doc__':</span> <span class="pre">&quot;\n</span>&#160;&#160;&#160; <span class="pre">Image</span> <span class="pre">Class\n</span>&#160;&#160;&#160; <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">Attributes:\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">data:</span> <span class="pre">numpy</span> <span class="pre">array</span> <span class="pre">containing</span> <span class="pre">image</span> <span class="pre">values\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">dim:</span> <span class="pre">shape</span> <span class="pre">of</span> <span class="pre">data\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">resolution:</span> <span class="pre">pixel</span> <span class="pre">resolution</span> <span class="pre">in</span> <span class="pre">Angstroms\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">savedir:</span> <span class="pre">\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">_processor:</span> <span class="pre">str,</span> <span class="pre">'cpu'</span> <span class="pre">or</span> <span class="pre">'cuda:#'\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">process_params:</span> <span class="pre">Parameter</span> <span class="pre">dictionary\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">pwd:</span> <span class="pre">np.array</span> <span class="pre">power</span> <span class="pre">spectrum</span> <span class="pre">of</span> <span class="pre">data\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">ctf:</span> <span class="pre">CTF</span> <span class="pre">object\n</span>&#160;&#160;&#160; <span class="pre">&quot;,</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">Image.__init__&gt;,</span> <span class="pre">'copy':</span> <span class="pre">&lt;classmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'load':</span> <span class="pre">&lt;classmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'_dummy_image':</span> <span class="pre">&lt;classmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'saveas_mrc':</span> <span class="pre">&lt;function</span> <span class="pre">Image.saveas_mrc&gt;,</span> <span class="pre">'update_params':</span> <span class="pre">&lt;function</span> <span class="pre">Image.update_params&gt;,</span> <span class="pre">'processor':</span> <span class="pre">&lt;function</span> <span class="pre">Image.processor&gt;,</span> <span class="pre">'view':</span> <span class="pre">&lt;function</span> <span class="pre">Image.view&gt;,</span> <span class="pre">'flatten':</span> <span class="pre">&lt;function</span> <span class="pre">Image.flatten&gt;,</span> <span class="pre">'mask':</span> <span class="pre">&lt;function</span> <span class="pre">Image.mask&gt;,</span> <span class="pre">'load_ctf':</span> <span class="pre">&lt;function</span> <span class="pre">Image.load_ctf&gt;,</span> <span class="pre">'correct_ctf':</span> <span class="pre">&lt;function</span> <span class="pre">Image.correct_ctf&gt;,</span> <span class="pre">'correct_drift':</span> <span class="pre">&lt;function</span> <span class="pre">Image.correct_drift&gt;,</span> <span class="pre">'power_spectrum':</span> <span class="pre">&lt;function</span> <span class="pre">Image.power_spectrum&gt;,</span> <span class="pre">'bandpass_filter':</span> <span class="pre">&lt;function</span> <span class="pre">Image.bandpass_filter&gt;,</span> <span class="pre">'fft_scan':</span> <span class="pre">&lt;function</span> <span class="pre">Image.fft_scan&gt;,</span> <span class="pre">'featurize':</span> <span class="pre">&lt;function</span> <span class="pre">Image.featurize&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'Image'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'Image'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#pytem.image.Image.__dict__" title="Link to this definition"></a></dt>
@@ -141,11 +177,18 @@ ctf: CTF object</p>
 <span class="sig-name descname"><span class="pre">bandpass_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q_low</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_high</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/Image.html#Image.bandpass_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.Image.bandpass_filter" title="Link to this definition"></a></dt>
 <dd><p>Applies bandpass filter to image.</p>
 <p>Based on code originally written by Camila</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>q_low: lower bound for high pass
-q_high: higher bound for low pass</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q_low</strong> – lower bound for high pass</p></li>
+<li><p><strong>q_high</strong> – higher bound for low pass</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>corrected img: Image instance with bandpass filtered data</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Image instance with bandpass filtered data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>corrected img</p>
 </dd>
 </dl>
 </dd></dl>
@@ -155,14 +198,17 @@ q_high: higher bound for low pass</p>
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/Image.html#Image.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.Image.copy" title="Link to this definition"></a></dt>
 <dd><p>creates a copy of Image instance, with optional kwargs
 to modify attributes.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>imarray: for data
-res: pixel resolution
-savedir: str
-pars: Parameters
-processor: str, ‘cpu’ or ‘cuda:#’
-pwd: np.array power spectrum
-ctf: CTF object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>imarray</strong> – for data</p></li>
+<li><p><strong>res</strong> – pixel resolution</p></li>
+<li><p><strong>savedir</strong> – str</p></li>
+<li><p><strong>pars</strong> – Parameters</p></li>
+<li><p><strong>processor</strong> – str, ‘cpu’ or ‘cuda:#’</p></li>
+<li><p><strong>pwd</strong> – np.array power spectrum</p></li>
+<li><p><strong>ctf</strong> – CTF object</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -173,10 +219,15 @@ ctf: CTF object</p>
 <dd><p>Constructs a new Image() object with the same properties
 but contains ctf corrected data
 BUG: RIGHT NOW ASSUME SQUARE. only qorks with min!</p>
-<dl class="simple">
-<dt>Arguments:</dt><dd><p>snr_array: Signal-to-Noise Ratio array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>snr_array</strong> – Signal-to-Noise Ratio array</p>
 </dd>
-<dt>Returns:</dt><dd><p>ctf_corrected_img: Image object</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Image object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ctf_corrected_img</p>
 </dd>
 </dl>
 </dd></dl>
@@ -185,10 +236,15 @@ BUG: RIGHT NOW ASSUME SQUARE. only qorks with min!</p>
 <dt class="sig sig-object py" id="pytem.image.Image.correct_drift">
 <span class="sig-name descname"><span class="pre">correct_drift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keep_frames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/Image.html#Image.correct_drift"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.Image.correct_drift" title="Link to this definition"></a></dt>
 <dd><p>Corrects drift across image frames, GPU implementation ONLY.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>keep_frames: boolean, determines whether to save drift-corrected data frames (True) versus only saving the summed data frames (False)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>keep_frames</strong> – boolean, determines whether to save drift-corrected data frames (True) versus only saving the summed data frames (False)</p>
 </dd>
-<dt>Returns:</dt><dd><p>corrected_img: Image instance containing drift-corrected data</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Image instance containing drift-corrected data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>corrected_img</p>
 </dd>
 </dl>
 </dd></dl>
@@ -198,8 +254,9 @@ BUG: RIGHT NOW ASSUME SQUARE. only qorks with min!</p>
 <span class="sig-name descname"><span class="pre">featurize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lamellar'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/Image.html#Image.featurize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.Image.featurize" title="Link to this definition"></a></dt>
 <dd><p>extracts the orientations and q-centers of a specific periodic feature</p>
 <p>if pars is given, then pars will be reused, regardless of instance attributes.</p>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>crystalStack
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>crystalStack
 q_datacube</p>
 </dd>
 </dl>
@@ -211,8 +268,9 @@ q_datacube</p>
 <dd><p>Performs a sliding FFT scan across the image. Unlike featurize, it does not extract orientations
 and it does not apply a bandpass filter.  Equivalent to generating a virtual 4D-STEM.</p>
 <p>if pars is given, then pars will be used regardless of object instance attributes.</p>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>fft_4d_datacube</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>fft_4d_datacube</p>
 </dd>
 </dl>
 </dd></dl>
@@ -227,14 +285,18 @@ and it does not apply a bandpass filter.  Equivalent to generating a virtual 4D-
 <dt class="sig sig-object py" id="pytem.image.Image.load">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/Image.html#Image.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.Image.load" title="Link to this definition"></a></dt>
 <dd><p>Creates Image object from image data filename.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>filename: string containing image data
-res: pixel resolution of image data
-params: dictionary of parameters, optional key word argument
-savedir: string, save directory, optional keyword argument
-processor: string, optional keyword argument of either “cpu” or “cuda:#”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – string containing image data</p></li>
+<li><p><strong>res</strong> – pixel resolution of image data</p></li>
+<li><p><strong>params</strong> – dictionary of parameters, optional key word argument</p></li>
+<li><p><strong>savedir</strong> – string, save directory, optional keyword argument</p></li>
+<li><p><strong>processor</strong> – string, optional keyword argument of either “cpu” or “cuda:#”</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>Image object</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Image object</p>
 </dd>
 </dl>
 </dd></dl>
@@ -244,8 +306,9 @@ processor: string, optional keyword argument of either “cpu” or “cuda:#”
 <span class="sig-name descname"><span class="pre">load_ctf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/Image.html#Image.load_ctf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.Image.load_ctf" title="Link to this definition"></a></dt>
 <dd><p>Get CTF object for this image based on CTFFIND output
 Runs the load method of the ctf model</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>filename: str, CTFFIND output .txt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – str, CTFFIND output .txt</p>
 </dd>
 </dl>
 </dd></dl>
@@ -254,12 +317,16 @@ Runs the load method of the ctf model</p>
 <dt class="sig sig-object py" id="pytem.image.Image.mask">
 <span class="sig-name descname"><span class="pre">mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/Image.html#Image.mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.Image.mask" title="Link to this definition"></a></dt>
 <dd><p>Apply mask to image</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>mask: np.array to apply
-suffix: str, to add to savefile prefix
-inplace: bool, if False, returns new Image instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mask</strong> – np.array to apply</p></li>
+<li><p><strong>suffix</strong> – str, to add to savefile prefix</p></li>
+<li><p><strong>inplace</strong> – bool, if False, returns new Image instance</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>None if inplace=True
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None if inplace=True
 masked_img: Image object if inplace=False</p>
 </dd>
 </dl>
@@ -270,17 +337,25 @@ masked_img: Image object if inplace=False</p>
 <span class="sig-name descname"><span class="pre">power_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calculate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/Image.html#Image.power_spectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.Image.power_spectrum" title="Link to this definition"></a></dt>
 <dd><p>Get Power Spectral Density of image
 This current method requires gpu usage, and converts image data to torch.Tensor</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>calculate: boolean, if False then it just returns or plots the existing power spectral density.
-If calculate is False and there is no existing power spectral density, it will calculate anyways.
-plot: boolean.  If True, it will automatically attempt to save image
-q_contour_list: optional
-q_contour_color: optional</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>calculate</strong> – boolean, if False then it just returns or plots the existing power spectral density.</p></li>
+<li><p><strong>density</strong> (<em>If calculate is False and there is no existing power spectral</em>) – </p></li>
+<li><p><strong>anyways.</strong> (<em>it will calculate</em>) – </p></li>
+<li><p><strong>plot</strong> – boolean.  If True, it will automatically attempt to save image</p></li>
+<li><p><strong>q_contour_list</strong> – optional</p></li>
+<li><p><strong>q_contour_color</strong> – optional</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>self.pwd: np.ndarray containing power spectral density of Image
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.ndarray containing power spectral density of Image
 qd
 counts
 plot: matplotlib figure if plot argument is True, otherwise returns False</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>self.pwd</p>
 </dd>
 </dl>
 </dd></dl>
@@ -289,10 +364,12 @@ plot: matplotlib figure if plot argument is True, otherwise returns False</p>
 <dt class="sig sig-object py" id="pytem.image.Image.processor">
 <span class="sig-name descname"><span class="pre">processor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">punit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/Image.html#Image.processor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.Image.processor" title="Link to this definition"></a></dt>
 <dd><p>Change the processing unit for the Image object.</p>
-<dl class="simple">
-<dt>Args: </dt><dd><p>punit: string, formatted as ‘cpu’ or ‘cuda’ (optional)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>punit</strong> – string, formatted as ‘cpu’ or ‘cuda’ (optional)</p>
 </dd>
-<dt>Returns:</dt><dd><p>prints the information of current proccessor after change.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>prints the information of current proccessor after change.</p>
 </dd>
 </dl>
 </dd></dl>

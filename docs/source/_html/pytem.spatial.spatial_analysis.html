@@ -109,7 +109,7 @@
 <td><p>Get domain size statistics for each cluster in cluster dataframe.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.spatial.spatial_analysis.get_domain_gradient.html#pytem.spatial.spatial_analysis.get_domain_gradient" title="pytem.spatial.spatial_analysis.get_domain_gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_domain_gradient</span></code></a>(domain_array, ...[, plot])</p></td>
-<td><p>Note: x,y follows i,j indexing such that x is iterating through the rows and y is iterating through the columns Thus, the parallel orientation is in the direction of y  and the perpendicular orientation is in the direction of x, and these follow the conventions of plt.imshow() BUT are inverse to the cartesian coordinates as usually plotted.</p></td>
+<td><p>Note: x,y follows i,j indexing such that x is iterating through the rows and y is iterating through the columns Thus, the parallel orientation is in the direction of y and the perpendicular orientation is in the direction of x, and these follow the conventions of plt.imshow() BUT are inverse to the cartesian coordinates as usually plotted.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pytem.spatial.spatial_analysis.plot_polygons_df.html#pytem.spatial.spatial_analysis.plot_polygons_df" title="pytem.spatial.spatial_analysis.plot_polygons_df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_polygons_df</span></code></a>(cluster_df[, resolution, ...])</p></td>
 <td><p></p></td>
@@ -130,7 +130,7 @@ OUTPUT:
 bb_Lc: length in direction of backbone chain, defined as longest line through polygon in that orientation
 ax_len: length of bounding box oriented in direction of backbone orientation (length == perpendicular direction to lamellar stacking)
 ax_width: width of bounding box oriented in direction of backbon orientation (width == direction of lamellar stacking)</p>
-<p>Note: The output is in the same units as the cluster geometry.  
+<p>Note: The output is in the same units as the cluster geometry.
 default unit is pixels, may need conversion!</p>
 </dd></dl>
 
@@ -146,12 +146,19 @@ collects multiprocessing results</p>
 <dt class="sig sig-object py" id="pytem.spatial.spatial_analysis._multiprocessing_polygons_func">
 <span class="sig-prename descclassname"><span class="pre">pytem.spatial.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">_multiprocessing_polygons_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/spatial_analysis.html#_multiprocessing_polygons_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.spatial_analysis._multiprocessing_polygons_func" title="Link to this definition"></a></dt>
 <dd><p>creates an alphashape Polygon based on a given cluster, based on CrystalStack.peaks_df</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>cluster_num: integer, to organize clusters when multiprocessing Pool results are collected
-sub_df: CrystalStack.peaks_df containing points belonging to the same cluster
-alpha: alphashape parameter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cluster_num</strong> – integer, to organize clusters when multiprocessing Pool results are collected</p></li>
+<li><p><strong>sub_df</strong> – CrystalStack.peaks_df containing points belonging to the same cluster</p></li>
+<li><p><strong>alpha</strong> – alphashape parameter</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>cluster_df: dataframe containing the cluster number, average orientation, and Polygon gemoetry</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dataframe containing the cluster number, average orientation, and Polygon gemoetry</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>cluster_df</p>
 </dd>
 </dl>
 </dd></dl>
@@ -171,7 +178,7 @@ first check if peaks_df[“coo”] exists, otherwise create it</p>
 <span class="sig-prename descclassname"><span class="pre">pytem.spatial.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">domain_length_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lamellar'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/spatial_analysis.html#domain_length_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.spatial_analysis.domain_length_df" title="Link to this definition"></a></dt>
 <dd><p>Get domain size statistics for each cluster in cluster dataframe.</p>
 <p>The lengths are returned for “backbone”, “bbox_length”, and “bbox_width”.
-“backbone” length is the longest length through the polygon in the direction of backbone orientation, 
+“backbone” length is the longest length through the polygon in the direction of backbone orientation,
 we assuem that the backbone is perpendicular to the lamellar. “bbox_length” is the length of the bounding box
 in the backbone direction, and “bbox_width” is the length of the bounding box in the lamellar direction.</p>
 </dd></dl>
@@ -180,7 +187,7 @@ in the backbone direction, and “bbox_width” is the length of the bounding bo
 <dt class="sig sig-object py" id="pytem.spatial.spatial_analysis.get_domain_gradient">
 <span class="sig-prename descclassname"><span class="pre">pytem.spatial.spatial_analysis.</span></span><span class="sig-name descname"><span class="pre">get_domain_gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_orientation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/spatial_analysis.html#get_domain_gradient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.spatial_analysis.get_domain_gradient" title="Link to this definition"></a></dt>
 <dd><p>Note: x,y follows i,j indexing such that x is iterating through the rows and y is iterating through the columns
-Thus, the parallel orientation is in the direction of y 
+Thus, the parallel orientation is in the direction of y
 and the perpendicular orientation is in the direction of x,
 and these follow the conventions of plt.imshow()
 BUT are inverse to the cartesian coordinates as usually plotted.</p>

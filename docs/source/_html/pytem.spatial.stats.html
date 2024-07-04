@@ -349,12 +349,17 @@ bg = 0.5*Ks*(s1 + s2)**2 + 0.5*Kb*(b1**2 + b2**2)</p>
 </ol>
 <p>BUGS:
 RUNTIME WARNING for model=’single-chain’: invalid value encountered in arccos when calculating theta?</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>v1,v2: vector field of chain orientation segments
-model: “single-chain”,”Frank-Oseen” or “nematic”        
-resolution: A/pixel resolution, needed for model=”single-chain”
-Lp: units A, Persistence Length of polymer, default 3nm
-Ks, Kb: units pixels</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>v1</strong> – vector field of chain orientation segments</p></li>
+<li><p><strong>v2</strong> – vector field of chain orientation segments</p></li>
+<li><p><strong>model</strong> – “single-chain”,”Frank-Oseen” or “nematic”</p></li>
+<li><p><strong>resolution</strong> – A/pixel resolution, needed for model=”single-chain”</p></li>
+<li><p><strong>Lp</strong> – units A, Persistence Length of polymer, default 3nm</p></li>
+<li><p><strong>Ks</strong> – units pixels</p></li>
+<li><p><strong>Kb</strong> – units pixels</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -365,12 +370,21 @@ Ks, Kb: units pixels</p>
 <dd><p>Fits an exponential to y by modeling log(y) = ax + b. Where the decay is given by -1/a</p>
 <p>Useful for modeling orientation correlation length where the input y is the
 expected value of the 2nd-order Legendre polynomial</p>
-<dl class="simple">
-<dt>Arguments:</dt><dd><p>y,x: np.array
-start_ind, end_ind: int, indexes for fitting
-plot: boolean, if True, will plot over any existing figure! Does not create new figure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y</strong> – np.array</p></li>
+<li><p><strong>x</strong> – np.array</p></li>
+<li><p><strong>start_ind</strong> – int, indexes for fitting</p></li>
+<li><p><strong>end_ind</strong> – int, indexes for fitting</p></li>
+<li><p><strong>plot</strong> – boolean, if True, will plot over any existing figure! Does not create new figure.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>Ld: decay length</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>decay length</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Ld</p>
 </dd>
 </dl>
 </dd></dl>
@@ -387,8 +401,9 @@ plot: boolean, if True, will plot over any existing figure! Does not create new 
 <dd><p>2nd-order Legendre Polynomial.
 dimension==2, 2D constrained is 2*(np.cos(np.deg2rad(x))**2) - 1
 dimension==3, 3D is 3/2*(np.cos(np.deg2rad(x))**2) - 1/2</p>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>function</p>
 </dd>
 </dl>
 </dd></dl>
@@ -397,15 +412,20 @@ dimension==3, 3D is 3/2*(np.cos(np.deg2rad(x))**2) - 1/2</p>
 <dt class="sig sig-object py" id="pytem.spatial.stats.line_intersect">
 <span class="sig-prename descclassname"><span class="pre">pytem.spatial.stats.</span></span><span class="sig-name descname"><span class="pre">line_intersect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/stats.html#line_intersect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.stats.line_intersect" title="Link to this definition"></a></dt>
 <dd><p>find the intersecting points between two lines</p>
-<dl class="simple">
-<dt>Args:</dt><dd><dl class="simple">
-<dt>line1 (array): array with shape (N,2) representing the X,Y values of the points of line 1</dt><dd><p>or array with shape (2,) representing the slope and intercept of line 1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>line1</strong> (<em>array</em>) – array with shape (N,2) representing the X,Y values of the points of line 1
+or array with shape (2,) representing the slope and intercept of line 1</p></li>
+<li><p><strong>line2</strong> (<em>array</em>) – array with shape (N,2) representing the X,Y, values of the points of line 2
+or array with shape (2,) representing the slope and intercept of line 2</p></li>
+</ul>
 </dd>
-<dt>line2 (array): array with shape (N,2) representing the X,Y, values of the points of line 2</dt><dd><p>or array with shape (2,) representing the slope and intercept of line 2</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>x,y</p>
 </dd>
-</dl>
-</dd>
-<dt>Returns:</dt><dd><p>point (array): x,y</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>point (array)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -414,10 +434,12 @@ dimension==3, 3D is 3/2*(np.cos(np.deg2rad(x))**2) - 1/2</p>
 <dt class="sig sig-object py" id="pytem.spatial.stats.make_histogram_distributions">
 <span class="sig-prename descclassname"><span class="pre">pytem.spatial.stats.</span></span><span class="sig-name descname"><span class="pre">make_histogram_distributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/stats.html#make_histogram_distributions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.stats.make_histogram_distributions" title="Link to this definition"></a></dt>
 <dd><p>Histogram values and return random variable distribution</p>
-<dl class="simple">
-<dt>Arguments:</dt><dd><p>array: 2D array with shape (n_samples,n_experiments). Histogram is performed by column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>array</strong> – 2D array with shape (n_samples,n_experiments). Histogram is performed by column.</p>
 </dd>
-<dt>Returns:</dt><dd><p>list of histogram distributions</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of histogram distributions</p>
 </dd>
 </dl>
 </dd></dl>
@@ -443,11 +465,17 @@ twist: t1 = -dvy/dx, t2 = dvx/dy
 bend: b1 = dvx/dz, b2 = dvy/dz</p>
 <p>These equations assume that the nematic vector is parallel to the z direction
 Assumed that r1!=r2</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>v1,v2: unit tangent vectors
-r1,r2: location of origin of v1 and v2</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>v1</strong> – unit tangent vectors</p></li>
+<li><p><strong>v2</strong> – unit tangent vectors</p></li>
+<li><p><strong>r1</strong> – location of origin of v1 and v2</p></li>
+<li><p><strong>r2</strong> – location of origin of v1 and v2</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>s1,s2,b1,b2</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>s1,s2,b1,b2</p>
 </dd>
 </dl>
 </dd></dl>

@@ -114,7 +114,7 @@ Written by Camila Cendra, circa 2018</p>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.image.drift.complex_fft.html#pytem.image.drift.complex_fft" title="pytem.image.drift.complex_fft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">complex_fft</span></code></a>(tensor[, s, normalize])</p></td>
-<td><p>Returns powder spectra of 2D tensor (image) using PyTorch implementation. NOTE: location of operation (GPU or CPU) is determined by location of input tensor. Send tensor to GPU prior to using this function to perform operations in GPU (i.e. tensor.to(cuda)) Args:     tensor: 2D tensor (image)     s: output size of FFT (s x s). tensor is padded with zeros prior to performing FFT operation     to specified output size. Returns:     fft: powder spectra (real^2 + complex^2) tensor of size (s x s) with Fourier Transform. DC frequency component is set in center of tensor.</p></td>
+<td><p>Returns powder spectra of 2D tensor (image) using PyTorch implementation.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pytem.image.drift.correct_data.html#pytem.image.drift.correct_data" title="pytem.image.drift.correct_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">correct_data</span></code></a>(data, x_drift, y_drift, ...[, ...])</p></td>
 <td><p>Corrects drift across frames in data</p></td>
@@ -132,10 +132,10 @@ Written by Camila Cendra, circa 2018</p>
 <td><p>by Camila</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.image.drift.read_mrc.html#pytem.image.drift.read_mrc" title="pytem.image.drift.read_mrc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_mrc</span></code></a>(fn)</p></td>
-<td><p>Opens .mrc file containing single stack of images and returns numpy array. Args:     fn: image filename Returns:     np array of size (n, x, y)     n is number of stacked images (generally 24)     x, y is # pixels horizontally and vertically.</p></td>
+<td><p>Opens .mrc file containing single stack of images and returns numpy array.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pytem.image.drift.tensor_shift_fft.html#pytem.image.drift.tensor_shift_fft" title="pytem.image.drift.tensor_shift_fft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_shift_fft</span></code></a>(fft)</p></td>
-<td><p>Shift zero frequency spatial frequency component to center of 2D image. For Pytorch implementation Args:     fft: 2D FFT obtained using torch_fft function Returns:     shifted FFT with DC frequency component in center of image.</p></td>
+<td><p>Shift zero frequency spatial frequency component to center of 2D image.</p></td>
 </tr>
 </tbody>
 </table>
@@ -155,17 +155,19 @@ Written by Camila Cendra, circa 2018</p>
 <dd><p>Returns powder spectra of 2D tensor (image) using PyTorch implementation.
 NOTE: location of operation (GPU or CPU) is determined by location of input tensor.
 Send tensor to GPU prior to using this function to perform operations in GPU (i.e. tensor.to(cuda))
-Args:</p>
-<blockquote>
-<div><p>tensor: 2D tensor (image)
-s: output size of FFT (s x s). tensor is padded with zeros prior to performing FFT operation
-to specified output size.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><dl class="simple">
-<dt>fft: powder spectra (real^2 + complex^2) tensor of size (s x s) with Fourier Transform.</dt><dd><p>DC frequency component is set in center of tensor.</p>
+:param tensor: 2D tensor (image)
+:param s: output size of FFT (s x s). tensor is padded with zeros prior to performing FFT operation
+:param to specified output size.:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>powder spectra (real^2 + complex^2) tensor of size (s x s) with Fourier Transform.</dt><dd><p>DC frequency component is set in center of tensor.</p>
 </dd>
 </dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>fft</p>
 </dd>
 </dl>
 </dd></dl>
@@ -174,15 +176,22 @@ to specified output size.</p>
 <dt class="sig sig-object py" id="pytem.image.drift.correct_data">
 <span class="sig-prename descclassname"><span class="pre">pytem.image.drift.</span></span><span class="sig-name descname"><span class="pre">correct_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_drift</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_drift</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_drift_allowed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_array</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/drift.html#correct_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.drift.correct_data" title="Link to this definition"></a></dt>
 <dd><p>Corrects drift across frames in data</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>data: Image Dose-Fractionated Frames
-x_drift: List with drift in x-direction for each frame
-y_drift: List with drift in y-direction for each frame
-max_drift_allowed: int, threshold for drift tolerance
-save_array: filename to save final array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Image Dose-Fractionated Frames</p></li>
+<li><p><strong>x_drift</strong> – List with drift in x-direction for each frame</p></li>
+<li><p><strong>y_drift</strong> – List with drift in y-direction for each frame</p></li>
+<li><p><strong>max_drift_allowed</strong> – int, threshold for drift tolerance</p></li>
+<li><p><strong>save_array</strong> – filename to save final array</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>data_corrected: data frames with drift corrected
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>data frames with drift corrected
 img_corrected: sum of data_corrected</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>data_corrected</p>
 </dd>
 </dl>
 </dd></dl>
@@ -212,12 +221,10 @@ img_corrected: sum of data_corrected</p>
 <dt class="sig sig-object py" id="pytem.image.drift.read_mrc">
 <span class="sig-prename descclassname"><span class="pre">pytem.image.drift.</span></span><span class="sig-name descname"><span class="pre">read_mrc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/drift.html#read_mrc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.drift.read_mrc" title="Link to this definition"></a></dt>
 <dd><p>Opens .mrc file containing single stack of images and returns numpy array.
-Args:</p>
-<blockquote>
-<div><p>fn: image filename</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>np array of size (n, x, y)
+:param fn: image filename</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np array of size (n, x, y)
 n is number of stacked images (generally 24)
 x, y is # pixels horizontally and vertically</p>
 </dd>
@@ -228,12 +235,10 @@ x, y is # pixels horizontally and vertically</p>
 <dt class="sig sig-object py" id="pytem.image.drift.tensor_shift_fft">
 <span class="sig-prename descclassname"><span class="pre">pytem.image.drift.</span></span><span class="sig-name descname"><span class="pre">tensor_shift_fft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fft</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/image/drift.html#tensor_shift_fft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.image.drift.tensor_shift_fft" title="Link to this definition"></a></dt>
 <dd><p>Shift zero frequency spatial frequency component to center of 2D image. For Pytorch implementation
-Args:</p>
-<blockquote>
-<div><p>fft: 2D FFT obtained using torch_fft function</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>shifted FFT with DC frequency component in center of image.</p>
+:param fft: 2D FFT obtained using torch_fft function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>shifted FFT with DC frequency component in center of image.</p>
 </dd>
 </dl>
 </dd></dl>

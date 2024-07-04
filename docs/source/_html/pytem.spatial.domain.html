@@ -107,7 +107,12 @@
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.spatial.domain.Domain.html#pytem.spatial.domain.Domain" title="pytem.spatial.domain.Domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Domain</span></code></a>([data, pixel_res, label, savedir, ...])</p></td>
-<td><p>Attributes:</p></td>
+<td><p><dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.data">
+<span class="sig-prename descclassname"><span class="pre">pytem.spatial.domain.</span></span><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#pytem.spatial.domain.data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pytem.spatial.domain.DomainCollection.html#pytem.spatial.domain.DomainCollection" title="pytem.spatial.domain.DomainCollection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DomainCollection</span></code></a>([domains, pixel_res, savedir])</p></td>
 <td><p>A collection of one or more Domains</p></td>
@@ -117,22 +122,64 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="pytem.spatial.domain.Domain">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pytem.spatial.domain.</span></span><span class="sig-name descname"><span class="pre">Domain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savedir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polygon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centroid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centroid_orientation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autopopulate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/domain.html#Domain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.domain.Domain" title="Link to this definition"></a></dt>
-<dd><dl class="simple">
-<dt>Attributes:</dt><dd><p>data: np.array of the theta values clustered into this domain
-label: int index label that corresponds to the cluster_num in CrystalStack and cluster_df
-savedir: directory to save to
-polygon: Shapely Polygon object of the domain
-centroid: indices of center of mass, calculated from the Shapely Polygon
-coo: coordinates of the domain
-centroid_orientation: theta orientation at the centroid of the domain
-interpolated_data: np.array of theta values with missing values interpolated, and shifted such that the interpolated centroid is at the image center
-aligned_data: np.array of interpolated_data rotated such that the nematic director of the centroid is in the y-direction</p>
-</dd>
-<dt>Notes:</dt><dd><ul class="simple">
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.Domain.data">
+<span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#pytem.spatial.domain.Domain.data" title="Link to this definition"></a></dt>
+<dd><p>np.array of the theta values clustered into this domain</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.Domain.label">
+<span class="sig-name descname"><span class="pre">label</span></span><a class="headerlink" href="#pytem.spatial.domain.Domain.label" title="Link to this definition"></a></dt>
+<dd><p>int index label that corresponds to the cluster_num in CrystalStack and cluster_df</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.Domain.savedir">
+<span class="sig-name descname"><span class="pre">savedir</span></span><a class="headerlink" href="#pytem.spatial.domain.Domain.savedir" title="Link to this definition"></a></dt>
+<dd><p>directory to save to</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.Domain.polygon">
+<span class="sig-name descname"><span class="pre">polygon</span></span><a class="headerlink" href="#pytem.spatial.domain.Domain.polygon" title="Link to this definition"></a></dt>
+<dd><p>Shapely Polygon object of the domain</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.Domain.centroid">
+<span class="sig-name descname"><span class="pre">centroid</span></span><a class="headerlink" href="#pytem.spatial.domain.Domain.centroid" title="Link to this definition"></a></dt>
+<dd><p>indices of center of mass, calculated from the Shapely Polygon</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.Domain.coo">
+<span class="sig-name descname"><span class="pre">coo</span></span><a class="headerlink" href="#pytem.spatial.domain.Domain.coo" title="Link to this definition"></a></dt>
+<dd><p>coordinates of the domain</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.Domain.centroid_orientation">
+<span class="sig-name descname"><span class="pre">centroid_orientation</span></span><a class="headerlink" href="#pytem.spatial.domain.Domain.centroid_orientation" title="Link to this definition"></a></dt>
+<dd><p>theta orientation at the centroid of the domain</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.Domain.interpolated_data">
+<span class="sig-name descname"><span class="pre">interpolated_data</span></span><a class="headerlink" href="#pytem.spatial.domain.Domain.interpolated_data" title="Link to this definition"></a></dt>
+<dd><p>np.array of theta values with missing values interpolated, and shifted such that the interpolated centroid is at the image center</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.Domain.aligned_data">
+<span class="sig-name descname"><span class="pre">aligned_data</span></span><a class="headerlink" href="#pytem.spatial.domain.Domain.aligned_data" title="Link to this definition"></a></dt>
+<dd><p>np.array of interpolated_data rotated such that the nematic director of the centroid is in the y-direction</p>
+</dd></dl>
+
+<p class="rubric">Notes</p>
+<ul class="simple">
 <li><p>This class is indexed by x,y == i,j</p></li>
 </ul>
-</dd>
-</dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pytem.spatial.domain.Domain.__dict__">
 <span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'pytem.spatial.domain',</span> <span class="pre">'__doc__':</span> <span class="pre">'\n</span>&#160;&#160;&#160; <span class="pre">Attributes:\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">data:</span> <span class="pre">np.array</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">theta</span> <span class="pre">values</span> <span class="pre">clustered</span> <span class="pre">into</span> <span class="pre">this</span> <span class="pre">domain\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">label:</span> <span class="pre">int</span> <span class="pre">index</span> <span class="pre">label</span> <span class="pre">that</span> <span class="pre">corresponds</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">cluster_num</span> <span class="pre">in</span> <span class="pre">CrystalStack</span> <span class="pre">and</span> <span class="pre">cluster_df\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">savedir:</span> <span class="pre">directory</span> <span class="pre">to</span> <span class="pre">save</span> <span class="pre">to\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">polygon:</span> <span class="pre">Shapely</span> <span class="pre">Polygon</span> <span class="pre">object</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">domain\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">centroid:</span> <span class="pre">indices</span> <span class="pre">of</span> <span class="pre">center</span> <span class="pre">of</span> <span class="pre">mass,</span> <span class="pre">calculated</span> <span class="pre">from</span> <span class="pre">the</span> <span class="pre">Shapely</span> <span class="pre">Polygon\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">coo:</span> <span class="pre">coordinates</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">domain\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">centroid_orientation:</span> <span class="pre">theta</span> <span class="pre">orientation</span> <span class="pre">at</span> <span class="pre">the</span> <span class="pre">centroid</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">domain\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">interpolated_data:</span> <span class="pre">np.array</span> <span class="pre">of</span> <span class="pre">theta</span> <span class="pre">values</span> <span class="pre">with</span> <span class="pre">missing</span> <span class="pre">values</span> <span class="pre">interpolated,</span> <span class="pre">and</span> <span class="pre">shifted</span> <span class="pre">such</span> <span class="pre">that</span> <span class="pre">the</span> <span class="pre">interpolated</span> <span class="pre">centroid</span> <span class="pre">is</span> <span class="pre">at</span> <span class="pre">the</span> <span class="pre">image</span> <span class="pre">center\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">aligned_data:</span> <span class="pre">np.array</span> <span class="pre">of</span> <span class="pre">interpolated_data</span> <span class="pre">rotated</span> <span class="pre">such</span> <span class="pre">that</span> <span class="pre">the</span> <span class="pre">nematic</span> <span class="pre">director</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">centroid</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">y-direction\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">Notes:\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">*</span> <span class="pre">This</span> <span class="pre">class</span> <span class="pre">is</span> <span class="pre">indexed</span> <span class="pre">by</span> <span class="pre">x,y</span> <span class="pre">==</span> <span class="pre">i,j\n</span>&#160;&#160;&#160; <span class="pre">',</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">Domain.__init__&gt;,</span> <span class="pre">'save':</span> <span class="pre">&lt;function</span> <span class="pre">Domain.save&gt;,</span> <span class="pre">'load':</span> <span class="pre">&lt;classmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'make_domain':</span> <span class="pre">&lt;classmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'interpolate':</span> <span class="pre">&lt;function</span> <span class="pre">Domain.interpolate&gt;,</span> <span class="pre">'rotate':</span> <span class="pre">&lt;function</span> <span class="pre">Domain.rotate&gt;,</span> <span class="pre">'align_nematic_center':</span> <span class="pre">&lt;function</span> <span class="pre">Domain.align_nematic_center&gt;,</span> <span class="pre">'gradient':</span> <span class="pre">&lt;function</span> <span class="pre">Domain.gradient&gt;,</span> <span class="pre">'plot_gradient':</span> <span class="pre">&lt;function</span> <span class="pre">Domain.plot_gradient&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'Domain'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'Domain'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#pytem.spatial.domain.Domain.__dict__" title="Link to this definition"></a></dt>
@@ -177,14 +224,18 @@ the array is plotted using plt.imshow</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pytem.spatial.domain.Domain.make_domain">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">make_domain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">crystal_stack</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savedir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polygon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/domain.html#Domain.make_domain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.domain.Domain.make_domain" title="Link to this definition"></a></dt>
-<dd><dl class="simple">
-<dt>Arguments:</dt><dd><p>stack: CrystalStack
-label: cluster_num of interest
-savedir: directory to save Domain information
-alpha: default 0.2, hyperparameter for getting domain shape from clustered coordinates, alpha=0 is the Convex Hull, alpha&gt;1 Convex Hull
-polygon: optional, Shapely Polygon object</p>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stack</strong> – CrystalStack</p></li>
+<li><p><strong>label</strong> – cluster_num of interest</p></li>
+<li><p><strong>savedir</strong> – directory to save Domain information</p></li>
+<li><p><strong>alpha</strong> – default 0.2, hyperparameter for getting domain shape from clustered coordinates, alpha=0 is the Convex Hull, alpha&gt;1 Convex Hull</p></li>
+<li><p><strong>polygon</strong> – optional, Shapely Polygon object</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>Domain object</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Domain object</p>
 </dd>
 </dl>
 </dd></dl>
@@ -192,11 +243,10 @@ polygon: optional, Shapely Polygon object</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pytem.spatial.domain.Domain.plot_gradient">
 <span class="sig-name descname"><span class="pre">plot_gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/domain.html#Domain.plot_gradient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.domain.Domain.plot_gradient" title="Link to this definition"></a></dt>
-<dd><dl class="simple">
-<dt>Arguments:</dt><dd><dl class="simple">
-<dt><a href="#id1"><span class="problematic" id="id2">*</span></a>args: which gradients to plot, defined as strings. </dt><dd><p>can be ‘dx/dx’,’dx/dy’,’dy/dx’,’dy/dy’</p>
-</dd>
-</dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*args</strong> – which gradients to plot, defined as strings.
+can be ‘dx/dx’,’dx/dy’,’dy/dx’,’dy/dy’</p>
 </dd>
 </dl>
 </dd></dl>
@@ -219,22 +269,63 @@ Rotates about the center of the image</p>
 <dt class="sig sig-object py" id="pytem.spatial.domain.DomainCollection">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pytem.spatial.domain.</span></span><span class="sig-name descname"><span class="pre">DomainCollection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domains</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savedir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/domain.html#DomainCollection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.domain.DomainCollection" title="Link to this definition"></a></dt>
 <dd><p>A collection of one or more Domains</p>
-<dl>
-<dt>Attributes:</dt><dd><p>domains: list of Domain objects
-savedir: path to save directory
-pixel_resolution: nm/pixel
-parallel_dtheta: list of scipy random variable class generated from rv_histogram,</p>
-<blockquote>
-<div><p>which contains the distribution for probability P(dtheta|r), where r is the list index
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.DomainCollection.domains">
+<span class="sig-name descname"><span class="pre">domains</span></span><a class="headerlink" href="#pytem.spatial.domain.DomainCollection.domains" title="Link to this definition"></a></dt>
+<dd><p>list of Domain objects</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.DomainCollection.savedir">
+<span class="sig-name descname"><span class="pre">savedir</span></span><a class="headerlink" href="#pytem.spatial.domain.DomainCollection.savedir" title="Link to this definition"></a></dt>
+<dd><p>path to save directory</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.DomainCollection.pixel_resolution">
+<span class="sig-name descname"><span class="pre">pixel_resolution</span></span><a class="headerlink" href="#pytem.spatial.domain.DomainCollection.pixel_resolution" title="Link to this definition"></a></dt>
+<dd><p>nm/pixel</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.DomainCollection.parallel_dtheta">
+<span class="sig-name descname"><span class="pre">parallel_dtheta</span></span><a class="headerlink" href="#pytem.spatial.domain.DomainCollection.parallel_dtheta" title="Link to this definition"></a></dt>
+<dd><p>list of scipy random variable class generated from rv_histogram,
+which contains the distribution for probability P(dtheta|r), where r is the list index
 (i.e. parallel_dtheta[1] = P(dtheta | r=1) in the direction parallel to the nematic director of the centroid)</p>
-</div></blockquote>
-<p>perpendicular_dtheta: same as DomainCollection.parallel_dtheta but in the perpendicular direction
-Ld_par: orientation correlation length in the parallel direction (in pixels)
-Ld_perp: orientation correlation length in the perpendicular direction (in pixels)</p>
-</dd>
-<dt>Methods:</dt><dd><p>histogram_dtheta: computes parallel_dtheta and perpendicular_dtheta
-plot_orientation_change: plots the pdf from histogram_dtheta</p>
-</dd>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.DomainCollection.perpendicular_dtheta">
+<span class="sig-name descname"><span class="pre">perpendicular_dtheta</span></span><a class="headerlink" href="#pytem.spatial.domain.DomainCollection.perpendicular_dtheta" title="Link to this definition"></a></dt>
+<dd><p>same as DomainCollection.parallel_dtheta but in the perpendicular direction</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.DomainCollection.Ld_par">
+<span class="sig-name descname"><span class="pre">Ld_par</span></span><a class="headerlink" href="#pytem.spatial.domain.DomainCollection.Ld_par" title="Link to this definition"></a></dt>
+<dd><p>orientation correlation length in the parallel direction (in pixels)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.spatial.domain.DomainCollection.Ld_perp">
+<span class="sig-name descname"><span class="pre">Ld_perp</span></span><a class="headerlink" href="#pytem.spatial.domain.DomainCollection.Ld_perp" title="Link to this definition"></a></dt>
+<dd><p>orientation correlation length in the perpendicular direction (in pixels)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.domain.DomainCollection.histogram_dtheta">
+<span class="sig-name descname"><span class="pre">histogram_dtheta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/domain.html#DomainCollection.histogram_dtheta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.domain.DomainCollection.histogram_dtheta" title="Link to this definition"></a></dt>
+<dd><p>computes parallel_dtheta and perpendicular_dtheta</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.spatial.domain.DomainCollection.plot_orientation_change">
+<span class="sig-name descname"><span class="pre">plot_orientation_change</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/domain.html#DomainCollection.plot_orientation_change"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.domain.DomainCollection.plot_orientation_change" title="Link to this definition"></a></dt>
+<dd><p>plots the pdf from histogram_dtheta</p>
+</dd></dl>
+
+<dl class="simple">
 <dt>Private attributes:</dt><dd><p>_parallel_dtheta_values, _perpendicular_dtheta_values
 _expected_val_par, _expected_val_perp
 _model_Ld_par, _model_Ld_perp
@@ -275,7 +366,7 @@ of the Fourier Transform of the orientation correlation function</p>
 <p>Let R = autocorrelation function = $langle n(r) cdot n(r’)</p>
 </div></blockquote>
 <dl>
-<dt>angle$. &lt;br&gt;</dt><dd><p>Then the Fourier transform of R is: 
+<dt>angle$. &lt;br&gt;</dt><dd><p>Then the Fourier transform of R is:
 egin{equation}
 mathscr{F}{R}(k) = 1 -</p>
 </dd>
@@ -289,7 +380,7 @@ mathscr{F}{R}(k) = 1 -</p>
 <dt>rac{1}{K_B k_y^2}</dt><dd><p>mathscr{F}{R_{perp}}(k) = 1 -</p>
 </dd>
 <dt>rac{1}{K_S k_x^2}</dt><dd><p>end{align}
-and the Frank Elastic relations 
+and the Frank Elastic relations
 egin{align}</p>
 <blockquote>
 <div><p>K_Bk_y^2 &amp;=</p>
@@ -316,19 +407,22 @@ Kb_ky^2</p>
 Takes 6 seconds if cluster_df is provided (Polygons pre computed)
 So I probably don’t need to speed it up.
 but the multiprocessing is written for num_threads&gt;1 just in case.</p>
-<dl class="simple">
-<dt>Arguments:</dt><dd><p>crystal_stack: CrystalStack object
-savedir: directory for savefiles
-alpha: parameter to extract shape of domain, see Domain.make_domain()
-cluster_df: optional, backwards compatibility with cluster_dfs made by pytem.spatial_analysis.create_polygons()
-num_threads: integer, num_threads == 1 core does not use multiprocessing, else sets the number of cores used</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>crystal_stack</strong> – CrystalStack object</p></li>
+<li><p><strong>savedir</strong> – directory for savefiles</p></li>
+<li><p><strong>alpha</strong> – parameter to extract shape of domain, see Domain.make_domain()</p></li>
+<li><p><strong>cluster_df</strong> – optional, backwards compatibility with cluster_dfs made by pytem.spatial_analysis.create_polygons()</p></li>
+<li><p><strong>num_threads</strong> – integer, num_threads == 1 core does not use multiprocessing, else sets the number of cores used</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pytem.spatial.domain.DomainCollection.histogram_dtheta">
-<span class="sig-name descname"><span class="pre">histogram_dtheta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/domain.html#DomainCollection.histogram_dtheta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.domain.DomainCollection.histogram_dtheta" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">histogram_dtheta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/domain.html#DomainCollection.histogram_dtheta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
 <dd><p>Histograms the orientation change as a function of distance in the directions
 parallel and perpendicular to the nematic director of at the domain centroid</p>
 </dd></dl>
@@ -346,13 +440,17 @@ the expected value &lt;2cos^2(Delta       heta)-1&gt;</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pytem.spatial.domain.DomainCollection.plot_orientation_change">
-<span class="sig-name descname"><span class="pre">plot_orientation_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distances</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtheta_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtheta_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/domain.html#DomainCollection.plot_orientation_change"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.domain.DomainCollection.plot_orientation_change" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">plot_orientation_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distances</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtheta_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtheta_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/domain.html#DomainCollection.plot_orientation_change"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
 <dd><p>Plots the pdf of the probability $P(Delta      heta | r)$ in the directions parallel and perpendicular
 to the nematic director of the domain centroid.</p>
-<dl class="simple">
-<dt>Arguments:</dt><dd><p>distances: list of integer distances to plot
-dtheta_min, dtheta_max: int</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>distances</strong> – list of integer distances to plot</p></li>
+<li><p><strong>dtheta_min</strong> – int</p></li>
+<li><p><strong>dtheta_max</strong> – int</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -365,9 +463,9 @@ dtheta_min, dtheta_max: int</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pytem.spatial.domain.DomainCollection.save">
 <span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">savefile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/spatial/domain.html#DomainCollection.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.spatial.domain.DomainCollection.save" title="Link to this definition"></a></dt>
-<dd><p>Save as json. However, scipy.stats.distributions cannot be serialized, 
+<dd><p>Save as json. However, scipy.stats.distributions cannot be serialized,
 so DomainCollection.parallel_dtheta and DomainCollection.perpendicular_dtheta cannot be saved.
-Instead, we will only save _parallel_dtheta_values and _perpendicular_dtheta_values, 
+Instead, we will only save _parallel_dtheta_values and _perpendicular_dtheta_values,
 and the rv_histogram will be recreated upon loading</p>
 </dd></dl>
 
