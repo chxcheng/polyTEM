@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pytem.crystal_peaks.crystal_stack.CrystalStack &mdash; polyTEM 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pytem.crystal_peaks.crystal_stack.MultiCrystalStack" href="pytem.crystal_peaks.crystal_stack.MultiCrystalStack.html" />
+    <link rel="prev" title="pytem.crystal_peaks.crystal_stack.peak_distance" href="pytem.crystal_peaks.crystal_stack.peak_distance.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            polyTEM
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pytem.html">pytem</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pytem.cc_drift_correction.html">pytem.cc_drift_correction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.cc_reduce_data.html">pytem.cc_reduce_data</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="pytem.crystal_peaks.html">pytem.crystal_peaks</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="pytem.crystal_peaks.crystal_stack.html">pytem.crystal_peaks.crystal_stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.crystal_peaks.crystal_stack_3D.html">pytem.crystal_peaks.crystal_stack_3D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.crystal_peaks.director_fields.html">pytem.crystal_peaks.director_fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.crystal_peaks.flow_fields.html">pytem.crystal_peaks.flow_fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.crystal_peaks.vector_graph_utils.html">pytem.crystal_peaks.vector_graph_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.image.html">pytem.image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.paracrystalline.html">pytem.paracrystalline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.params.html">pytem.params</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.spatial.html">pytem.spatial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.spatial_analysis.html">pytem.spatial_analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.statistics.html">pytem.statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.tol_colors.html">pytem.tol_colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.utilities.html">pytem.utilities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">polyTEM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="pytem.html">pytem</a></li>
+          <li class="breadcrumb-item"><a href="pytem.crystal_peaks.html">pytem.crystal_peaks</a></li>
+          <li class="breadcrumb-item"><a href="pytem.crystal_peaks.crystal_stack.html">pytem.crystal_peaks.crystal_stack</a></li>
+      <li class="breadcrumb-item active">pytem.crystal_peaks.crystal_stack.CrystalStack</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/pytem.crystal_peaks.crystal_stack.CrystalStack.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pytem-crystal-peaks-crystal-stack-crystalstack">
+<h1>pytem.crystal_peaks.crystal_stack.CrystalStack<a class="headerlink" href="#pytem-crystal-peaks-crystal-stack-crystalstack" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.crystal_stack.</span></span><span class="sig-name descname"><span class="pre">CrystalStack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datacube</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hkl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Donor'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack.html#CrystalStack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>FFT peaks from HRTEM Image</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.q">
+<span class="sig-name descname"><span class="pre">q</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.q" title="Link to this definition"></a></dt>
+<dd><p>1/A</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.resolution">
+<span class="sig-name descname"><span class="pre">resolution</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.resolution" title="Link to this definition"></a></dt>
+<dd><p>nm/pxel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.outdir">
+<span class="sig-name descname"><span class="pre">outdir</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.outdir" title="Link to this definition"></a></dt>
+<dd><p>save directory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.hkl">
+<span class="sig-name descname"><span class="pre">hkl</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.hkl" title="Link to this definition"></a></dt>
+<dd><p>100, 010, 001 for lamellar, pi-pi, or backbone information</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.datacube">
+<span class="sig-name descname"><span class="pre">datacube</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.datacube" title="Link to this definition"></a></dt>
+<dd><p>sliding fft scan intensities</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.type_">
+<span class="sig-name descname"><span class="pre">type_</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.type_" title="Link to this definition"></a></dt>
+<dd><p>default ‘Donor’</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.sparse_peaks_mat">
+<span class="sig-name descname"><span class="pre">sparse_peaks_mat</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.sparse_peaks_mat" title="Link to this definition"></a></dt>
+<dd><p>one-hot matrix of location and orientation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sparse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.conditional_probability">
+<span class="sig-name descname"><span class="pre">conditional_probability</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.conditional_probability" title="Link to this definition"></a></dt>
+<dd><p>class containing Probability of orientation difference given distance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ConditionalProbability</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.ks_distmat">
+<span class="sig-name descname"><span class="pre">ks_distmat</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.ks_distmat" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.ks_dlist">
+<span class="sig-name descname"><span class="pre">ks_dlist</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.ks_dlist" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.ks_thetas">
+<span class="sig-name descname"><span class="pre">ks_thetas</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.ks_thetas" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.peaks_df">
+<span class="sig-name descname"><span class="pre">peaks_df</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.peaks_df" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack._threshold_function">
+<span class="sig-name descname"><span class="pre">_threshold_function</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack._threshold_function" title="Link to this definition"></a></dt>
+<dd><p>_threshold_1sigma</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack._plot_frequency">
+<span class="sig-name descname"><span class="pre">_plot_frequency</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack._plot_frequency" title="Link to this definition"></a></dt>
+<dd><p>20000</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack._peak_width_threshold">
+<span class="sig-name descname"><span class="pre">_peak_width_threshold</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack._peak_width_threshold" title="Link to this definition"></a></dt>
+<dd><p>5</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datacube</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hkl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Donor'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack.html#CrystalStack.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id0" title="pytem.crystal_peaks.crystal_stack.CrystalStack.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(img, datacube[, hkl, type_])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.apply_mask" title="pytem.crystal_peaks.crystal_stack.CrystalStack.apply_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_mask</span></code></a>(mask[, inplace])</p></td>
+<td><p>Apply (x,y) mask</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.compare_to_random" title="pytem.crystal_peaks.crystal_stack.CrystalStack.compare_to_random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compare_to_random</span></code></a>([reference, rand_stack, plot])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.conditional_prob" title="pytem.crystal_peaks.crystal_stack.CrystalStack.conditional_prob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conditional_prob</span></code></a>([threads, num_slices, ...])</p></td>
+<td><p>Calculate and/or plot Conditional Probability of misorientation given spatial distance R</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.get_clusters" title="pytem.crystal_peaks.crystal_stack.CrystalStack.get_clusters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_clusters</span></code></a>([min_cluster_size, ...])</p></td>
+<td><p>Cluster fft peaks to find crystalline domains using HDBSCAN</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.load" title="pytem.crystal_peaks.crystal_stack.CrystalStack.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>(filename)</p></td>
+<td><p>Load saved crystalstack</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.peaks_from_datacube" title="pytem.crystal_peaks.crystal_stack.CrystalStack.peaks_from_datacube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">peaks_from_datacube</span></code></a>([save, ...])</p></td>
+<td><p>Find fft peaks in datacube and records peak location,</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.plot_clusters" title="pytem.crystal_peaks.crystal_stack.CrystalStack.plot_clusters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_clusters</span></code></a>([confidence_threshold, ...])</p></td>
+<td><p><div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>DEPRECATE IN THE FUTURE. PREFERENCE FOR spatial.plot_polygons_df</p>
+</div>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.plot_overlap_angles" title="pytem.crystal_peaks.crystal_stack.CrystalStack.plot_overlap_angles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_overlap_angles</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.random" title="pytem.crystal_peaks.crystal_stack.CrystalStack.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>(n, dim, img)</p></td>
+<td><p>Generates a crystal stack with randomized peaks matrix, effectively generates a crystal stack with random orientation</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.save" title="pytem.crystal_peaks.crystal_stack.CrystalStack.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>([prefix, json])</p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">param prefix<span class="colon">:</span></dt>
+<dd class="field-odd"><p>save file &quot;[prefix]crystal_stack&quot;</p>
+</dd>
+</dl>
+</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.__annotations__">
+<span class="sig-name descname"><span class="pre">__annotations__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.__annotations__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'pytem.crystal_peaks.crystal_stack',</span> <span class="pre">'__doc__':</span> <span class="pre">&quot;\n</span>&#160;&#160;&#160; <span class="pre">FFT</span> <span class="pre">peaks</span> <span class="pre">from</span> <span class="pre">HRTEM</span> <span class="pre">Image\n</span>&#160;&#160;&#160; <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">Attributes:\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">q</span> <span class="pre">(float):</span> <span class="pre">1/A\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">resolution</span> <span class="pre">(float):</span> <span class="pre">nm/pxel\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">outdir</span> <span class="pre">(str):</span> <span class="pre">save</span> <span class="pre">directory\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">hkl</span> <span class="pre">(int):</span> <span class="pre">100,</span> <span class="pre">010,</span> <span class="pre">001</span> <span class="pre">for</span> <span class="pre">lamellar,</span> <span class="pre">pi-pi,</span> <span class="pre">or</span> <span class="pre">backbone</span> <span class="pre">information\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">datacube</span> <span class="pre">(np.ndarray):</span> <span class="pre">sliding</span> <span class="pre">fft</span> <span class="pre">scan</span> <span class="pre">intensities\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">type_:</span> <span class="pre">default</span> <span class="pre">'Donor'\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">sparse_peaks_mat</span> <span class="pre">(sparse):</span> <span class="pre">one-hot</span> <span class="pre">matrix</span> <span class="pre">of</span> <span class="pre">location</span> <span class="pre">and</span> <span class="pre">orientation</span> <span class="pre">\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">conditional_probability</span> <span class="pre">(ConditionalProbability):</span> <span class="pre">class</span> <span class="pre">containing</span> <span class="pre">Probability</span> <span class="pre">of</span> <span class="pre">orientation</span> <span class="pre">difference</span> <span class="pre">given</span> <span class="pre">distance\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">ks_distmat:\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">ks_dlist:\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">ks_thetas:\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">peaks_df</span> <span class="pre">(pd.Dataframe):\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">_threshold_function</span> <span class="pre">:</span> <span class="pre">_threshold_1sigma\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">_plot_frequency</span> <span class="pre">:</span> <span class="pre">20000\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">_peak_width_threshold</span> <span class="pre">:</span> <span class="pre">5\n</span>&#160;&#160;&#160; <span class="pre">&quot;,</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack.__init__&gt;,</span> <span class="pre">'peaks_from_datacube':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack.peaks_from_datacube&gt;,</span> <span class="pre">'load':</span> <span class="pre">&lt;classmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'save':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack.save&gt;,</span> <span class="pre">'plot_overlap_angles':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack.plot_overlap_angles&gt;,</span> <span class="pre">'conditional_prob':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack.conditional_prob&gt;,</span> <span class="pre">'get_clusters':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack.get_clusters&gt;,</span> <span class="pre">'plot_clusters':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack.plot_clusters&gt;,</span> <span class="pre">'compare_to_random':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack.compare_to_random&gt;,</span> <span class="pre">'random':</span> <span class="pre">&lt;classmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'apply_mask':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack.apply_mask&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'CrystalStack'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'CrystalStack'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.__dict__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datacube</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hkl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Donor'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack.html#CrystalStack.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'pytem.crystal_peaks.crystal_stack'</span></em><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.__module__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.apply_mask">
+<span class="sig-name descname"><span class="pre">apply_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack.html#CrystalStack.apply_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.apply_mask" title="Link to this definition"></a></dt>
+<dd><p>Apply (x,y) mask</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.compare_to_random">
+<span class="sig-name descname"><span class="pre">compare_to_random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rand_stack</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack.html#CrystalStack.compare_to_random"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.compare_to_random" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.conditional_prob">
+<span class="sig-name descname"><span class="pre">conditional_prob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_slices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calculate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack.html#CrystalStack.conditional_prob"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.conditional_prob" title="Link to this definition"></a></dt>
+<dd><p>Calculate and/or plot Conditional Probability of misorientation given spatial distance R</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>threads</strong> – int, number of multiprocessing cores to use</p></li>
+<li><p><strong>plot</strong> – bool, whether to plot</p></li>
+<li><p><strong>**kwargs</strong> – optional plotting keyword-arguments</p></li>
+<li><p><strong>plot_color</strong> – string</p></li>
+<li><p><strong>plot_dist_max</strong> – int</p></li>
+<li><p><strong>plot_th_max</strong> – int</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.get_clusters">
+<span class="sig-name descname"><span class="pre">get_clusters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_cluster_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster_selection_epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_reference_implementation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack.html#CrystalStack.get_clusters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.get_clusters" title="Link to this definition"></a></dt>
+<dd><p>Cluster fft peaks to find crystalline domains using HDBSCAN</p>
+<p>Saves cluster information as peaks_df attribute.
+see HDBSCAN documentation for more description on parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_cluster_size</strong> (<em>int</em>) – </p></li>
+<li><p><strong>min_samples</strong> (<em>int</em>) – in order to be considered a cluster</p></li>
+<li><p><strong>cluster_selection_epsilon</strong> – </p></li>
+<li><p><strong>match_reference_implementation</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>plot</strong> (<em>bool</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack.html#CrystalStack.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.load" title="Link to this definition"></a></dt>
+<dd><p>Load saved crystalstack</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – ends in extension .str or .pkl</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>CrystalStack object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.peaks_from_datacube">
+<span class="sig-name descname"><span class="pre">peaks_from_datacube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_overlap_angles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_figures</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack.html#CrystalStack.peaks_from_datacube"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.peaks_from_datacube" title="Link to this definition"></a></dt>
+<dd><p>Find fft peaks in datacube and records peak location,</p>
+<p>saved to CrystalStack.sparse_peaks_mat as a sparse one-hot matrix of (x,y,theta)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.plot_clusters">
+<span class="sig-name descname"><span class="pre">plot_clusters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">confidence_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probabilities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack.html#CrystalStack.plot_clusters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.plot_clusters" title="Link to this definition"></a></dt>
+<dd><div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>DEPRECATE IN THE FUTURE. PREFERENCE FOR spatial.plot_polygons_df</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.plot_overlap_angles">
+<span class="sig-name descname"><span class="pre">plot_overlap_angles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack.html#CrystalStack.plot_overlap_angles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.plot_overlap_angles" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.random">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack.html#CrystalStack.random"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.random" title="Link to this definition"></a></dt>
+<dd><p>Generates a crystal stack with randomized peaks matrix,
+effectively generates a crystal stack with random orientation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack.CrystalStack.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack.html#CrystalStack.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack.CrystalStack.save" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prefix</strong> (<em>str</em>) – save file “[prefix]crystal_stack”</p></li>
+<li><p><strong>json</strong> (<em>bool</em>) – if True, save as .json, else save as .pkl</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pytem.crystal_peaks.crystal_stack.peak_distance.html" class="btn btn-neutral float-left" title="pytem.crystal_peaks.crystal_stack.peak_distance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pytem.crystal_peaks.crystal_stack.MultiCrystalStack.html" class="btn btn-neutral float-right" title="pytem.crystal_peaks.crystal_stack.MultiCrystalStack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Christina Cheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

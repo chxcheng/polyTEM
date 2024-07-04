@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pytem.statistics.get_deltath_hist &mdash; polyTEM 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pytem.statistics.get_kstest" href="pytem.statistics.get_kstest.html" />
+    <link rel="prev" title="pytem.statistics.fisher_z" href="pytem.statistics.fisher_z.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            polyTEM
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pytem.html">pytem</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pytem.cc_drift_correction.html">pytem.cc_drift_correction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.cc_reduce_data.html">pytem.cc_reduce_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.crystal_peaks.html">pytem.crystal_peaks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.image.html">pytem.image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.paracrystalline.html">pytem.paracrystalline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.params.html">pytem.params</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.spatial.html">pytem.spatial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.spatial_analysis.html">pytem.spatial_analysis</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="pytem.statistics.html">pytem.statistics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.decay_length.html">pytem.statistics.decay_length</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.decay_length_means.html">pytem.statistics.decay_length_means</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.fisher_z.html">pytem.statistics.fisher_z</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">pytem.statistics.get_deltath_hist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.get_kstest.html">pytem.statistics.get_kstest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.get_spatial_df.html">pytem.statistics.get_spatial_df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.get_stack_list.html">pytem.statistics.get_stack_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.match_stack_lists.html">pytem.statistics.match_stack_lists</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.overlap_density.html">pytem.statistics.overlap_density</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.plot_xcorr.html">pytem.statistics.plot_xcorr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.remove_outliers.html">pytem.statistics.remove_outliers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.xcorr_linecuts.html">pytem.statistics.xcorr_linecuts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.xcorr_slow.html">pytem.statistics.xcorr_slow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.z_test.html">pytem.statistics.z_test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics._ksdist"><code class="docutils literal notranslate"><span class="pre">_ksdist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics._mp_df_func"><code class="docutils literal notranslate"><span class="pre">_mp_df_func()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics.decay_length"><code class="docutils literal notranslate"><span class="pre">decay_length()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics.decay_length_means"><code class="docutils literal notranslate"><span class="pre">decay_length_means()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics.fisher_z"><code class="docutils literal notranslate"><span class="pre">fisher_z()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics.get_deltath_hist"><code class="docutils literal notranslate"><span class="pre">get_deltath_hist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics.get_kstest"><code class="docutils literal notranslate"><span class="pre">get_kstest()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics.get_spatial_df"><code class="docutils literal notranslate"><span class="pre">get_spatial_df()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics.get_stack_list"><code class="docutils literal notranslate"><span class="pre">get_stack_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics.match_stack_lists"><code class="docutils literal notranslate"><span class="pre">match_stack_lists()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics.overlap_density"><code class="docutils literal notranslate"><span class="pre">overlap_density()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics.plot_xcorr"><code class="docutils literal notranslate"><span class="pre">plot_xcorr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics.remove_outliers"><code class="docutils literal notranslate"><span class="pre">remove_outliers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics.xcorr_linecuts"><code class="docutils literal notranslate"><span class="pre">xcorr_linecuts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics.xcorr_slow"><code class="docutils literal notranslate"><span class="pre">xcorr_slow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.statistics.html#pytem.statistics.z_test"><code class="docutils literal notranslate"><span class="pre">z_test()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.tol_colors.html">pytem.tol_colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.utilities.html">pytem.utilities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">polyTEM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="pytem.html">pytem</a></li>
+          <li class="breadcrumb-item"><a href="pytem.statistics.html">pytem.statistics</a></li>
+      <li class="breadcrumb-item active">pytem.statistics.get_deltath_hist</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/pytem.statistics.get_deltath_hist.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pytem-statistics-get-deltath-hist">
+<h1>pytem.statistics.get_deltath_hist<a class="headerlink" href="#pytem-statistics-get-deltath-hist" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="pytem.statistics.get_deltath_hist">
+<span class="sig-prename descclassname"><span class="pre">pytem.statistics.</span></span><span class="sig-name descname"><span class="pre">get_deltath_hist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/statistics.html#get_deltath_hist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.statistics.get_deltath_hist" title="Link to this definition"></a></dt>
+<dd><p>Process and Plot the AngleOverlap histogram
+INPUTS
+filename = .csv output of the AngleOverlap.py script
+—
+OUTPUTS
+delta_th_df = dataframe</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pytem.statistics.fisher_z.html" class="btn btn-neutral float-left" title="pytem.statistics.fisher_z" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pytem.statistics.get_kstest.html" class="btn btn-neutral float-right" title="pytem.statistics.get_kstest" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Christina Cheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

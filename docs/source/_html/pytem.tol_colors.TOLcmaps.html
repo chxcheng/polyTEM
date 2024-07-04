@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pytem.tol_colors.TOLcmaps &mdash; polyTEM 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pytem.utilities" href="pytem.utilities.html" />
+    <link rel="prev" title="pytem.tol_colors.tol_cset" href="pytem.tol_colors.tol_cset.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            polyTEM
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pytem.html">pytem</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pytem.cc_drift_correction.html">pytem.cc_drift_correction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.cc_reduce_data.html">pytem.cc_reduce_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.crystal_peaks.html">pytem.crystal_peaks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.image.html">pytem.image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.paracrystalline.html">pytem.paracrystalline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.params.html">pytem.params</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.spatial.html">pytem.spatial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.spatial_analysis.html">pytem.spatial_analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.statistics.html">pytem.statistics</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="pytem.tol_colors.html">pytem.tol_colors</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pytem.tol_colors.discretemap.html">pytem.tol_colors.discretemap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.tol_colors.main.html">pytem.tol_colors.main</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.tol_colors.tol_cmap.html">pytem.tol_colors.tol_cmap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.tol_colors.tol_cset.html">pytem.tol_colors.tol_cset</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">pytem.tol_colors.TOLcmaps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.tol_colors.html#pytem.tol_colors.TOLcmaps"><code class="docutils literal notranslate"><span class="pre">TOLcmaps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.tol_colors.html#pytem.tol_colors.discretemap"><code class="docutils literal notranslate"><span class="pre">discretemap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.tol_colors.html#pytem.tol_colors.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.tol_colors.html#pytem.tol_colors.tol_cmap"><code class="docutils literal notranslate"><span class="pre">tol_cmap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytem.tol_colors.html#pytem.tol_colors.tol_cset"><code class="docutils literal notranslate"><span class="pre">tol_cset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.utilities.html">pytem.utilities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">polyTEM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="pytem.html">pytem</a></li>
+          <li class="breadcrumb-item"><a href="pytem.tol_colors.html">pytem.tol_colors</a></li>
+      <li class="breadcrumb-item active">pytem.tol_colors.TOLcmaps</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/pytem.tol_colors.TOLcmaps.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pytem-tol-colors-tolcmaps">
+<h1>pytem.tol_colors.TOLcmaps<a class="headerlink" href="#pytem-tol-colors-tolcmaps" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pytem.tol_colors.</span></span><span class="sig-name descname"><span class="pre">TOLcmaps</span></span><a class="reference internal" href="../_modules/pytem/tol_colors.html#TOLcmaps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.tol_colors.TOLcmaps" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class TOLcmaps definition.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/tol_colors.html#TOLcmaps.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id0" title="pytem.tol_colors.TOLcmaps.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pytem.tol_colors.TOLcmaps.get" title="pytem.tol_colors.TOLcmaps.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>([cname, lut])</p></td>
+<td><p>Return requested colormap, default is 'rainbow_PuRd'.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pytem.tol_colors.TOLcmaps.show" title="pytem.tol_colors.TOLcmaps.show"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show</span></code></a>()</p></td>
+<td><p>List names of defined colormaps.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__BuRd">
+<span class="sig-name descname"><span class="pre">__BuRd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__BuRd" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘BuRd’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__BuRd_discrete">
+<span class="sig-name descname"><span class="pre">__BuRd_discrete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__BuRd_discrete" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘BuRd_discrete’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__PRGn">
+<span class="sig-name descname"><span class="pre">__PRGn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__PRGn" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘PRGn’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__PRGn_discrete">
+<span class="sig-name descname"><span class="pre">__PRGn_discrete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__PRGn_discrete" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘PRGn_discrete’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__WhOrBr">
+<span class="sig-name descname"><span class="pre">__WhOrBr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__WhOrBr" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘WhOrBr’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__YlOrBr">
+<span class="sig-name descname"><span class="pre">__YlOrBr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__YlOrBr" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘YlOrBr’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__YlOrBr_discrete">
+<span class="sig-name descname"><span class="pre">__YlOrBr_discrete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__YlOrBr_discrete" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘YlOrBr_discrete’.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__annotations__">
+<span class="sig-name descname"><span class="pre">__annotations__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__annotations__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'pytem.tol_colors',</span> <span class="pre">'__doc__':</span> <span class="pre">'\n</span>&#160;&#160;&#160; <span class="pre">Class</span> <span class="pre">TOLcmaps</span> <span class="pre">definition.\n</span>&#160;&#160;&#160; <span class="pre">',</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__init__&gt;,</span> <span class="pre">'_TOLcmaps__sunset_discrete':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__sunset_discrete&gt;,</span> <span class="pre">'_TOLcmaps__sunset':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__sunset&gt;,</span> <span class="pre">'_TOLcmaps__nightfall_discrete':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__nightfall_discrete&gt;,</span> <span class="pre">'_TOLcmaps__nightfall':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__nightfall&gt;,</span> <span class="pre">'_TOLcmaps__BuRd_discrete':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__BuRd_discrete&gt;,</span> <span class="pre">'_TOLcmaps__BuRd':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__BuRd&gt;,</span> <span class="pre">'_TOLcmaps__PRGn_discrete':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__PRGn_discrete&gt;,</span> <span class="pre">'_TOLcmaps__PRGn':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__PRGn&gt;,</span> <span class="pre">'_TOLcmaps__YlOrBr_discrete':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__YlOrBr_discrete&gt;,</span> <span class="pre">'_TOLcmaps__YlOrBr':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__YlOrBr&gt;,</span> <span class="pre">'_TOLcmaps__WhOrBr':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__WhOrBr&gt;,</span> <span class="pre">'_TOLcmaps__iridescent':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__iridescent&gt;,</span> <span class="pre">'_TOLcmaps__rainbow_PuRd':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__rainbow_PuRd&gt;,</span> <span class="pre">'_TOLcmaps__rainbow_PuBr':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__rainbow_PuBr&gt;,</span> <span class="pre">'_TOLcmaps__rainbow_WhRd':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__rainbow_WhRd&gt;,</span> <span class="pre">'_TOLcmaps__rainbow_WhBr':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__rainbow_WhBr&gt;,</span> <span class="pre">'_TOLcmaps__rainbow_discrete':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.__rainbow_discrete&gt;,</span> <span class="pre">'show':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.show&gt;,</span> <span class="pre">'get':</span> <span class="pre">&lt;function</span> <span class="pre">TOLcmaps.get&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'TOLcmaps'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'TOLcmaps'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__dict__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/tol_colors.html#TOLcmaps.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__iridescent">
+<span class="sig-name descname"><span class="pre">__iridescent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__iridescent" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘iridescent’.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'pytem.tol_colors'</span></em><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__module__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__nightfall">
+<span class="sig-name descname"><span class="pre">__nightfall</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__nightfall" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘nightfall’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__nightfall_discrete">
+<span class="sig-name descname"><span class="pre">__nightfall_discrete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__nightfall_discrete" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘nighfall_discrete’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__rainbow_PuBr">
+<span class="sig-name descname"><span class="pre">__rainbow_PuBr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__rainbow_PuBr" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘rainbow_PuBr’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__rainbow_PuRd">
+<span class="sig-name descname"><span class="pre">__rainbow_PuRd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__rainbow_PuRd" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘rainbow_PuRd’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__rainbow_WhBr">
+<span class="sig-name descname"><span class="pre">__rainbow_WhBr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__rainbow_WhBr" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘rainbow_WhBr’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__rainbow_WhRd">
+<span class="sig-name descname"><span class="pre">__rainbow_WhRd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__rainbow_WhRd" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘rainbow_WhRd’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__rainbow_discrete">
+<span class="sig-name descname"><span class="pre">__rainbow_discrete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__rainbow_discrete" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘rainbow_discrete’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__sunset">
+<span class="sig-name descname"><span class="pre">__sunset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__sunset" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘sunset’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.__sunset_discrete">
+<span class="sig-name descname"><span class="pre">__sunset_discrete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.__sunset_discrete" title="Link to this definition"></a></dt>
+<dd><p>Define colormap ‘sunset_discrete’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rainbow_PuRd'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/tol_colors.html#TOLcmaps.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.get" title="Link to this definition"></a></dt>
+<dd><p>Return requested colormap, default is ‘rainbow_PuRd’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pytem.tol_colors.TOLcmaps.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/tol_colors.html#TOLcmaps.show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.tol_colors.TOLcmaps.show" title="Link to this definition"></a></dt>
+<dd><p>List names of defined colormaps.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pytem.tol_colors.tol_cset.html" class="btn btn-neutral float-left" title="pytem.tol_colors.tol_cset" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pytem.utilities.html" class="btn btn-neutral float-right" title="pytem.utilities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Christina Cheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
