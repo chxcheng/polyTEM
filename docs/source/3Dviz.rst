@@ -17,6 +17,6 @@ The embedded visualization may take up to 2 minutes to load.
 
 .. raw:: html
 
-   <iframe src="_static/S0_corner_streamplot_full.html" id="plotly3D" style="border:none; width: 100%; height: 100vh"></iframe>
+   <iframe src="https://media.githubusercontent.com/media/chxcheng/polyTEM/main/docs/source/_static/S0_corner_streamplot_full.html" id="plotly3D" style="border:none; width: 100%; height: 100vh"></iframe>
 
 
