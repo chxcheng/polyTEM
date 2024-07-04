@@ -44,8 +44,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+              <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="pytem.html">pytem</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="pytem.cc_drift_correction.html">pytem.cc_drift_correction</a></li>
@@ -113,99 +112,66 @@
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.html#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D" title="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CrystalStack3D</span></code></a>(stack_list, tilt_angles, ...)</p></td>
-<td><p>Assumptions</p></td>
+<td><p>Assumptions: * the sample datacube parameters were used to generate each of the crystal stacks.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py class">
 <dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pytem.crystal_peaks.crystal_stack_3D.</span></span><span class="sig-name descname"><span class="pre">CrystalStack3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stack_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tilt_angles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain_collections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_populate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orient_perpendicular</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytem/crystal_peaks/crystal_stack_3D.html#CrystalStack3D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D" title="Link to this definition"></a></dt>
-<dd><p>Assumptions
-–
+<dd><p>Assumptions:
 * the sample datacube parameters were used to generate each of the crystal stacks. Thus, the resolution and shape is the same.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.stack_list">
 <span class="sig-name descname"><span class="pre">stack_list</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.stack_list" title="Link to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list of crystal stacks</p>
-</dd>
-</dl>
+<dd><p>list of crystal stacks</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.tilt_angles">
 <span class="sig-name descname"><span class="pre">tilt_angles</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.tilt_angles" title="Link to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list of  tilt angles corresponding to each stack in stack_list</p>
-</dd>
-</dl>
+<dd><p>list of  tilt angles corresponding to each stack in stack_list</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.domain_collections">
 <span class="sig-name descname"><span class="pre">domain_collections</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.domain_collections" title="Link to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list of DomainCollections correspond to each stack in stack_list</p>
-</dd>
-</dl>
+<dd><p>list of DomainCollections correspond to each stack in stack_list</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.shape">
 <span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.shape" title="Link to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>(x,y) shape</p>
-</dd>
-</dl>
+<dd><p>(x,y) shape</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.resolution">
 <span class="sig-name descname"><span class="pre">resolution</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.resolution" title="Link to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>resolution of tilt stack (afer sliding fft)</p>
-</dd>
-</dl>
+<dd><p>resolution of tilt stack (afer sliding fft)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.vector_field">
 <span class="sig-name descname"><span class="pre">vector_field</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.vector_field" title="Link to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>each row is from one fft peak and contains (x,y,a,b,c) for vector field direction</p>
-</dd>
-</dl>
+<dd><p>each row is from one fft peak and contains (x,y,a,b,c) for vector field direction</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.threshold_func">
 <span class="sig-name descname"><span class="pre">threshold_func</span></span><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.threshold_func" title="Link to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>function for peak finding</p>
-</dd>
-</dl>
+<dd><p>function for peak finding</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">Kb,</span> <span class="pre">Ks</span></span></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Frank Elastic Constants in Angstroms</p>
-</dd>
-</dl>
+<dd><p>Frank Elastic Constants in Angstroms</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.__dict__">
-<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'pytem.crystal_peaks.crystal_stack_3D',</span> <span class="pre">'__doc__':</span> <span class="pre">'\n</span>&#160;&#160;&#160; <span class="pre">Assumptions\n</span>&#160;&#160;&#160; <span class="pre">--\n</span>&#160;&#160;&#160; <span class="pre">*</span> <span class="pre">the</span> <span class="pre">sample</span> <span class="pre">datacube</span> <span class="pre">parameters</span> <span class="pre">were</span> <span class="pre">used</span> <span class="pre">to</span> <span class="pre">generate</span> <span class="pre">each</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">crystal</span> <span class="pre">stacks.</span> <span class="pre">Thus,</span> <span class="pre">the</span> <span class="pre">resolution</span> <span class="pre">and</span> <span class="pre">shape</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">same.\n</span>&#160;&#160;&#160; <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">Attributes\n</span>&#160;&#160;&#160; <span class="pre">--\n</span>&#160;&#160;&#160; <span class="pre">stack_list:</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">crystal</span> <span class="pre">stacks\n</span>&#160;&#160;&#160; <span class="pre">tilt_angles:</span> <span class="pre">list</span> <span class="pre">of</span>&#160; <span class="pre">tilt</span> <span class="pre">angles</span> <span class="pre">corresponding</span> <span class="pre">to</span> <span class="pre">each</span> <span class="pre">stack</span> <span class="pre">in</span> <span class="pre">stack_list\n</span>&#160;&#160;&#160; <span class="pre">domain_collections:</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">DomainCollections</span> <span class="pre">correspond</span> <span class="pre">to</span> <span class="pre">each</span> <span class="pre">stack</span> <span class="pre">in</span> <span class="pre">stack_list\n</span>&#160;&#160;&#160; <span class="pre">shape:</span> <span class="pre">(x,y)</span> <span class="pre">shape</span> <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">resolution:</span> <span class="pre">resolution</span> <span class="pre">of</span> <span class="pre">tilt</span> <span class="pre">stack</span> <span class="pre">(afer</span> <span class="pre">sliding</span> <span class="pre">fft)\n</span>&#160;&#160;&#160; <span class="pre">vector_field:</span> <span class="pre">each</span> <span class="pre">row</span> <span class="pre">is</span> <span class="pre">from</span> <span class="pre">one</span> <span class="pre">fft</span> <span class="pre">peak</span> <span class="pre">and</span> <span class="pre">contains</span> <span class="pre">(x,y,a,b,c)</span> <span class="pre">for</span> <span class="pre">vector</span> <span class="pre">field</span> <span class="pre">direction\n</span>&#160;&#160;&#160; <span class="pre">threshold_func:</span> <span class="pre">function</span> <span class="pre">for</span> <span class="pre">peak</span> <span class="pre">finding\n</span>&#160;&#160;&#160; <span class="pre">Kb,</span> <span class="pre">Ks:</span> <span class="pre">Frank</span> <span class="pre">Elastic</span> <span class="pre">Constants</span> <span class="pre">in</span> <span class="pre">Angstroms\n</span>&#160;&#160;&#160; <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">',</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.__init__&gt;,</span> <span class="pre">'save':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.save&gt;,</span> <span class="pre">'load':</span> <span class="pre">&lt;classmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'create_vector_field':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.create_vector_field&gt;,</span> <span class="pre">'align_vector_field':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.align_vector_field&gt;,</span> <span class="pre">'find_peak_threshold':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.find_peak_threshold&gt;,</span> <span class="pre">'apply_threshold_func':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.apply_threshold_func&gt;,</span> <span class="pre">'estimate_bending_stiffness':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.estimate_bending_stiffness&gt;,</span> <span class="pre">'adjacency_probability_matrix':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.adjacency_probability_matrix&gt;,</span> <span class="pre">'build_vector_graph':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.build_vector_graph&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'CrystalStack3D'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'CrystalStack3D'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.__dict__" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'pytem.crystal_peaks.crystal_stack_3D',</span> <span class="pre">'__doc__':</span> <span class="pre">'\n</span>&#160;&#160;&#160; <span class="pre">Assumptions:\n</span>&#160;&#160;&#160; <span class="pre">*</span> <span class="pre">the</span> <span class="pre">sample</span> <span class="pre">datacube</span> <span class="pre">parameters</span> <span class="pre">were</span> <span class="pre">used</span> <span class="pre">to</span> <span class="pre">generate</span> <span class="pre">each</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">crystal</span> <span class="pre">stacks.</span> <span class="pre">Thus,</span> <span class="pre">the</span> <span class="pre">resolution</span> <span class="pre">and</span> <span class="pre">shape</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">same.\n</span>&#160;&#160;&#160; <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">Attributes:\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">stack_list:</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">crystal</span> <span class="pre">stacks\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">tilt_angles:</span> <span class="pre">list</span> <span class="pre">of</span>&#160; <span class="pre">tilt</span> <span class="pre">angles</span> <span class="pre">corresponding</span> <span class="pre">to</span> <span class="pre">each</span> <span class="pre">stack</span> <span class="pre">in</span> <span class="pre">stack_list\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">domain_collections:</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">DomainCollections</span> <span class="pre">correspond</span> <span class="pre">to</span> <span class="pre">each</span> <span class="pre">stack</span> <span class="pre">in</span> <span class="pre">stack_list\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">shape:</span> <span class="pre">(x,y)</span> <span class="pre">shape</span> <span class="pre">\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">resolution:</span> <span class="pre">resolution</span> <span class="pre">of</span> <span class="pre">tilt</span> <span class="pre">stack</span> <span class="pre">(afer</span> <span class="pre">sliding</span> <span class="pre">fft)\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">vector_field:</span> <span class="pre">each</span> <span class="pre">row</span> <span class="pre">is</span> <span class="pre">from</span> <span class="pre">one</span> <span class="pre">fft</span> <span class="pre">peak</span> <span class="pre">and</span> <span class="pre">contains</span> <span class="pre">(x,y,a,b,c)</span> <span class="pre">for</span> <span class="pre">vector</span> <span class="pre">field</span> <span class="pre">direction\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">threshold_func:</span> <span class="pre">function</span> <span class="pre">for</span> <span class="pre">peak</span> <span class="pre">finding\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Kb,</span> <span class="pre">Ks:</span> <span class="pre">Frank</span> <span class="pre">Elastic</span> <span class="pre">Constants</span> <span class="pre">in</span> <span class="pre">Angstroms\n</span>&#160;&#160;&#160; <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">',</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.__init__&gt;,</span> <span class="pre">'save':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.save&gt;,</span> <span class="pre">'load':</span> <span class="pre">&lt;classmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'create_vector_field':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.create_vector_field&gt;,</span> <span class="pre">'align_vector_field':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.align_vector_field&gt;,</span> <span class="pre">'find_peak_threshold':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.find_peak_threshold&gt;,</span> <span class="pre">'apply_threshold_func':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.apply_threshold_func&gt;,</span> <span class="pre">'estimate_bending_stiffness':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.estimate_bending_stiffness&gt;,</span> <span class="pre">'adjacency_probability_matrix':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.adjacency_probability_matrix&gt;,</span> <span class="pre">'build_vector_graph':</span> <span class="pre">&lt;function</span> <span class="pre">CrystalStack3D.build_vector_graph&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'CrystalStack3D'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'CrystalStack3D'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#pytem.crystal_peaks.crystal_stack_3D.CrystalStack3D.__dict__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
