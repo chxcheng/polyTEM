@@ -1,7 +1,11 @@
 API
 ===
 
+.. Note::
+    Package is in active development! Not all functionality is fully documented
+
 Link to package documentation:
+
 .. raw:: html
 
     
