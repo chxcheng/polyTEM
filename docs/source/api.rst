@@ -8,6 +8,7 @@ Package originally privately written as **pyTEM**, but will be published as **po
 so as to not overlap with a separate package available on python.
 
 .. raw:: html
+    
     <a class="reference internal" href="generated_api/pytem.html">pytem</a>
     <br>
     <br>
