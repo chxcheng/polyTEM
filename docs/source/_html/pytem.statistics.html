@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pytem.statistics &mdash; pyTEM 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pytem.tol_colors" href="pytem.tol_colors.html" />
+    <link rel="prev" title="pytem.spatial_analysis" href="pytem.spatial_analysis.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pyTEM
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pytem.html">pytem</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pytem.cc_drift_correction.html">pytem.cc_drift_correction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.cc_reduce_data.html">pytem.cc_reduce_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.crystal_peaks.html">pytem.crystal_peaks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.image.html">pytem.image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.paracrystalline.html">pytem.paracrystalline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.params.html">pytem.params</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.spatial.html">pytem.spatial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.spatial_analysis.html">pytem.spatial_analysis</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">pytem.statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.tol_colors.html">pytem.tol_colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytem.utilities.html">pytem.utilities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyTEM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="pytem.html">pytem</a></li>
+      <li class="breadcrumb-item active">pytem.statistics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/pytem.statistics.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pytem.statistics">
+<span id="pytem-statistics"></span><h1>pytem.statistics<a class="headerlink" href="#module-pytem.statistics" title="Link to this heading"></a></h1>
+<p>These functions are used to help with bulk analysis of crystal stacks</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">decay_length</span></code>(expected_vals, distances[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">decay_length_means</span></code>(expected_val_list, distances)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fisher_z</span></code>(rho)</p></td>
+<td><p>Fisher Z Transform turns pearson correlation coefficient r into a normally distributed z value, such that z = arctanh(r) with mean 0.5*np.log((1+rho)/(1-rho)) and stderr 1/np.sqrt(N-3) INPUTS: rho = np.ndarray of correlation coefficients</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_deltath_hist</span></code>(filename[, plot, fig, axs])</p></td>
+<td><p>Process and Plot the AngleOverlap histogram INPUTS filename = .csv output of the AngleOverlap.py script --- OUTPUTS delta_th_df = dataframe</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_kstest</span></code>(stack_list[, reference, plot])</p></td>
+<td><p>retrieves Kolmogorov-smirnov test D-value against all distances for each stack in stack_list -- INPUTS stack_list = list of crystal stacks OUTPUTS kstest_list[sample][d_value_list] = list of all the ks_dvalues kstest_thetas[sample,distance] = theta with the largest CDF difference from uniform</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_spatial_df</span></code>(stack_list)</p></td>
+<td><p>Uses multiprocessing to run function multiprocessing_df_func, which performs spatial analysis on each stack.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stack_list</span></code>(filenames_list[, num_threads])</p></td>
+<td><p>Use multiprocessing to load stacks from filenames helps reduce time for large datasets</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match_stack_lists</span></code>(stack_list1[, stack_list2])</p></td>
+<td><p>arbitrary CrystalStackLists may not having matching lengths and matching image orders.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">overlap_density</span></code>(stack_list1, stack_list2[, ...])</p></td>
+<td><p>Compares overlap density of CrystalStacks peaks.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_xcorr</span></code>(xc_array[, dtheta, resolution, ...])</p></td>
+<td><p>plotting function for cross correlation</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_outliers</span></code>(data, col[, method])</p></td>
+<td><p>removes outliers from pandas database using method input INPUT: data = pandas dataframe col = string of column name method = 'IQR', data more than 1.5*IQR outside the IQR are considered outliers. 'mean', data more than 4 standard deviations from the mean are considered outliers.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">xcorr_linecuts</span></code>(arr, max_d)</p></td>
+<td><p>Outputs the radial lineout of average correlation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">xcorr_slow</span></code>(stack_list1[, stack_list2, ...])</p></td>
+<td><p>Across many samples, performs crosscorrelation of two 3-D datacubes that originate from the same sample. First, checks that the datasets come match sample name Second, perform crosscorrelation (convolution of the datacubes) using scipy.signal.correlate This method is slow, tqdm will print progress -- INPUT stack_list1: List of CrystalStack instances stack_list2: List of CrystalStack instances, if not inputted, then perform autocorrelation instead -- OUTPUT xc_array: 4-D array of shape (len(matches), size[0]*2 - 1, size[1]*2 - 1, size[2]*2-1)              that represents (sample, lagx, lagy, lag_theta), centered around 0 lag --- KNOWN BUGS This uses A LOT of RAM space Takes about 5 seconds per pair of images.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">z_test</span></code>(x, y)</p></td>
+<td><p>Standard Z-Statistic test Critical Z for p=0.01 is 2.33</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pytem.spatial_analysis.html" class="btn btn-neutral float-left" title="pytem.spatial_analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pytem.tol_colors.html" class="btn btn-neutral float-right" title="pytem.tol_colors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Christina Cheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
