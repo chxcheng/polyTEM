@@ -1,7 +1,7 @@
 polyTEM
 ===================================
 
-**polyTEM**is a Python library for analyzing HRTEM images of polymeric materials. 
+**polyTEM** is a Python library for analyzing HRTEM images of polymeric materials. 
 polyTEM handles CTF correct, image frame drift correction, backbone chain orientation, 
 domain clustering, and statistical analysis of 2D images.
 
