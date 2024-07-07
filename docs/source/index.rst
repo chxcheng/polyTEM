@@ -12,6 +12,13 @@ domain clustering, and statistical analysis of 2D images.
    available to demonstrate the working applications of this package. 
    Version-controlled source code will be released as manuscripts are published.
 
+.. toctree::
+
+   usage
+   api
+   3D visualization <3Dviz>
+
+
 
 References
 ------------
@@ -38,9 +45,3 @@ Camila Cendra, and Luke Balhorn.
 
 
 
-
-.. toctree::
-
-   usage
-   api
-   3D visualization <3Dviz>
