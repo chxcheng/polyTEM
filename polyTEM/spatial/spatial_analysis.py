@@ -13,12 +13,6 @@ from shapely import affinity
 import geopandas as gpd
 import multiprocessing as mp
 
-from libpysal import weights
-import esda
-import splot
-from splot.esda import plot_moran, moran_scatterplot
-
-import rasterio.features
 import scipy.ndimage as ndimage
 import torch
 from tqdm.auto import tqdm
