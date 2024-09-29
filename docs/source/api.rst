@@ -7,11 +7,9 @@ API
 Package originally privately written as **pyTEM**, but will be published as **polyTEM**
 so as to not overlap with a separate package available on python.
 
-.. raw:: html
-    
-    <a class="reference internal" href="generated_api/pytem.html">pytem</a>
-    <br>
-    <br>
+.. autosummary::
+   :toctree: generated
+   :template: custom-module-template.rst
+   :recursive:
 
-
-
+   pytem
