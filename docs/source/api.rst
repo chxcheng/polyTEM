@@ -12,4 +12,4 @@ so as to not overlap with a separate package available on python.
    :template: custom-module-template.rst
    :recursive:
 
-   pytem
+   polytem
