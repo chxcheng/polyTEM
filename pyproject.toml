@@ -21,7 +21,7 @@ dependencies = [
     "lmfit>=1.2",
     "mrcfile>=1.4",
     "matplotlib>=3.6",
-    "numpy>=2.0"
+    "numpy>=2.0",
     "scipy>=1.10",
     "tqdm",
     "scikit-image>=0.19",
