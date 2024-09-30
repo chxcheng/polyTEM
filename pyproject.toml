@@ -1,0 +1,13 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "polyTEM"
+authors = [{name = "Christina Cheng", email = "chxcheng@stanford.edu"}]
+requires-python = ">= 3.9"
+dynamic = ["version", "description"]
+classifiers = [
+    "Private :: Do Not Upload",
+]
+    
