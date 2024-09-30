@@ -25,7 +25,7 @@ dependencies = [
     "scipy>=1.10",
     "tqdm",
     "scikit-image>=0.19",
-    "multiprocess>=0.70"
+    "multiprocess>=0.70",
     "sparse>=0.13",
     "seaborn>=0.12",
     "hdbscan>=0.8",
