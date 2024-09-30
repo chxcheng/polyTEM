@@ -32,4 +32,8 @@ dependencies = [
     "dill>=0.3",
     "jsonpickle>=3.0"
 ]
+
+[project.urls]
+Documentation = "https://polytem.readthedocs.io/en/latest/"
+Source = "https://github.com/chxcheng/polyTEM"
     
