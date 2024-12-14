@@ -24,9 +24,9 @@ import torch
 from tqdm.auto import tqdm
 from scipy.signal import find_peaks
 
-from pytem.crystal_peaks._process_datacube import _extend_signal, _remove_duplicates
-from pytem.crystal_peaks import crystal_stack as peaks
-from pytem import utilities
+from ..crystal_peaks._process_datacube import _extend_signal, _remove_duplicates
+from ..crystal_peaks import crystal_stack as peaks
+from .. import utilities
 
 import warnings
 from shapely.errors import ShapelyDeprecationWarning

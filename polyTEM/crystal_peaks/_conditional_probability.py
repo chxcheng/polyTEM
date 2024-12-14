@@ -4,7 +4,7 @@ import sparse
 import multiprocessing as mp
 import builtins
 import matplotlib.pyplot as plt
-from pytem import spatial
+from .. import spatial
 from scipy.stats import rv_discrete
 import logging
 
