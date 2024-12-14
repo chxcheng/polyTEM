@@ -28,14 +28,15 @@ Advanced Materials, 2024 (submitted).
 
 If you use this package for 2D Analysis, please cite:
 
-.. [link] Cheng, C. et al., Impact of dilute DIO on local microstructure 
-   of fluorinated, pNDI-based polymer solar cells. *Advanced Materials*, 2024. (submitted)
+.. [ADMA.202409502R1] Cheng, C. et al., Impact of dilute DIO on local microstructure 
+   of fluorinated, pNDI-based polymer solar cells. *Advanced Materials*, 2024. (accepted)
 
 If you use this package for 3D Analysis, please cite:
 
-.. [link] Cheng, C., Marks A., Quill T., Salleo A., 3D liquid crystalline
-   connectivity in semiconducting polymer films. *Gordon Research Conference:
-   Electronic Processes in Organic Materials*, July 2024.
+.. [Dissertation] Cheng, C., "Charge Transport Pathways in Organic Semiconductors: Insights
+   From Mesoscale Structural Characterizations." PhD dissertation, Stanford University,
+   2024. https://purl.stanford.edu/ts088bt5211
+
 
 Contributors
 -------------
