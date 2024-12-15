@@ -1,6 +1,8 @@
 """
 Testing Basic Docstring
 """
+__author__ = "Christina Cheng"
+__version__ = "v0.2"
 __all__ = ['crystal_peaks',
            'image',
            'spatial',
