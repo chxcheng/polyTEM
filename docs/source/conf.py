@@ -6,8 +6,8 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'pyTEM'
-copyright = '2023, Christina Cheng'
+project = 'polyTEM'
+copyright = '2024, Christina Cheng'
 author = 'Christina Cheng'
 release = '1.0'
 
