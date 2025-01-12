@@ -13,9 +13,9 @@ import builtins
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import pandas as pd
-from pytem import spatial_analysis as spatial
-from pytem.crystal_peaks import crystal_stack
-from pytem.crystal_peaks import _conditional_probability as cp
+from polytem import spatial_analysis as spatial
+from polytem.crystal_peaks import crystal_stack
+from polytem.crystal_peaks import _conditional_probability as cp
 from scipy.stats import uniform, linregress
 from scipy.signal import correlate
 from tqdm.auto import tqdm 
