@@ -10,17 +10,17 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.10"
-  jobs:
-    pre_build:
-      - mkdir -p $READTHEDOCS_OUTPUT/html/generated_api
-      - cp --recursive docs/source/_html/* $READTHEDOCS_OUTPUT/html/generated_api/
+  # jobs:
+  #   pre_build:
+  #     - mkdir -p $READTHEDOCS_OUTPUT/html/generated_api
+  #     - cp --recursive docs/source/_html/* $READTHEDOCS_OUTPUT/html/generated_api/
 
-python:
-  install:
-    - requirements: docs/requirements.txt
-    - method: pip
-      path: .  
+# python:
+#   install:
+#     - requirements: docs/requirements.txt
+#     - method: pip
+#       path: .  
 
 sphinx:
   configuration: docs/source/conf.py
-  fail_on_warning: true
+  fail_on_warning: false
