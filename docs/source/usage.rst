@@ -16,6 +16,94 @@ There are five main modules:
 4. **spatial** which handles the spatial and statistical analysis, including domain clustering
 5. **tomography** which handles tilt series alignment and reconstruction
 
+Quick-Start
+------------
+
+Input Parameters
+^^^^^^^^^^^^^^^^^
+
+```
+image_dir =  'path/to/images'
+filename_list = glob.glob(os.path.join(image_dir,'*.tiff'))
+ctffilename_list = [filename.removesuffix('.tiff') + 'ctffind_output.txt' for filename in filename_list]
+savedir = '/path/to/results'
+
+# Initialize parameters
+q022_pars = Parameters()
+q022_pars.update({
+   'q':0.22,
+   'q_low':0.18,
+   'q_high':0.26,
+   'processor':'cuda:1',
+   'threads':8})
+pixel_resolution = 0.944 # Angstrom/pixel
+             
+overwrite=True
+```
+
+Standard Image processing
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+```
+from polyTEM import image as pyimg
+from polyTEM.params import Parameters
+
+img = pyimg.Image.load(
+   filename,
+   format=re.search('(\w+)$',filename).group()[0],
+   res=pixel_resolution,
+   processor=q022_pars['processor'],
+   savedir=savedir
+)
+img.load_ctf(ctffilename)
+ctf_corrected_img = img.correct_ctf(
+   snr_array=np.full((np.min(img.dim),np.min(img.dim)),0.7))
+ctf_corrected_img.saveas_mrc()
+```
+
+```
+## Process Image using q022_pars
+bp_img = ctf_corrected_img.bandpass_filter(
+   q_low=q022_pars['q_low'],
+   q_high=q022_pars['q_high'])
+crystalstack = bp_img.featurize(
+   pars=q022_pars, 
+   kind='lamellar', 
+   plot_freq=0)
+crystalstack.outdir=savedir
+
+```
+
+```
+from polyTEM.crystal_peaks import flow_fields
+flow_maps = crystalstack.plot_flow_field(
+   perpendicular=True, 
+   curve_resolution=3,
+   line_spacing=1,
+   spacing_resolution=1,
+   bend_tolerance=15)
+```
+
+Domain Analysis
+^^^^^^^^^^^^^^^^^
+
+```
+from polyTEM import spatial_analysis as spatial 
+
+crystalstack.conditional_prob()
+
+crystalstack.get_clusters(plot=False)
+crystalstack.save_stack()
+
+cluster_df = spatial.create_polygons(crystalstack.peaks_df, alpha = 0.18)
+spatial.plot_polygons_df(
+   cluster_df, 
+   resolution=crystalstack.resolution, 
+   xlim=[0,crystalstack.sparse_peaks_mat.shape[1]], 
+   ylim=[0,crystalstack.sparse_peaks_mat.shape[0]])
+```
+
 image module
 -------------
 The *Image* class is useful for loading, viewing, and post-processing the HRTEM micrograph 

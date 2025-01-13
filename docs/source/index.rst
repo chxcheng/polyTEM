@@ -12,24 +12,13 @@ domain clustering, and statistical analysis of 2D images.
    available to demonstrate the working applications of this package. 
    Version-controlled source code will be released as manuscripts are published.
 
-.. toctree::
-
-   usage
-   api
-   3D visualization <3Dviz>
-
-
 
 References
 ------------
-This package was published with *Impact of dilute DIO additive on 
-local microstructure of fluorinated, pNDI-based polymer solar cells* 
-Advanced Materials, 2024 (submitted).
-
 If you use this package for 2D Analysis, please cite:
 
 .. [ADMA.202409502R1] Cheng, C. et al., Impact of dilute DIO on local microstructure 
-   of fluorinated, pNDI-based polymer solar cells. *Advanced Materials*, 2024. (accepted)
+   of fluorinated, pNDI-based polymer solar cells. *Advanced Materials*, 2024. https://doi.org/10.1002/adma.202409502
 
 If you use this package for 3D Analysis, please cite:
 
@@ -44,5 +33,12 @@ This package was built off of the methods and prototype code
 first written and developed by Christopher Takacs, 
 Camila Cendra, and Luke Balhorn.
 
+API
+----
 
+.. toctree::
+   :maxdepth: 2
+   usage
+   api
+   3D visualization <3Dviz>
 
