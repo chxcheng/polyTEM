@@ -8,6 +8,6 @@ Installation
 
 e.g. If the location of the repository as at "Documents/polyTEM", ``cd`` to the "Documents" directory to run ``pip install``
 
-USAGE
+Usage
 ######
-Please refer to [the Documentation](https://polytem.readthedocs.io/en/latest/usage.html)
+Please refer to `the Documentation <https://polytem.readthedocs.io/en/latest/usage.html>`_
