@@ -17,95 +17,93 @@ There are five main modules:
 5. **tomography** which handles tilt series alignment and reconstruction
 
 Quick-Start
-------------
+-----------
 
 Input Parameters
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
-```
-image_dir =  'path/to/images'
-filename_list = glob.glob(os.path.join(image_dir,'*.tiff'))
-ctffilename_list = [filename.removesuffix('.tiff') + 'ctffind_output.txt' for filename in filename_list]
-savedir = '/path/to/results'
+.. code-block:: python
 
-# Initialize parameters
-q022_pars = Parameters()
-q022_pars.update({
-   'q':0.22,
-   'q_low':0.18,
-   'q_high':0.26,
-   'processor':'cuda:1',
-   'threads':8})
-pixel_resolution = 0.944 # Angstrom/pixel
+   image_dir =  'path/to/images'
+   filename_list = glob.glob(os.path.join(image_dir,'*.tiff'))
+   ctffilename_list = [filename.removesuffix('.tiff') + 'ctffind_output.txt' for filename in filename_list]
+   savedir = '/path/to/results'
+
+   # Initialize parameters
+   q022_pars = Parameters()
+   q022_pars.update({
+      'q':0.22,
+      'q_low':0.18,
+      'q_high':0.26,
+      'processor':'cuda:1',
+      'threads':8})
+   pixel_resolution = 0.944 # Angstrom/pixel
              
-overwrite=True
-```
+   overwrite=True
 
 Standard Image processing
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. code-block:: python
 
-```
-from polyTEM import image as pyimg
-from polyTEM.params import Parameters
+   from polyTEM import image as pyimg
+   from polyTEM.params import Parameters
 
-img = pyimg.Image.load(
-   filename,
-   format=re.search('(\w+)$',filename).group()[0],
-   res=pixel_resolution,
-   processor=q022_pars['processor'],
-   savedir=savedir
-)
-img.load_ctf(ctffilename)
-ctf_corrected_img = img.correct_ctf(
-   snr_array=np.full((np.min(img.dim),np.min(img.dim)),0.7))
-ctf_corrected_img.saveas_mrc()
-```
+   img = pyimg.Image.load(
+      filename,
+      format=re.search('(\w+)$',filename).group()[0],
+      res=pixel_resolution,
+      processor=q022_pars['processor'],
+      savedir=savedir
+   )
+   img.load_ctf(ctffilename)
+   ctf_corrected_img = img.correct_ctf(
+      snr_array=np.full((np.min(img.dim),np.min(img.dim)),0.7))
+   ctf_corrected_img.saveas_mrc()
 
-```
-## Process Image using q022_pars
-bp_img = ctf_corrected_img.bandpass_filter(
-   q_low=q022_pars['q_low'],
-   q_high=q022_pars['q_high'])
-crystalstack = bp_img.featurize(
-   pars=q022_pars, 
-   kind='lamellar', 
-   plot_freq=0)
-crystalstack.outdir=savedir
+.. code-block:: python
 
-```
+   ## Process Image using q022_pars
+   bp_img = ctf_corrected_img.bandpass_filter(
+      q_low=q022_pars['q_low'],
+      q_high=q022_pars['q_high'])
+   crystalstack = bp_img.featurize(
+      pars=q022_pars, 
+      kind='lamellar', 
+      plot_freq=0)
+   crystalstack.outdir=savedir
 
-```
-from polyTEM.crystal_peaks import flow_fields
-flow_maps = crystalstack.plot_flow_field(
-   perpendicular=True, 
-   curve_resolution=3,
-   line_spacing=1,
-   spacing_resolution=1,
-   bend_tolerance=15)
-```
+.. code-block:: python
+
+   from polyTEM.crystal_peaks import flow_fields
+   flow_maps = crystalstack.plot_flow_field(
+      perpendicular=True, 
+      curve_resolution=3,
+      line_spacing=1,
+      spacing_resolution=1,
+      bend_tolerance=15)
 
 Domain Analysis
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
-```
-from polyTEM import spatial_analysis as spatial 
+.. code-block:: python
 
-crystalstack.conditional_prob()
+   from polyTEM import spatial_analysis as spatial 
 
-crystalstack.get_clusters(plot=False)
-crystalstack.save_stack()
+   crystalstack.conditional_prob()
 
-cluster_df = spatial.create_polygons(crystalstack.peaks_df, alpha = 0.18)
-spatial.plot_polygons_df(
-   cluster_df, 
-   resolution=crystalstack.resolution, 
-   xlim=[0,crystalstack.sparse_peaks_mat.shape[1]], 
-   ylim=[0,crystalstack.sparse_peaks_mat.shape[0]])
-```
+   crystalstack.get_clusters(plot=False)
+   crystalstack.save_stack()
+
+   cluster_df = spatial.create_polygons(crystalstack.peaks_df, alpha = 0.18)
+   spatial.plot_polygons_df(
+      cluster_df, 
+      resolution=crystalstack.resolution, 
+      xlim=[0,crystalstack.sparse_peaks_mat.shape[1]], 
+      ylim=[0,crystalstack.sparse_peaks_mat.shape[0]])
 
 image module
--------------
+-----------
 The *Image* class is useful for loading, viewing, and post-processing the HRTEM micrograph 
 (note: does not contain analysis). The main methods include:
 
@@ -119,7 +117,7 @@ The *Image* class is useful for loading, viewing, and post-processing the HRTEM 
 .. _CTFFIND4: https://grigoriefflab.umassmed.edu/ctffind4/
 
 crystal_peaks module
---------------------
+-------------------
 *CrystalStack* class handles the scanning fft peak results from a single projection image, 
 while *CrystalStack3D* handles a list of *CrystalStacks* for 3D analysis to produce a networkx_
 graph of connected backbone nematic directors. 
@@ -146,7 +144,7 @@ graph of connected backbone nematic directors.
 
 
 spatial module (v0.2)
----------------------
+--------------------
 Crystalline domains are clustered using HDBSCAN_ which outputs a *DomainCollection* object, whose *domains* attribute
 is a list of *Domain* objects for each cluster. *Domain* geometries are represented using alphashape_ and shapely polygons_. 
 *DomainCollections* can then be analyzed for
@@ -176,7 +174,7 @@ In v0.2, they will all be handled by the main spatial module. Code is still bein
 .. _polygons: https://shapely.readthedocs.io/en/stable/reference/shapely.Polygon.html
 
 tomography module (v0.2)
-------------------------
+-----------------------
 The *AlignmentResult* class handles alignment of tilt series image frames using fiduciary marker alignment
 based on Jing and Sachs, [JingSachs]_. 
 

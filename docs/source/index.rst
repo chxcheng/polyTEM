@@ -38,6 +38,7 @@ API
 
 .. toctree::
    :maxdepth: 2
+   
    usage
    api
    3D visualization <3Dviz>
