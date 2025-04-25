@@ -1,5 +1,5 @@
 3D Backbone Interconnectivity of Semiconducting Polymers
-===================================
+=======================================================
 
 Poster Extension for *3D Liquid Crystalline Connectivity in Semiconducting
 Polymer Films* poster, presented at the **Gordon Research Conference: 

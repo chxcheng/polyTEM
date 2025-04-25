@@ -16,8 +16,8 @@ There are five main modules:
 4. **spatial** which handles the spatial and statistical analysis, including domain clustering
 5. **tomography** which handles tilt series alignment and reconstruction
 
-Quick-Start
------------
+Quick-start parameters
+---------------------
 
 Input Parameters
 ^^^^^^^^^^^^^^^
@@ -41,8 +41,8 @@ Input Parameters
              
    overwrite=True
 
-Standard Image processing
-^^^^^^^^^^^^^^^^^^^^^^^^
+Standard image processing
+------------------------
 
 .. code-block:: python
 
@@ -83,8 +83,8 @@ Standard Image processing
       spacing_resolution=1,
       bend_tolerance=15)
 
-Domain Analysis
-^^^^^^^^^^^^^^
+Domain analysis
+--------------
 
 .. code-block:: python
 
@@ -101,6 +101,9 @@ Domain Analysis
       resolution=crystalstack.resolution, 
       xlim=[0,crystalstack.sparse_peaks_mat.shape[1]], 
       ylim=[0,crystalstack.sparse_peaks_mat.shape[0]])
+
+Module descriptions
+------------------
 
 image module
 -----------
