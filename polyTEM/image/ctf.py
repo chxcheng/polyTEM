@@ -13,7 +13,9 @@ from collections import defaultdict
 
 class CTF:
     """
-    Class storing the results of ctffind4 output
+    Class for handling CTF (Contrast Transfer Function) correction of TEM images.
+    
+    This class processes the output from CTFFIND4 and provides methods for CTF correction.
     
     Attributes:
         df (pd.DataFrame): Spatial frequency vs ctffit
@@ -86,8 +88,7 @@ class CTF:
         """
         Processes ctffind4 output textfiles
 
-        \b
-        Expected info contanied in ctffind output (info=='summary'):
+        Expected info contained in ctffind output (info=='summary'):
         Line 1: # CTF version, date and time
         Line 2: # Input file : <filename> ;
         Line 3: # <Parameter Name>: <Value> <Unit>;
@@ -95,7 +96,6 @@ class CTF:
         Line 5: # Columns: #1 - micrograph number; #2 - defocus 1 [Angstroms]; #3 - defocus 2; #4 - azimuth of astigmatism; #5 - additional phase shift [radians]; #6 - cross correlation; #7 - spacing (in Angstroms);
         Line 6+: <Column Values separated by space>
 
-        \b
         Expected info contained in ctiffind out _avrot:
         Line 1: # Output from CTFFIND version <version>, run on <date> <time>
         Line 2: # Input file: <filename>

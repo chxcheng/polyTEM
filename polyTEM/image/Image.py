@@ -1,6 +1,22 @@
 ### Image object and functions
 """
-Written by Christina Cheng, Adapted from Camila Cendra.
+This module provides the Image class for handling and processing HRTEM (High-Resolution Transmission Electron Microscopy) images.
+
+The Image class encapsulates HRTEM image data and provides methods for:
+- Loading and saving images in various formats (MRC, NPY, standard image formats)
+- Image processing operations (CTF correction, drift correction, bandpass filtering)
+- Fourier analysis (power spectrum calculation, FFT scanning)
+- Feature extraction for different types of periodic structures
+- Visualization with scale bars and proper formatting
+
+Key features include:
+- Support for both CPU and GPU processing
+- Integration with CTF (Contrast Transfer Function) analysis
+- Drift correction for multi-frame images
+- Bandpass filtering and Fourier analysis
+- Feature extraction for lamellar, pi-pi, and backbone structures
+
+The module also includes helper functions for windowing and signal processing.
 """
 
 import mrcfile

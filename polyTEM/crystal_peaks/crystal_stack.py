@@ -65,16 +65,16 @@ class CrystalStack:
         outdir (str): save directory
         hkl (int): 100, 010, 001 for lamellar, pi-pi, or backbone information
         datacube (np.ndarray): sliding fft scan intensities
-        type_: default 'Donor'
+        type_ (str): default 'Donor'
         sparse_peaks_mat (sparse): one-hot matrix of location and orientation 
         conditional_probability (ConditionalProbability): class containing Probability of orientation difference given distance
-        ks_distmat:
-        ks_dlist:
-        ks_thetas:
-        peaks_df (pd.Dataframe):
-        _threshold_function : _threshold_1sigma
-        _plot_frequency : 20000
-        _peak_width_threshold : 5
+        ks_distmat (array): Kolmogorov-Smirnov distance matrix
+        ks_dlist (list): Kolmogorov-Smirnov D-value list
+        ks_thetas (list): List of theta with max difference for each distance
+        peaks_df (pd.Dataframe): DataFrame containing peak information
+        _threshold_function (function): Function for thresholding peaks (default: _threshold_1sigma)
+        _plot_frequency (int): Frequency of plotting (default: 20000)
+        _peak_width_threshold (int): Threshold for peak width (default: 5)
     """
 
     def __init__(self, img, datacube, hkl = 100, type_ = 'Donor', peak_threshold_function = _threshold_1sigma):
@@ -432,7 +432,6 @@ def _get_clusters(sparse_peaks_mat, nm_per_pxl,min_cluster_size = 10, min_sample
 
 def peak_distance(theta1, theta2):
     '''
-    decent idea christina! but it doens't work because there is a distribution of chord lengths in a given circle that is nonuniform...
     '''
     x1=np.cos(2*np.deg2rad(theta1))
     y1 = np.sin(2*np.deg2rad(theta1))
